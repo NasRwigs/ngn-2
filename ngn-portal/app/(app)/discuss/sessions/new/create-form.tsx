@@ -12,6 +12,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/toaster";
 import { PROGRAMME_AREAS } from "@/lib/taxonomy/programme-areas";
 import { EVENT_FORMATS } from "@/lib/taxonomy/statuses";
+import { createGroupSessionAction } from "@/lib/actions/data-mutations";
 
 export function CreateSessionForm() {
   const router = useRouter();
@@ -36,10 +37,22 @@ export function CreateSessionForm() {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 500));
+    try {
+      await createGroupSessionAction({
+        title: form.title,
+        description: form.description,
+        programmeArea: form.programmeArea,
+        startAt: new Date(form.startAt).toISOString(),
+        endAt: new Date(form.endAt).toISOString(),
+        format: form.format,
+        capacity: form.capacity,
+      });
+      toast.success("Session scheduled");
+      router.push("/discuss/sessions");
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : "Create failed");
+    }
     setSubmitting(false);
-    toast.success("Session scheduled");
-    router.push("/discuss/sessions");
   }
 
   return (

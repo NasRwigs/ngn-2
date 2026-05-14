@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/toaster";
+import { inviteMemberByEmailAction } from "@/lib/actions/data-mutations";
 
 export function InviteForm() {
   const router = useRouter();
@@ -22,8 +23,17 @@ export function InviteForm() {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 500));
+    const res = await inviteMemberByEmailAction({
+      email,
+      name,
+      role,
+      note: note || undefined,
+    });
     setSubmitting(false);
+    if (!res.ok) {
+      toast.error(res.error);
+      return;
+    }
     toast.success(`Invitation sent to ${email}`);
     router.push("/admin/members");
   }

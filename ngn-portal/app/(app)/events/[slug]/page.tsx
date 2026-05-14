@@ -11,6 +11,8 @@ import { PageHeader } from "@/components/ui/page-header";
 import { dataProvider } from "@/lib/data";
 import { formatDateTime } from "@/lib/format/date";
 
+import { EventRegistrationButtons } from "./event-registration-buttons";
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
@@ -52,11 +54,17 @@ export default async function EventDetailPage({ params }: PageProps) {
         actions={
           upcoming ? (
             event.registered ? (
-              <Button variant="outline">Cancel registration</Button>
+              <EventRegistrationButtons
+                eventId={event.id}
+                registered
+              />
             ) : event.registrationRequired ? (
-              <Button>Register</Button>
+              <EventRegistrationButtons
+                eventId={event.id}
+                registered={false}
+              />
             ) : (
-              <Button>Add to calendar</Button>
+              <Button variant="secondary">Add to calendar</Button>
             )
           ) : event.recordingUrl ? (
             <Button asChild>

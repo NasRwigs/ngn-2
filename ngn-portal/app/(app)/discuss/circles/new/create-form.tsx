@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/toaster";
+import { createCircleProgramAction } from "@/lib/actions/data-mutations";
 
 export function CreateCircleForm() {
   const router = useRouter();
@@ -32,10 +33,21 @@ export function CreateCircleForm() {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 500));
+    try {
+      await createCircleProgramAction({
+        name: form.name,
+        topic: form.topic,
+        cadence: form.cadence,
+        capacity: form.capacity,
+        facilitatorIds: [],
+        description: form.description,
+      });
+      toast.success("Circle created");
+      router.push("/discuss/circles");
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : "Create failed");
+    }
     setSubmitting(false);
-    toast.success("Circle created");
-    router.push("/discuss/circles");
   }
 
   return (

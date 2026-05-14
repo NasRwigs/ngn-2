@@ -8,6 +8,9 @@ import { Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FormField } from "@/components/ui/form-field";
 import { Input } from "@/components/ui/input";
+import { isSupabaseEnabled } from "@/lib/supabase/config";
+
+import { signInWithPasswordAction } from "./actions";
 
 export function LoginForm() {
   const router = useRouter();
@@ -21,13 +24,25 @@ export function LoginForm() {
     event.preventDefault();
     setSubmitting(true);
     setError(null);
-    await new Promise((r) => setTimeout(r, 400));
     if (!email || !password) {
       setError("Email and password are required.");
       setSubmitting(false);
       return;
     }
-    router.push("/");
+    if (isSupabaseEnabled()) {
+      const res = await signInWithPasswordAction(email, password);
+      if (!res.ok) {
+        setError(res.error);
+        setSubmitting(false);
+        return;
+      }
+      router.push("/");
+      router.refresh();
+    } else {
+      await new Promise((r) => setTimeout(r, 200));
+      router.push("/");
+    }
+    setSubmitting(false);
   }
 
   return (

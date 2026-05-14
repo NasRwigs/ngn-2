@@ -6,6 +6,9 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { FormField } from "@/components/ui/form-field";
 import { Input } from "@/components/ui/input";
+import { isSupabaseEnabled } from "@/lib/supabase/config";
+
+import { updatePasswordAction } from "../actions";
 
 export function ConfirmResetForm() {
   const router = useRouter();
@@ -28,7 +31,17 @@ export function ConfirmResetForm() {
       return;
     }
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 400));
+    if (isSupabaseEnabled()) {
+      const res = await updatePasswordAction(password);
+      if (!res.ok) {
+        setError(res.error);
+        setSubmitting(false);
+        return;
+      }
+    } else {
+      await new Promise((r) => setTimeout(r, 400));
+    }
+    setSubmitting(false);
     router.push("/login");
   }
 

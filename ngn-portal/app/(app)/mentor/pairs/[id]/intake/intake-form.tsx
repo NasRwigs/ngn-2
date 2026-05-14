@@ -12,6 +12,7 @@ import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/toaster";
 import type { Pair } from "@/lib/data/types";
+import { submitIntakeAction } from "@/lib/actions/data-mutations";
 
 interface GoalDraft {
   title: string;
@@ -49,10 +50,23 @@ export function IntakeForm({ pair }: { pair: Pair }) {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 500));
+    try {
+      await submitIntakeAction(pair.id, {
+        goals: goals
+          .filter((g) => g.title.trim())
+          .map((g) => ({
+            title: g.title,
+            successCriteria: g.successCriteria,
+          })),
+        workingAgreement: agreement,
+        cadence,
+      });
+      toast.success("Intake saved");
+      router.push(`/mentor/pairs/${pair.id}`);
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : "Save failed");
+    }
     setSubmitting(false);
-    toast.success("Intake saved");
-    router.push(`/mentor/pairs/${pair.id}`);
   }
 
   return (

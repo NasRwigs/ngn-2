@@ -11,6 +11,7 @@ import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/toaster";
 import { PROGRAMME_AREAS } from "@/lib/taxonomy/programme-areas";
+import { createDiscussionSpaceAdminAction } from "@/lib/actions/data-mutations";
 
 export function CreateSpaceForm() {
   const router = useRouter();
@@ -22,10 +23,18 @@ export function CreateSpaceForm() {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 500));
+    try {
+      await createDiscussionSpaceAdminAction({
+        name,
+        description,
+        programmeArea: programmeArea || undefined,
+      });
+      toast.success("Space created");
+      router.push("/admin/spaces");
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : "Create failed");
+    }
     setSubmitting(false);
-    toast.success("Space created");
-    router.push("/admin/spaces");
   }
 
   return (

@@ -1,0 +1,8 @@
+# For local Supabase CLI (`supabase start` / `supabase db reset`).
+# Remote London project uses Dashboard or `supabase link`.
+
+[api]
+enabled = true
+
+[db]
+major_version = 15

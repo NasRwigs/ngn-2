@@ -6,15 +6,23 @@
  * Supabase lands, change the import here and nothing else needs to move.
  */
 
-import { mutations, queries } from "./mock-impl";
+import { isSupabaseEnabled } from "@/lib/supabase/config";
+
+import type { Mutations } from "./mutations";
+import type { Queries } from "./queries";
+import { mutations as mockMutations, queries as mockQueries } from "./mock-impl";
+import { createSupabaseDataProvider } from "./supabase/provider";
 
 export interface DataProvider {
-  queries: typeof queries;
-  mutations: typeof mutations;
+  queries: Queries;
+  mutations: Mutations;
 }
 
 export async function dataProvider(): Promise<DataProvider> {
-  return { queries, mutations };
+  if (isSupabaseEnabled()) {
+    return createSupabaseDataProvider();
+  }
+  return { queries: mockQueries, mutations: mockMutations };
 }
 
 export type {

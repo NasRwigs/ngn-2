@@ -11,6 +11,7 @@ import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/toaster";
 import type { Member } from "@/lib/data/types";
+import { sendMentorshipRequestAction } from "@/lib/actions/data-mutations";
 
 export function RequestForm({ mentor }: { mentor: Member }) {
   const router = useRouter();
@@ -24,10 +25,19 @@ export function RequestForm({ mentor }: { mentor: Member }) {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 500));
+    try {
+      await sendMentorshipRequestAction({
+        toUserId: mentor.id,
+        motivation,
+        goals,
+        preferredCadence: cadence,
+      });
+      toast.success(`Request sent to ${mentor.name}`);
+      router.push("/mentor");
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : "Request failed");
+    }
     setSubmitting(false);
-    toast.success(`Request sent to ${mentor.name}`);
-    router.push("/mentor");
   }
 
   return (

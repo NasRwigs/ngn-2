@@ -15,6 +15,7 @@ import { toast } from "@/components/ui/toaster";
 import { COUNTRIES } from "@/lib/taxonomy/countries";
 import { SECTORS } from "@/lib/taxonomy/sectors";
 import type { Member } from "@/lib/data/types";
+import { updateProfileAction } from "@/lib/actions/data-mutations";
 
 interface EditProfileFormProps {
   member: Member;
@@ -56,11 +57,28 @@ export function EditProfileForm({ member }: EditProfileFormProps) {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 500));
+    try {
+      await updateProfileAction({
+        name: form.name,
+        title: form.title,
+        organisation: form.organisation,
+        country: form.country,
+        sectors: form.sectors,
+        expertise: form.expertise,
+        bio: form.bio,
+        languages: form.languages,
+        timezone: member.timezone,
+        linkedinUrl: form.linkedinUrl || undefined,
+        websiteUrl: form.websiteUrl || undefined,
+        mentorshipStatus: form.mentorshipStatus,
+      });
+      toast.success("Profile updated");
+      router.push(`/connect/${member.slug}`);
+      router.refresh();
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : "Update failed");
+    }
     setSubmitting(false);
-    toast.success("Profile updated");
-    router.push(`/connect/${member.slug}`);
-    router.refresh();
   }
 
   return (

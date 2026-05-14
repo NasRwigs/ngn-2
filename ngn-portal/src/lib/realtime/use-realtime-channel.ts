@@ -2,33 +2,66 @@
 
 import * as React from "react";
 
+import { isSupabaseEnabled } from "@/lib/supabase/config";
+import { createSupabaseBrowserClient } from "@/lib/supabase/client";
+
 /**
- * Realtime channel seam.
- *
- * Today this is a no-op subscription that only handles the polling fallback.
- * When Supabase Realtime is added, replace the internals with a
- * `supabase.channel(channelName).on('broadcast', ...).subscribe()` call.
- * Callers don't need to change.
+ * Realtime channel seam. With Supabase configured, subscribes to postgres
+ * changes when `table` + `filter` are provided; otherwise uses polling fallback.
  */
-export function useRealtimeChannel<T>(
+export function useRealtimeChannel(
   channelName: string,
   options: {
-    pollFn?: () => Promise<T>;
+    pollFn?: () => Promise<unknown>;
     pollIntervalMs?: number;
-    onUpdate?: (next: T) => void;
+    onUpdate?: () => void;
+    /** e.g. `messages` */
+    table?: string;
+    /** e.g. `conversation_id=eq.<uuid>` */
+    filter?: string;
   } = {},
 ) {
-  const { pollFn, pollIntervalMs = 5000, onUpdate } = options;
+  const { pollFn, pollIntervalMs = 5000, onUpdate, table, filter } = options;
 
   React.useEffect(() => {
+    if (
+      isSupabaseEnabled() &&
+      table &&
+      filter &&
+      typeof window !== "undefined"
+    ) {
+      let cancelled = false;
+      const supabase = createSupabaseBrowserClient();
+      const channel = supabase
+        .channel(channelName)
+        .on(
+          "postgres_changes",
+          {
+            event: "*",
+            schema: "public",
+            table,
+            filter,
+          },
+          () => {
+            if (!cancelled) onUpdate?.();
+          },
+        )
+        .subscribe();
+
+      return () => {
+        cancelled = true;
+        void supabase.removeChannel(channel);
+      };
+    }
+
     if (!pollFn || !onUpdate) return;
     let cancelled = false;
     const tick = async () => {
       try {
-        const next = await pollFn();
-        if (!cancelled) onUpdate(next);
+        await pollFn();
+        if (!cancelled) onUpdate();
       } catch {
-        // ignore — surface real errors when Supabase lands
+        // ignore
       }
     };
     const id = window.setInterval(tick, pollIntervalMs);
@@ -37,5 +70,5 @@ export function useRealtimeChannel<T>(
       window.clearInterval(id);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [channelName, pollIntervalMs]);
+  }, [channelName, pollIntervalMs, table, filter]);
 }

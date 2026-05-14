@@ -39,6 +39,7 @@ export interface OnboardingInput {
   mentorshipStatus: Member["mentorshipStatus"];
   skillsOffered?: string[];
   skillsWanted?: string[];
+  cadence?: "weekly" | "biweekly" | "monthly";
 }
 
 export interface MentorshipRequestInput {
@@ -90,6 +91,22 @@ export interface CircleInput {
 export interface DiscussionThreadInput {
   title: string;
   body: string;
+}
+
+export interface DiscussionSpaceInput {
+  name: string;
+  description: string;
+  programmeArea?: string;
+}
+
+export interface GroupSessionInput {
+  title: string;
+  description: string;
+  programmeArea: string;
+  startAt: string;
+  endAt: string;
+  format: string;
+  capacity: number;
 }
 
 export interface Mutations {
@@ -144,11 +161,20 @@ export interface Mutations {
       authorId: string,
       body: string,
     ): Promise<{ replyId: string }>;
+    createSpace(
+      input: DiscussionSpaceInput,
+    ): Promise<{ spaceId: string; slug: string }>;
   };
   admin: {
     moderationResolve(
       reportId: string,
       action: "keep" | "remove",
     ): Promise<{ ok: true }>;
+  };
+  groupSessions: {
+    create(
+      hostId: string,
+      input: GroupSessionInput,
+    ): Promise<{ sessionId: string }>;
   };
 }

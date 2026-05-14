@@ -7,6 +7,9 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { FormField } from "@/components/ui/form-field";
 import { Input } from "@/components/ui/input";
+import { isSupabaseEnabled } from "@/lib/supabase/config";
+
+import { verifyTotpAction } from "./actions";
 
 export function VerifyMfaForm() {
   const router = useRouter();
@@ -19,12 +22,22 @@ export function VerifyMfaForm() {
     event.preventDefault();
     setError(null);
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 300));
-    if (useBackup ? code.length < 10 : code.length !== 6) {
-      setError("Invalid code. Try again.");
-      setSubmitting(false);
-      return;
+    if (isSupabaseEnabled() && !useBackup) {
+      const res = await verifyTotpAction(code);
+      if (!res.ok) {
+        setError(res.error);
+        setSubmitting(false);
+        return;
+      }
+    } else {
+      await new Promise((r) => setTimeout(r, 300));
+      if (useBackup ? code.length < 10 : code.length !== 6) {
+        setError("Invalid code. Try again.");
+        setSubmitting(false);
+        return;
+      }
     }
+    setSubmitting(false);
     router.push("/");
   }
 

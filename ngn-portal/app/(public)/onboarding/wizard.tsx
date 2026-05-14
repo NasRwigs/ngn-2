@@ -17,6 +17,10 @@ import { TagInput } from "@/components/ui/tag-input";
 import { Textarea } from "@/components/ui/textarea";
 import { COUNTRIES } from "@/lib/taxonomy/countries";
 import { SECTORS } from "@/lib/taxonomy/sectors";
+import { isSupabaseEnabled } from "@/lib/supabase/config";
+import { toast } from "@/components/ui/toaster";
+
+import { signUpFromOnboardingAction } from "./actions";
 
 const STEPS = [
   "Account",
@@ -114,15 +118,48 @@ export function OnboardingWizard() {
 
   async function submit() {
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 600));
     try {
-      window.localStorage.removeItem(STORAGE_KEY);
-    } catch {
-      // ignore
+      if (isSupabaseEnabled()) {
+        const res = await signUpFromOnboardingAction({
+          email: state.email,
+          password: state.password,
+          name: state.name,
+          country: state.country,
+          nationality: state.nationality,
+          title: state.title,
+          organisation: state.organisation,
+          sectors: state.sectors,
+          expertise: state.expertise,
+          bio: state.bio,
+          languages: state.languages,
+          timezone: state.timezone,
+          linkedinUrl: state.linkedinUrl || undefined,
+          websiteUrl: state.websiteUrl || undefined,
+          mentorshipStatus: state.mentorshipStatus,
+          skillsOffered: state.skillsOffered,
+          skillsWanted: state.skillsWanted,
+          cadence: state.cadence,
+        });
+        if (!res.ok) {
+          toast.error(res.error);
+          setSubmitting(false);
+          return;
+        }
+      } else {
+        await new Promise((r) => setTimeout(r, 600));
+      }
+      try {
+        window.localStorage.removeItem(STORAGE_KEY);
+      } catch {
+        // ignore
+      }
+      setSubmitting(false);
+      setDone(true);
+      setTimeout(() => router.push("/login"), 1800);
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : "Something went wrong.");
+      setSubmitting(false);
     }
-    setSubmitting(false);
-    setDone(true);
-    setTimeout(() => router.push("/login"), 1800);
   }
 
   if (done) {

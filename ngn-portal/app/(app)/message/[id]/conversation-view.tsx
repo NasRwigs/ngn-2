@@ -2,13 +2,30 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowLeft, MoreVertical, Paperclip, Send } from "lucide-react";
+import { useRouter } from "next/navigation";
+import {
+  ArrowLeft,
+  ExternalLink,
+  MoreVertical,
+  Paperclip,
+  Send,
+} from "lucide-react";
 
 import { Avatar } from "@/components/app-shell/avatar";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { useRealtimeChannel } from "@/lib/realtime/use-realtime-channel";
 import { cn } from "@/components/ui/cn";
 import { formatTime } from "@/lib/format/date";
+import { toast } from "@/components/ui/toaster";
+
+import { sendDirectMessage } from "../actions";
 
 interface Message {
   id: string;
@@ -30,19 +47,29 @@ export function ConversationView({
   other,
   initialMessages,
 }: ConversationViewProps) {
+  const router = useRouter();
   const [messages, setMessages] = React.useState<Message[]>(initialMessages);
   const [input, setInput] = React.useState("");
   const [sending, setSending] = React.useState(false);
   const endRef = React.useRef<HTMLDivElement | null>(null);
 
   React.useEffect(() => {
+    setMessages(initialMessages);
+  }, [initialMessages]);
+
+  const messagesRef = React.useRef(messages);
+  messagesRef.current = messages;
+
+  React.useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages.length]);
 
-  useRealtimeChannel<Message[]>(`conversation:${conversationId}`, {
-    pollFn: async () => messages,
+  useRealtimeChannel(`conversation:${conversationId}`, {
+    table: "messages",
+    filter: `conversation_id=eq.${conversationId}`,
+    pollFn: async () => messagesRef.current,
     onUpdate: () => {
-      // No-op in mock. Real impl: merge in new messages broadcast by Supabase Realtime.
+      router.refresh();
     },
   });
 
@@ -58,8 +85,20 @@ export function ConversationView({
     };
     setMessages((prev) => [...prev, optimistic]);
     setInput("");
-    await new Promise((r) => setTimeout(r, 200));
-    setSending(false);
+    try {
+      const result = await sendDirectMessage(conversationId, body);
+      if (!result.ok) {
+        setMessages((prev) => prev.filter((m) => m.id !== optimistic.id));
+        toast.error(result.error);
+        return;
+      }
+      router.refresh();
+    } catch {
+      setMessages((prev) => prev.filter((m) => m.id !== optimistic.id));
+      toast.error("Could not send message. Try again.");
+    } finally {
+      setSending(false);
+    }
   }
 
   function handleKey(event: React.KeyboardEvent<HTMLTextAreaElement>) {
@@ -69,13 +108,20 @@ export function ConversationView({
     }
   }
 
+  function onAttachClick() {
+    toast.message("Attachments", {
+      description:
+        "File attachments are not available in this preview build. They will arrive with cloud storage integration.",
+    });
+  }
+
   return (
     <div className="-mx-4 md:-mx-6 lg:-mx-16 -mb-24 md:-mb-12 h-[calc(100dvh-7rem)] md:h-[calc(100dvh-3.5rem)] flex flex-col bg-surface">
       <header className="flex items-center gap-3 px-3 md:px-6 py-3 border-b border-outline-variant bg-surface-container-lowest">
         <Link
           href="/message"
           aria-label="Back to inbox"
-          className="md:hidden size-9 grid place-items-center rounded-full hover:bg-surface-container focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+          className="md:hidden min-h-11 min-w-11 grid place-items-center rounded-full hover:bg-surface-container focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
         >
           <ArrowLeft className="size-5" aria-hidden />
         </Link>
@@ -97,16 +143,47 @@ export function ConversationView({
           </Link>
         )}
 
-        <button
-          type="button"
-          aria-label="More options"
-          className="size-9 grid place-items-center rounded-full hover:bg-surface-container focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-        >
-          <MoreVertical className="size-5" aria-hidden />
-        </button>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <button
+              type="button"
+              aria-label="Conversation options"
+              className="min-h-11 min-w-11 grid place-items-center rounded-full hover:bg-surface-container focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            >
+              <MoreVertical className="size-5" aria-hidden />
+            </button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="w-48">
+            {other && (
+              <>
+                <DropdownMenuItem asChild>
+                  <Link href={`/connect/${other.id}`} className="cursor-pointer">
+                    <ExternalLink className="size-4 mr-2 inline" aria-hidden />
+                    View profile
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+              </>
+            )}
+            <DropdownMenuItem
+              className="cursor-pointer"
+              onSelect={() => {
+                toast.message("Notifications", {
+                  description:
+                    "Per-conversation mute will be available in a future release.",
+                });
+              }}
+            >
+              Mute conversation
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </header>
 
-      <ol className="flex-1 overflow-y-auto px-4 md:px-6 py-4 space-y-2">
+      <ol
+        className="flex-1 overflow-y-auto px-4 md:px-6 py-4 space-y-2"
+        aria-label="Messages"
+      >
         {messages.map((msg) => {
           const isMe = msg.senderId === currentUserId;
           return (
@@ -147,8 +224,9 @@ export function ConversationView({
         <div className="flex items-end gap-2">
           <button
             type="button"
-            aria-label="Attach file"
-            className="size-10 shrink-0 grid place-items-center rounded-full hover:bg-surface-container focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            aria-label="Attach file (preview: not available)"
+            onClick={onAttachClick}
+            className="min-h-11 min-w-11 shrink-0 grid place-items-center rounded-full border border-transparent hover:bg-surface-container focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           >
             <Paperclip className="size-5" aria-hidden />
           </button>
@@ -163,10 +241,10 @@ export function ConversationView({
           />
           <Button
             type="button"
-            onClick={send}
+            onClick={() => void send()}
             disabled={!input.trim() || sending}
             aria-label="Send message"
-            className="size-10 p-0"
+            className="min-h-11 min-w-11 p-0"
           >
             <Send className="size-4" aria-hidden />
           </Button>

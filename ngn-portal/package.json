@@ -6,7 +6,9 @@
     "node": ">=20.10"
   },
   "scripts": {
+    "clean": "rm -rf .next",
     "dev": "NODE_OPTIONS='--max-http-header-size=65536' next dev",
+    "dev:clean": "npm run clean && npm run dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -19,6 +21,7 @@
     "ci": "npm run typecheck && npm run lint && npm test && npm run build && npm run build-storybook"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-checkbox": "^1.1.2",
     "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-dropdown-menu": "^2.1.2",
@@ -29,7 +32,8 @@
     "@radix-ui/react-tabs": "^1.1.1",
     "@radix-ui/react-tooltip": "^1.1.4",
     "@radix-ui/react-visually-hidden": "^1.1.0",
-    "@hookform/resolvers": "^3.9.1",
+    "@supabase/ssr": "^0.5.2",
+    "@supabase/supabase-js": "^2.105.4",
     "date-fns": "^4.1.0",
     "date-fns-tz": "^3.2.0",
     "lucide-react": "^0.460.0",

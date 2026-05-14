@@ -17,7 +17,8 @@ import { DISCUSSION_THREADS, THREAD_REPLIES } from "./fixtures/threads";
 import { MODERATION_REPORTS } from "./fixtures/moderation-reports";
 import type { Queries } from "./queries";
 import type { Mutations } from "./mutations";
-import type { AdminStat, DiscussionThread } from "./types";
+import type { AdminStat, DiscussionSpace, DiscussionThread } from "./types";
+import { slugify } from "./supabase/slug";
 
 const sleep = (ms = 30) => new Promise((r) => setTimeout(r, ms));
 
@@ -324,10 +325,11 @@ export const mutations: Mutations = {
       });
       return { requestId: id };
     },
-    async submitIntake(pairId) {
+    async submitIntake(pairId, input) {
       await sleep();
       const pair = PAIRS.find((p) => p.id === pairId);
       if (!pair) throw new Error("Pair not found");
+      void input;
       return { ok: true };
     },
     async logSession(pairId, input) {
@@ -347,22 +349,24 @@ export const mutations: Mutations = {
     },
   },
   events: {
-    async register(eventId) {
+    async register(eventId, userId) {
       await sleep();
       const event = EVENTS.find((e) => e.id === eventId);
       if (event) {
         event.registeredCount += 1;
         event.registered = true;
       }
+      void userId;
       return { ok: true };
     },
-    async unregister(eventId) {
+    async unregister(eventId, userId) {
       await sleep();
       const event = EVENTS.find((e) => e.id === eventId);
       if (event && event.registeredCount > 0) {
         event.registeredCount -= 1;
         event.registered = false;
       }
+      void userId;
       return { ok: true };
     },
     async create() {
@@ -402,8 +406,9 @@ export const mutations: Mutations = {
       }
       return { messageId: id };
     },
-    async markRead(conversationId) {
+    async markRead(conversationId, userId) {
       await sleep();
+      void userId;
       const c = CONVERSATIONS.find((c) => c.id === conversationId);
       if (c) c.unreadCount = 0;
       return { ok: true };
@@ -457,6 +462,22 @@ export const mutations: Mutations = {
         .length;
       return { replyId: rid };
     },
+    async createSpace(input) {
+      await sleep();
+      const id = generateId();
+      const slug = `${slugify(input.name)}-${id.slice(-6)}`;
+      DISCUSSION_SPACES.push({
+        id,
+        slug,
+        name: input.name,
+        description: input.description,
+        memberCount: 0,
+        programmeArea: input.programmeArea
+          ? (input.programmeArea as DiscussionSpace["programmeArea"])
+          : undefined,
+      });
+      return { spaceId: id, slug };
+    },
   },
   admin: {
     async moderationResolve(reportId, _action) {
@@ -465,6 +486,25 @@ export const mutations: Mutations = {
       const idx = MODERATION_REPORTS.findIndex((r) => r.id === reportId);
       if (idx !== -1) MODERATION_REPORTS.splice(idx, 1);
       return { ok: true };
+    },
+  },
+  groupSessions: {
+    async create(hostId, input) {
+      await sleep();
+      const id = generateId();
+      ONE_TO_MANY_SESSIONS.push({
+        id,
+        title: input.title,
+        description: input.description,
+        hostId,
+        programmeArea: input.programmeArea as (typeof ONE_TO_MANY_SESSIONS)[number]["programmeArea"],
+        startAt: input.startAt,
+        endAt: input.endAt,
+        format: input.format as (typeof ONE_TO_MANY_SESSIONS)[number]["format"],
+        capacity: input.capacity,
+        registeredCount: 0,
+      });
+      return { sessionId: id };
     },
   },
 };

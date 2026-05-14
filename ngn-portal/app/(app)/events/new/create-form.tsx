@@ -16,6 +16,7 @@ import {
   EVENT_TYPES,
 } from "@/lib/taxonomy/statuses";
 import { PROGRAMME_AREAS } from "@/lib/taxonomy/programme-areas";
+import { createProgramEventAction } from "@/lib/actions/data-mutations";
 
 export function CreateEventForm() {
   const router = useRouter();
@@ -44,10 +45,29 @@ export function CreateEventForm() {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 500));
+    try {
+      const startAt = new Date(form.startAt).toISOString();
+      const endAt = new Date(form.endAt).toISOString();
+      await createProgramEventAction({
+        title: form.title,
+        description: form.description,
+        programmeArea: form.programmeArea,
+        type: form.type,
+        format: form.format,
+        startAt,
+        endAt,
+        location: form.location || undefined,
+        videoUrl: form.videoUrl || undefined,
+        speakerIds: [],
+        registrationRequired: form.registrationRequired,
+        capacity: form.registrationRequired ? form.capacity : undefined,
+      });
+      toast.success("Event published");
+      router.push("/admin/events");
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : "Save failed");
+    }
     setSubmitting(false);
-    toast.success("Event saved as draft");
-    router.push("/admin/events");
   }
 
   return (

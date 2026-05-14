@@ -7,6 +7,9 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { FormField } from "@/components/ui/form-field";
 import { Input } from "@/components/ui/input";
+import { isSupabaseEnabled } from "@/lib/supabase/config";
+
+import { requestPasswordResetAction } from "./actions";
 
 export function ResetPasswordForm() {
   const [email, setEmail] = React.useState("");
@@ -16,7 +19,15 @@ export function ResetPasswordForm() {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 400));
+    if (isSupabaseEnabled()) {
+      const res = await requestPasswordResetAction(email);
+      if (!res.ok) {
+        setSubmitting(false);
+        return;
+      }
+    } else {
+      await new Promise((r) => setTimeout(r, 400));
+    }
     setSubmitting(false);
     setState("sent");
   }

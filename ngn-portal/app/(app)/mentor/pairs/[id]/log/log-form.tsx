@@ -13,6 +13,7 @@ import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/toaster";
 import type { Pair } from "@/lib/data/types";
+import { logSessionAction } from "@/lib/actions/data-mutations";
 
 export function LogSessionForm({ pair }: { pair: Pair }) {
   const router = useRouter();
@@ -41,11 +42,26 @@ export function LogSessionForm({ pair }: { pair: Pair }) {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 500));
+    try {
+      const goalsDiscussed = pair.goals
+        .filter((g) => discussed.has(g.id))
+        .map((g) => g.title);
+      const sessionDate = date || today || new Date().toISOString().slice(0, 10);
+      await logSessionAction(pair.id, {
+        date: sessionDate,
+        durationMinutes: duration,
+        format,
+        notes,
+        goalsDiscussed,
+        wellbeing,
+      });
+      toast.success("Session logged");
+      router.push(`/mentor/pairs/${pair.id}`);
+      router.refresh();
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : "Log failed");
+    }
     setSubmitting(false);
-    toast.success("Session logged");
-    router.push(`/mentor/pairs/${pair.id}`);
-    router.refresh();
   }
 
   return (
