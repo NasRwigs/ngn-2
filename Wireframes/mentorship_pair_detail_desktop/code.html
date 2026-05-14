@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pair Detail View - NGN Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#bead00",
+                    "on-tertiary-fixed-variant": "#4f4700",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed": "#f9e544",
+                    "outline-variant": "#c4c6d2",
+                    "on-secondary-fixed": "#2d1600",
+                    "inverse-surface": "#303031",
+                    "primary-fixed-dim": "#afc6ff",
+                    "on-background": "#1b1b1c",
+                    "surface": "#fcf9f9",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#0e3b83",
+                    "error": "#ba1a1a",
+                    "surface-variant": "#e5e2e2",
+                    "on-secondary-container": "#653900",
+                    "primary-fixed": "#d9e2ff",
+                    "surface-dim": "#dcd9d9",
+                    "surface-container-highest": "#e5e2e2",
+                    "primary": "#00265e",
+                    "on-primary-fixed-variant": "#1b448c",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#474000",
+                    "on-surface-variant": "#434651",
+                    "on-primary-fixed": "#001944",
+                    "background": "#fcf9f9",
+                    "tertiary-fixed-dim": "#dbc826",
+                    "surface-container-high": "#eae7e7",
+                    "secondary-fixed": "#ffdcbe",
+                    "on-tertiary-fixed": "#201c00",
+                    "on-error": "#ffffff",
+                    "surface-container-low": "#f6f3f3",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#f0eded",
+                    "on-surface": "#1b1b1c",
+                    "surface-tint": "#385ca5",
+                    "secondary-fixed-dim": "#ffb871",
+                    "tertiary": "#695f00",
+                    "surface-bright": "#fcf9f9",
+                    "on-primary-container": "#86a8f7",
+                    "secondary-container": "#fe9812",
+                    "on-secondary-fixed-variant": "#6a3c00",
+                    "inverse-on-surface": "#f3f0f0",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#afc6ff",
+                    "outline": "#747782",
+                    "secondary": "#8b5000"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "lg": "48px",
+                    "margin-mobile": "16px",
+                    "base": "8px",
+                    "xl": "80px",
+                    "gutter": "24px",
+                    "xs": "4px",
+                    "md": "24px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "display-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "body-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "body-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "label-sm": [
+                            "Hanken Grotesk"
+                    ],
+                    "emphasis": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-lg-mobile": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-lg": [
+                            "Hanken Grotesk"
+                    ]
+            },
+            "fontSize": {
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "300"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "300"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "emphasis": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<div class="relative flex h-auto min-h-screen w-full flex-col lg:flex-row overflow-x-hidden">
+<!-- SideNavBar -->
+<div class="hidden lg:flex w-[280px] shrink-0 flex-col bg-surface-container-low border-r border-outline-variant/30 sticky top-0 h-screen overflow-y-auto">
+<div class="flex h-full flex-col justify-between p-4">
+<div class="flex flex-col gap-lg">
+<div class="flex gap-3 items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="A clean, professional avatar placeholder image in a modern corporate style. The image features a simple geometric or abstract portrait representation suitable for an admin portal. The color palette is minimal, utilizing shades of blue and grey to align with the overarching light-mode interface. The mood is authoritative yet accessible." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAAa7amv73DY-HRyEVDE275L-pKjjIrcbFxHQqwp_6__9vn8XwobzGzol_Mq2KLDIoj01mJAViF39We4P6lqYcmkep5xi_ESSQy-c3-MqahIndesEvTLy9YZxied4kTdWkq91GzKcBaMU8OOyYYere0YvW1xFxXn_L2jIGKNfX9-d7JUK1kl8v6NwAM0KVVRlXNRg70Px1appqoshW64q3n-M0Zuxe_VlUSgyV0gxDiLKsWqpxOzPaDD6yHgtbJvKXyc5kV8ftWR7IL");'></div>
+<div class="flex flex-col">
+<h1 class="text-on-surface font-emphasis">Admin Portal</h1>
+<p class="text-on-surface-variant font-label-sm">admin@mif.org</p>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined text-on-surface-variant">dashboard</span>
+<p class="text-on-surface font-emphasis">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary-container text-on-primary" href="#">
+<span class="material-symbols-outlined text-on-primary">group</span>
+<p class="text-on-primary font-emphasis">Pairs</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined text-on-surface-variant">person</span>
+<p class="text-on-surface font-emphasis">Users</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined text-on-surface-variant">settings</span>
+<p class="text-on-surface font-emphasis">Settings</p>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col min-w-0 pb-xl">
+<!-- Mobile Header (Minimal Back) -->
+<div class="lg:hidden flex items-center p-4 border-b border-outline-variant/30 bg-surface-container-lowest">
+<button class="mr-4 text-on-surface">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-on-surface">Pair Details</h1>
+</div>
+<!-- Page Header -->
+<div class="px-margin-mobile lg:px-margin-desktop py-md lg:py-lg flex flex-col md:flex-row md:items-end justify-between gap-md border-b border-outline-variant/30 bg-surface-container-lowest">
+<div>
+<div class="flex items-center gap-sm mb-xs">
+<button class="hidden lg:flex text-on-surface-variant hover:text-on-surface transition-colors items-center gap-xs text-sm">
+<span class="material-symbols-outlined" style="font-size: 18px;">arrow_back</span> Back to Pairs
+                    </button>
+</div>
+<h1 class="font-display-lg text-on-surface">Partnership Detail</h1>
+<p class="font-body-lg text-on-surface-variant mt-xs">Cohort 2024 • Established Jan 15</p>
+</div>
+<div class="flex gap-sm">
+<button class="px-4 py-2 rounded-lg border-2 border-primary-container text-primary-container font-emphasis hover:bg-primary-container hover:text-on-primary transition-colors">
+                    End Partnership
+                 </button>
+<button class="px-4 py-2 rounded-lg bg-secondary-container text-on-primary font-emphasis hover:opacity-90 transition-opacity">
+                    Message Pair
+                 </button>
+</div>
+</div>
+<!-- Content Container -->
+<div class="px-margin-mobile lg:px-margin-desktop py-lg flex flex-col gap-lg">
+<!-- Hero / Pair Overview -->
+<div class="bg-surface-container-lowest rounded-lg p-md lg:p-gutter shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border-t-4 border-primary">
+<div class="flex flex-col md:flex-row gap-lg items-center md:items-start">
+<!-- Photos side-by-side -->
+<div class="flex items-center gap-4 shrink-0">
+<div class="flex flex-col items-center gap-xs">
+<div class="w-24 h-24 lg:w-32 lg:h-32 rounded-full bg-cover bg-center border-4 border-surface-container-lowest shadow-[0px_8px_30px_rgba(0,0,0,0.10)]" data-alt="A professional headshot of a mature African male executive mentor. He is wearing a sharp, modern business suit with a subtle pattern. The background is a soft, warm grey (#f2efef) to align with the overarching light-mode interface. The lighting is clear and professional, highlighting his approachable and authoritative demeanor, typical of a corporate leadership profile." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAhd7U5CVWflDI6YuB3ne2lQk9HK0yz-w3j3Holw10pmCArTMkWGtOVu0iOVnLbOOpmH5rVdDTVhao4oJq_jN__7aG1ruKYHp_0ejeT_kpP1LDisKUir64GEV7Xe1VkOsIQXT3dMu-UBKYHNM-QWX7g8kX8QH49OygeidkRlNfLkRAMaLTOSl_HeG6tJFJNVXAfdvWIuX4209nPn5l6Dt8oH_5ha5YatgonQqRz0jSNUnQY8JGc4ggnnEhVCj2Vlw3W28nmh4ZDztdj');"></div>
+<span class="font-emphasis text-on-surface">Dr. Kwame Osei</span>
+<span class="font-label-sm text-primary">MENTOR</span>
+</div>
+<div class="text-outline-variant flex items-center justify-center pt-8">
+<span class="material-symbols-outlined" style="font-size: 32px;">sync_alt</span>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<div class="w-24 h-24 lg:w-32 lg:h-32 rounded-full bg-cover bg-center border-4 border-surface-container-lowest shadow-[0px_8px_30px_rgba(0,0,0,0.10)]" data-alt="A professional headshot of a young African female leader mentee. She is dressed in contemporary, smart-casual business attire with vibrant yet professional colors. The background is a soft, warm grey (#f2efef) ensuring consistency with the overall light-mode corporate aesthetic. The lighting is bright and energetic, reflecting her forward-looking and ambitious personality." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAXVw8smiSb1PCPds99TIlsMeN3vvYizQ8tzIe8q34gvnPx1f5G9CFuMmgWRD5nHKfPnzd_gnxajKDyo8aR9oly_2g-Xe6eMyHrdjzzjp5-IdUBUcWfdPR4W9OKAZp2E1M-MEvXfst21mIvqgbaXD7ErYRvfdZA0GPS9veGlQdB4CfT12AS6U8OxqnOqTIw96hdjRuHMBIMiwoTmu3FIIHMYQ-iLYOJ3pETBeDH6Yf7totzCTWecnz53AYVBp7Jp9nD7wxpGFhO7G13');"></div>
+<span class="font-emphasis text-on-surface">Amara Diallo</span>
+<span class="font-label-sm text-secondary">MENTEE</span>
+</div>
+</div>
+<!-- Progress and Quick Stats -->
+<div class="flex-1 w-full flex flex-col justify-center">
+<div class="mb-md">
+<div class="flex justify-between items-end mb-xs">
+<span class="font-headline-md text-on-surface">Program Progress</span>
+<span class="font-emphasis text-primary">50%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-3 overflow-hidden">
+<div class="bg-primary h-3 rounded-full" style="width: 50%"></div>
+</div>
+<p class="font-label-sm text-on-surface-variant mt-2 text-right">3 of 6 months completed</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-sm">
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/30">
+<p class="font-label-sm text-on-surface-variant uppercase mb-1">Sessions</p>
+<p class="font-headline-md text-on-surface">8 <span class="font-body-md text-outline">/ 12</span></p>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/30">
+<p class="font-label-sm text-on-surface-variant uppercase mb-1">Goals Met</p>
+<p class="font-headline-md text-on-surface">2 <span class="font-body-md text-outline">/ 5</span></p>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/30">
+<p class="font-label-sm text-on-surface-variant uppercase mb-1">Avg Rating</p>
+<p class="font-headline-md text-on-surface flex items-center gap-1">4.8 <span class="material-symbols-outlined text-secondary-container" data-weight="fill" style="font-size: 20px;">star</span></p>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/30">
+<p class="font-label-sm text-on-surface-variant uppercase mb-1">Next Meeting</p>
+<p class="font-emphasis text-on-surface">Oct 24</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Multi-column Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter items-start">
+<!-- Left Column: Goals & Notes -->
+<div class="lg:col-span-1 flex flex-col gap-gutter">
+<!-- Admin Notes (Scoped) -->
+<div class="bg-surface-container-lowest rounded-lg p-md shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border-t-4 border-tertiary">
+<div class="flex justify-between items-center mb-md">
+<h2 class="font-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">admin_panel_settings</span>
+                                Admin Notes
+                            </h2>
+<button class="text-primary hover:bg-surface-container-high p-1 rounded transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+<div class="bg-tertiary-fixed/20 p-sm rounded border border-tertiary/30 mb-sm text-on-surface font-body-md">
+                            Pairing requested early intervention regarding scheduling conflicts. Resolved as of Oct 1st. Strong alignment on policy development goals.
+                        </div>
+<textarea class="w-full bg-surface-container-low border border-outline-variant rounded-lg p-sm font-body-md text-on-surface focus:ring-2 focus:ring-primary focus:border-primary resize-none" placeholder="Add a private note..." rows="3"></textarea>
+<button class="mt-sm w-full py-2 bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-emphasis rounded-lg transition-colors border border-outline-variant/30">
+                            Save Note
+                        </button>
+</div>
+<!-- Goals List -->
+<div class="bg-surface-container-lowest rounded-lg p-md shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border-t-4 border-secondary-container">
+<h2 class="font-headline-md text-on-surface mb-md">Shared Goals</h2>
+<div class="flex flex-col gap-sm">
+<!-- Goal 1 -->
+<div class="border border-outline-variant/30 rounded-lg p-sm bg-surface">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary-container mt-1" data-weight="fill">check_circle</span>
+<div>
+<p class="font-emphasis text-on-surface">Expand Professional Network</p>
+<p class="font-body-md text-on-surface-variant text-sm mt-1">Connect with 3 industry leaders in sustainable tech.</p>
+<div class="mt-2 inline-flex items-center px-2 py-1 rounded bg-secondary-fixed/50 text-on-secondary-fixed font-label-sm">
+                                            Completed
+                                        </div>
+</div>
+</div>
+</div>
+<!-- Goal 2 -->
+<div class="border border-outline-variant/30 rounded-lg p-sm bg-surface">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">radio_button_unchecked</span>
+<div class="w-full">
+<p class="font-emphasis text-on-surface">Leadership Framework</p>
+<p class="font-body-md text-on-surface-variant text-sm mt-1">Develop a personal leadership framework document.</p>
+<div class="mt-2 flex items-center gap-2">
+<div class="flex-1 bg-surface-container-highest rounded-full h-1.5">
+<div class="bg-primary h-1.5 rounded-full" style="width: 70%"></div>
+</div>
+<span class="font-label-sm text-on-surface-variant">In Progress</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Goal 3 -->
+<div class="border border-outline-variant/30 rounded-lg p-sm bg-surface">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline mt-1">radio_button_unchecked</span>
+<div>
+<p class="font-emphasis text-on-surface">Policy Pitch Preparation</p>
+<p class="font-body-md text-on-surface-variant text-sm mt-1">Draft and review initial policy pitch for Q4 forum.</p>
+<div class="mt-2 inline-flex items-center px-2 py-1 rounded bg-surface-container-highest text-on-surface-variant font-label-sm">
+                                            Not Started
+                                        </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Session Log Timeline -->
+<div class="lg:col-span-2 bg-surface-container-lowest rounded-lg p-md lg:p-gutter shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border-t-4 border-outline-variant">
+<div class="flex justify-between items-center mb-lg">
+<h2 class="font-headline-md text-on-surface">Session Timeline</h2>
+<button class="text-primary font-emphasis hover:underline">View All Reports</button>
+</div>
+<div class="relative border-l-2 border-surface-container-highest ml-4 pl-6 flex flex-col gap-lg">
+<!-- Upcoming Session -->
+<div class="relative">
+<div class="absolute -left-[35px] top-1 w-6 h-6 rounded-full bg-surface-container-lowest border-2 border-primary flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+</div>
+<div class="bg-primary-fixed/20 border border-primary/20 rounded-lg p-md">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-emphasis text-on-surface">Upcoming: Policy Pitch Review</h3>
+<span class="font-label-sm text-primary bg-surface-container-lowest px-2 py-1 rounded">Scheduled</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-2">October 24, 2024 • 14:00 GMT</p>
+<p class="font-body-md text-on-surface text-sm">Focus: Initial review of the Q4 policy pitch document. Mentee to provide draft 48hrs prior.</p>
+</div>
+</div>
+<!-- Past Session 1 -->
+<div class="relative">
+<div class="absolute -left-[35px] top-1 w-6 h-6 rounded-full bg-surface-container-highest border-2 border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-outline" style="font-size: 14px;">check</span>
+</div>
+<div class="border border-outline-variant/30 rounded-lg p-md hover:bg-surface-container-low transition-colors">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-emphasis text-on-surface">Session 8: Leadership Framework Deep Dive</h3>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary-container" data-weight="fill" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined text-secondary-container" data-weight="fill" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined text-secondary-container" data-weight="fill" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined text-secondary-container" data-weight="fill" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined text-secondary-container" data-weight="fill" style="font-size: 16px;">star</span>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant mb-3">October 10, 2024 • Video Call</p>
+<div class="grid md:grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-3 rounded border border-outline-variant/20">
+<p class="font-label-sm text-on-surface-variant uppercase mb-1">Mentor Feedback</p>
+<p class="font-body-md text-on-surface text-sm">Amara showed excellent progress on identifying her core values. We outlined the structure for her framework.</p>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded border border-outline-variant/20">
+<p class="font-label-sm text-on-surface-variant uppercase mb-1">Mentee Feedback</p>
+<p class="font-body-md text-on-surface text-sm">Very insightful session. Dr. Osei's examples from his time at the ministry helped clarify my approach.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Past Session 2 -->
+<div class="relative">
+<div class="absolute -left-[35px] top-1 w-6 h-6 rounded-full bg-surface-container-highest border-2 border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-outline" style="font-size: 14px;">check</span>
+</div>
+<div class="border border-outline-variant/30 rounded-lg p-md hover:bg-surface-container-low transition-colors">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-emphasis text-on-surface">Session 7: Network Expansion Strategy</h3>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary-container" data-weight="fill" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined text-secondary-container" data-weight="fill" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined text-secondary-container" data-weight="fill" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined text-secondary-container" data-weight="fill" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined text-outline-variant" data-weight="fill" style="font-size: 16px;">star</span>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant mb-3">September 25, 2024 • Video Call</p>
+<div class="bg-surface-container-lowest p-3 rounded border border-outline-variant/20">
+<p class="font-body-md text-on-surface text-sm">Discussed strategies for authentic networking. Identified three key individuals for introduction.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

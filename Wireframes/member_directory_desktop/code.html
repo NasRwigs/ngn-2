@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Member Directory - NGN Portal</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#bead00",
+                    "on-tertiary-fixed-variant": "#4f4700",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed": "#f9e544",
+                    "outline-variant": "#c4c6d2",
+                    "on-secondary-fixed": "#2d1600",
+                    "inverse-surface": "#303031",
+                    "primary-fixed-dim": "#afc6ff",
+                    "on-background": "#1b1b1c",
+                    "surface": "#fcf9f9",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#0e3b83",
+                    "error": "#ba1a1a",
+                    "surface-variant": "#e5e2e2",
+                    "on-secondary-container": "#653900",
+                    "primary-fixed": "#d9e2ff",
+                    "surface-dim": "#dcd9d9",
+                    "surface-container-highest": "#e5e2e2",
+                    "primary": "#00265e",
+                    "on-primary-fixed-variant": "#1b448c",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#474000",
+                    "on-surface-variant": "#434651",
+                    "on-primary-fixed": "#001944",
+                    "background": "#fcf9f9",
+                    "tertiary-fixed-dim": "#dbc826",
+                    "surface-container-high": "#eae7e7",
+                    "secondary-fixed": "#ffdcbe",
+                    "on-tertiary-fixed": "#201c00",
+                    "on-error": "#ffffff",
+                    "surface-container-low": "#f6f3f3",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#f0eded",
+                    "on-surface": "#1b1b1c",
+                    "surface-tint": "#385ca5",
+                    "secondary-fixed-dim": "#ffb871",
+                    "tertiary": "#695f00",
+                    "surface-bright": "#fcf9f9",
+                    "on-primary-container": "#86a8f7",
+                    "secondary-container": "#fe9812",
+                    "on-secondary-fixed-variant": "#6a3c00",
+                    "inverse-on-surface": "#f3f0f0",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#afc6ff",
+                    "outline": "#747782",
+                    "secondary": "#8b5000"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "lg": "48px",
+                    "margin-mobile": "16px",
+                    "base": "8px",
+                    "xl": "80px",
+                    "gutter": "24px",
+                    "xs": "4px",
+                    "md": "24px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "emphasis": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                    "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "300" }],
+                    "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "300" }],
+                    "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "700" }],
+                    "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                    "emphasis": ["16px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                    "headline-lg-mobile": ["28px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                    "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for a cleaner modern look */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background-color: #c4c6d2; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary selection:text-on-primary">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- SIDEBAR (Immutable Shared Component Area) -->
+<aside class="w-[280px] shrink-0 h-full border-r border-outline-variant bg-slate-50 hidden md:block overflow-y-auto">
+<!-- EXACT COPY OF SHARED COMPONENT START -->
+<div class="flex h-full min-h-[700px] flex-col justify-between bg-slate-50 p-4">
+<div class="flex flex-col gap-4">
+<div class="flex gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="A minimal abstract placeholder graphic acting as an avatar. The visual style is simple and clean, matching a modern light-mode interface. The palette is neutral with soft grays and whites, conveying a placeholder state before a user uploads their professional headshot." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDskRSP0Em8HSm4LMLvOWKYaCDM9uMcrqVsuZsOKR7iP-Miu7mU72Xm-q1d_pPmhm61fNWf-nAvBpyn66rVmS58c4KnN7jMz11phMQonOO38fSgDXjL_TAtMAjDC6Nc3-gV_JYZprqum9f4R7iyGqAr_RcoCVu_qwxudB_Pt7zmBxmvMgEGIozvOI0yOi9vS-hRg7oopexTm3b4l4hEWIns_V1VZUVo4mszJorQ86Z2ocAXxLvXbGxhIH6EnwhcqNgBxl2gjQtdkM-U");'></div>
+<div class="flex flex-col">
+<h1 class="text-[#0e131b] text-base font-medium leading-normal">Member Portal</h1>
+<p class="text-[#4e6a97] text-sm font-normal leading-normal">Admin View</p>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3 px-3 py-2">
+<div class="text-[#0e131b]" data-icon="House" data-size="24px" data-weight="regular">
+<svg fill="currentColor" height="24px" viewbox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z"></path>
+</svg>
+</div>
+<p class="text-[#0e131b] text-sm font-medium leading-normal">Home</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#e7ecf3]">
+<div class="text-[#0e131b]" data-icon="Users" data-size="24px" data-weight="fill">
+<svg fill="currentColor" height="24px" viewbox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M164.47,195.63a8,8,0,0,1-6.7,12.37H10.23a8,8,0,0,1-6.7-12.37,95.83,95.83,0,0,1,47.22-37.71,60,60,0,1,1,66.5,0A95.83,95.83,0,0,1,164.47,195.63Zm87.91-.15a95.87,95.87,0,0,0-47.13-37.56A60,60,0,0,0,144.7,54.59a4,4,0,0,0-1.33,6A75.83,75.83,0,0,1,147,150.53a4,4,0,0,0,1.07,5.53,112.32,112.32,0,0,1,29.85,30.83,23.92,23.92,0,0,1,3.65,16.47,4,4,0,0,0,3.95,4.64h60.3a8,8,0,0,0,7.73-5.93A8.22,8.22,0,0,0,252.38,195.48Z"></path>
+</svg>
+</div>
+<p class="text-[#0e131b] text-sm font-medium leading-normal">Directory</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2">
+<div class="text-[#0e131b]" data-icon="Calendar" data-size="24px" data-weight="regular">
+<svg fill="currentColor" height="24px" viewbox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-96-88v64a8,8,0,0,1-16,0V132.94l-4.42,2.22a8,8,0,0,1-7.16-14.32l16-8A8,8,0,0,1,112,120Zm59.16,30.45L152,176h16a8,8,0,0,1,0,16H136a8,8,0,0,1-6.4-12.8l28.78-38.37A8,8,0,1,0,145.07,132a8,8,0,1,1-13.85-8A24,24,0,0,1,176,136,23.76,23.76,0,0,1,171.16,150.45Z"></path>
+</svg>
+</div>
+<p class="text-[#0e131b] text-sm font-medium leading-normal">Events</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2">
+<div class="text-[#0e131b]" data-icon="Folder" data-size="24px" data-weight="regular">
+<svg fill="currentColor" height="24px" viewbox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M216,72H131.31L104,44.69A15.86,15.86,0,0,0,92.69,40H40A16,16,0,0,0,24,56V200.62A15.4,15.4,0,0,0,39.38,216H216.89A15.13,15.13,0,0,0,232,200.89V88A16,16,0,0,0,216,72ZM40,56H92.69l16,16H40ZM216,200H40V88H216Z"></path>
+</svg>
+</div>
+<p class="text-[#0e131b] text-sm font-medium leading-normal">Resources</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2">
+<div class="text-[#0e131b]" data-icon="Gear" data-size="24px" data-weight="regular">
+<svg fill="currentColor" height="24px" viewbox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-29.84q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.21,107.21,0,0,0-10.88-26.25,8,8,0,0,0-6-3.93l-23.72-2.64q-1.48-1.56-3-3L186,40.54a8,8,0,0,0-3.94-6,107.71,107.71,0,0,0-26.25-10.87,8,8,0,0,0-7.06,1.49L130.16,40Q128,40,125.84,40L107.2,25.11a8,8,0,0,0-7.06-1.48A107.6,107.6,0,0,0,73.89,34.51a8,8,0,0,0-3.93,6L67.32,64.27q-1.56,1.49-3,3L40.54,70a8,8,0,0,0-6,3.94,107.71,107.71,0,0,0-10.87,26.25,8,8,0,0,0,1.49,7.06L40,125.84Q40,128,40,130.16L25.11,148.8a8,8,0,0,0-1.48,7.06,107.21,107.21,0,0,0,10.88,26.25,8,8,0,0,0,6,3.93l23.72,2.64q1.49,1.56,3,3L70,215.46a8,8,0,0,0,3.94,6,107.71,107.71,0,0,0,26.25,10.87,8,8,0,0,0,7.06-1.49L125.84,216q2.16.06,4.32,0l18.64,14.92a8,8,0,0,0,7.06,1.48,107.21,107.21,0,0,0,26.25-10.88,8,8,0,0,0,3.93-6l2.64-23.72q1.56-1.48,3-3L215.46,186a8,8,0,0,0,6-3.94,107.71,107.71,0,0,0,10.87-26.25,8,8,0,0,0-1.49-7.06Zm-16.1-6.5a73.93,73.93,0,0,1,0,8.68,8,8,0,0,0,1.74,5.48l14.19,17.73a91.57,91.57,0,0,1-6.23,15L187,173.11a8,8,0,0,0-5.1,2.64,74.11,74.11,0,0,1-6.14,6.14,8,8,0,0,0-2.64,5.1l-2.51,22.58a91.32,91.32,0,0,1-15,6.23l-17.74-14.19a8,8,0,0,0-5-1.75h-.48a73.93,73.93,0,0,1-8.68,0,8,8,0,0,0-5.48,1.74L100.45,215.8a91.57,91.57,0,0,1-15-6.23L82.89,187a8,8,0,0,0-2.64-5.1,74.11,74.11,0,0,1-6.14-6.14,8,8,0,0,0-5.1-2.64L46.43,170.6a91.32,91.32,0,0,1-6.23-15l14.19-17.74a8,8,0,0,0,1.74-5.48,73.93,73.93,0,0,1,0-8.68,8,8,0,0,0-1.74-5.48L40.2,100.45a91.57,91.57,0,0,1,6.23-15L69,82.89a8,8,0,0,0,5.1-2.64,74.11,74.11,0,0,1,6.14-6.14A8,8,0,0,0,82.89,69L85.4,46.43a91.32,91.32,0,0,1,15-6.23l17.74,14.19a8,8,0,0,0,5.48,1.74,73.93,73.93,0,0,1,8.68,0,8,8,0,0,0,5.48-1.74L155.55,40.2a91.57,91.57,0,0,1,15,6.23L173.11,69a8,8,0,0,0,2.64,5.1,74.11,74.11,0,0,1,6.14,6.14,8,8,0,0,0,5.1,2.64l22.58,2.51a91.32,91.32,0,0,1,6.23,15l-14.19,17.74A8,8,0,0,0,199.87,123.66Z"></path>
+</svg>
+</div>
+<p class="text-[#0e131b] text-sm font-medium leading-normal">Settings</p>
+</div>
+</div>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#0e3b83] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Invite Member</span>
+</button>
+</div>
+<!-- EXACT COPY OF SHARED COMPONENT END -->
+</aside>
+<!-- MAIN CONTENT AREA -->
+<main class="flex-1 h-full overflow-y-auto relative z-10 flex flex-col bg-surface">
+<!-- Subtle Background Pattern Overlay -->
+<div class="absolute inset-0 z-[-1] opacity-[0.03] pointer-events-none mix-blend-multiply" data-alt="A subtle, repeating geometric vector pattern inspired by traditional African textiles and motifs. The design relies on interconnected shapes and lines in a soft gray tone against a white background, creating a continuous watermark effect. The lighting is flat and graphic, providing a professional and culturally resonant texture that adds depth without overwhelming the foreground content." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCB8OzJK1ygXNojwdqzNdo17LlGzD8y74Ilgo17491b02jGpV4DcJOTlpmlHj5_HAsung-X0m7uOeQi-jgJDGt8KGQpHizje2LC1je_jnGtCtnDjxm3LRw464LB096sFWiAWJOnf-lp8s0jevoEQMa7lgtDn6AVeEx9PToI0_Llm5aTK3HU8ae1hqDj7Q33lsTdRnLlR5iSDkwvdmOyGEf41r8CnLZC3DyxzwCCNv6Yo2PCa_9CjJxF2wSo6tdfxTlMAlLChPTulYDt");'></div>
+<!-- Header & Breadcrumbs -->
+<header class="px-margin-desktop py-lg flex flex-col gap-sm border-b border-surface-container-high bg-surface-container-lowest sticky top-0 z-20 shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
+<nav class="flex items-center gap-2 text-label-sm font-label-sm text-outline-variant">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface">Member Directory</span>
+</nav>
+<div class="flex items-center justify-between">
+<h2 class="text-headline-lg font-headline-lg text-on-background">Member Directory</h2>
+</div>
+</header>
+<div class="px-margin-desktop py-lg flex flex-col gap-lg max-w-[1280px] mx-auto w-full">
+<!-- Search & Filters Section -->
+<section class="flex flex-col gap-md w-full">
+<!-- Large Search Bar -->
+<div class="relative w-full max-w-2xl bg-surface-container-lowest rounded-lg shadow-[0px_4px_20px_rgba(0,0,0,0.05)] overflow-hidden flex items-center h-14 border border-outline-variant focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+<div class="pl-4 pr-2 flex items-center justify-center text-outline">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full h-full bg-transparent border-none text-body-md font-body-md text-on-surface placeholder:text-outline-variant focus:ring-0 px-2" placeholder="Search members by name, role, or company" type="text"/>
+</div>
+<!-- Filter Row -->
+<div class="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-hide w-full">
+<button class="flex items-center gap-2 h-10 px-4 rounded-full bg-surface-container text-on-surface text-label-sm font-label-sm hover:bg-surface-container-high transition-colors whitespace-nowrap border border-transparent">
+                            All Departments
+                            <span class="material-symbols-outlined text-[18px]">arrow_drop_down</span>
+</button>
+<button class="flex items-center gap-2 h-10 px-4 rounded-full bg-surface-container-lowest text-on-surface text-label-sm font-label-sm hover:bg-surface-container transition-colors whitespace-nowrap border border-outline-variant">
+                            Leadership
+                            <span class="material-symbols-outlined text-[18px]">arrow_drop_down</span>
+</button>
+<button class="flex items-center gap-2 h-10 px-4 rounded-full bg-surface-container-lowest text-on-surface text-label-sm font-label-sm hover:bg-surface-container transition-colors whitespace-nowrap border border-outline-variant">
+                            Engineering
+                            <span class="material-symbols-outlined text-[18px]">arrow_drop_down</span>
+</button>
+<button class="flex items-center gap-2 h-10 px-4 rounded-full bg-surface-container-lowest text-on-surface text-label-sm font-label-sm hover:bg-surface-container transition-colors whitespace-nowrap border border-outline-variant">
+                            Marketing
+                            <span class="material-symbols-outlined text-[18px]">arrow_drop_down</span>
+</button>
+<button class="flex items-center gap-2 h-10 px-4 rounded-full bg-surface-container-lowest text-on-surface text-label-sm font-label-sm hover:bg-surface-container transition-colors whitespace-nowrap border border-outline-variant ml-auto text-primary">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                            More Filters
+                        </button>
+</div>
+</section>
+<!-- Grid of Member Profiles -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter w-full pb-xl">
+<!-- Card 1 -->
+<article class="bg-surface-container-lowest rounded-lg shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border-t-[4px] border-t-tertiary-container p-6 flex flex-col items-center text-center gap-4 transition-transform hover:-translate-y-1 hover:shadow-[0px_8px_30px_rgba(0,0,0,0.10)] group">
+<div class="relative">
+<img class="w-24 h-24 rounded-full object-cover border-4 border-surface-container ring-1 ring-outline-variant/20" data-alt="A professional headshot portrait of a confident young African woman in her late 20s. She is smiling warmly and looking directly at the camera. The setting is a bright, modern corporate office with soft, high-key natural lighting illuminating her face. She wears a tailored navy blue blazer over a crisp white blouse. The background is slightly out of focus, showing contemporary architectural elements in soft gray and white tones, matching a clean corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1u93ZlLvr0EuS5JRWsD8vQ3SA3RiIvQl-UADKCzjB6loWTGxedaK36vtSkmEDeA1r8lUGX2RkB3GZRA4gTvSpZnNuFfPn2fCxRQHluuEngWihsIDA9QCKXw2NPZ2JsbERZehZswQ_ezyluW8xam5YcDoVrFoEnrGuY68S-a47q4xvpGLf5OocHfj-mG3PFSlNtS5gLE53nDB0tV73ZvCCBKcrPr7hN_W9gGZQ43kXpSpi7SW2XxAZJ4KGGWwld9Smo89psnqIdOkS"/>
+<div class="absolute bottom-0 right-0 w-4 h-4 bg-tertiary-fixed rounded-full border-2 border-surface-container-lowest" title="Online"></div>
+</div>
+<div class="flex flex-col items-center">
+<h3 class="text-headline-md font-headline-md text-on-background group-hover:text-primary transition-colors">Amara Diallo</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">Director of Innovation</p>
+</div>
+<div class="w-12 h-[1px] bg-outline-variant/40 my-1"></div>
+<div class="flex flex-wrap justify-center gap-2">
+<span class="px-2 py-1 bg-surface-container text-on-surface text-[11px] font-label-sm uppercase tracking-wider rounded">Strategy</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface text-[11px] font-label-sm uppercase tracking-wider rounded">Tech</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface text-[11px] font-label-sm uppercase tracking-wider rounded">Fintech</span>
+</div>
+<button class="mt-2 w-full py-2.5 rounded-lg border border-primary text-primary font-emphasis text-emphasis hover:bg-primary/5 transition-colors flex items-center justify-center gap-2">
+                            View Profile
+                        </button>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-lowest rounded-lg shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border-t-[4px] border-t-tertiary-container p-6 flex flex-col items-center text-center gap-4 transition-transform hover:-translate-y-1 hover:shadow-[0px_8px_30px_rgba(0,0,0,0.10)] group">
+<div class="relative">
+<img class="w-24 h-24 rounded-full object-cover border-4 border-surface-container ring-1 ring-outline-variant/20" data-alt="A professional business portrait of a young African man in a bright, modern indoor environment. The lighting is soft and diffused, creating an approachable yet authoritative mood. He is wearing a sharp, light gray tailored suit with a white shirt and no tie. He has a calm, thoughtful expression. The background features a blurred minimalist office space with muted white and cool gray tones, reflecting a premium corporate brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8fuKKVfl9I6Aw6TmuZfAJQpNW9suMDycSFdRC76pn_ajRWgSf-jLmNcqGc10GlXXZpmf9CNfpXuzCseoePZEkAwYDUSMKifNXFNt6PEu9BX5D9vo2HTjSVT8syipmtAxXzT00fZ9caxQU64etN1hI2Y-HlreLtPH90xN9S3fQriBzFvL8efTYRYY25z8oIAa2t5q8cLhYFA74383w_sQkWjX79R5w-9UzrGAyl4jJIDiBwQBQ8cnB1hDjZyPwZCqbgLNk2JRCIVxk"/>
+</div>
+<div class="flex flex-col items-center">
+<h3 class="text-headline-md font-headline-md text-on-background group-hover:text-primary transition-colors">Kwame Osei</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">Lead Data Scientist</p>
+</div>
+<div class="w-12 h-[1px] bg-outline-variant/40 my-1"></div>
+<div class="flex flex-wrap justify-center gap-2">
+<span class="px-2 py-1 bg-surface-container text-on-surface text-[11px] font-label-sm uppercase tracking-wider rounded">Analytics</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface text-[11px] font-label-sm uppercase tracking-wider rounded">AI</span>
+</div>
+<button class="mt-2 w-full py-2.5 rounded-lg border border-primary text-primary font-emphasis text-emphasis hover:bg-primary/5 transition-colors flex items-center justify-center gap-2">
+                            View Profile
+                        </button>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface-container-lowest rounded-lg shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border-t-[4px] border-t-tertiary-container p-6 flex flex-col items-center text-center gap-4 transition-transform hover:-translate-y-1 hover:shadow-[0px_8px_30px_rgba(0,0,0,0.10)] group">
+<div class="relative">
+<img class="w-24 h-24 rounded-full object-cover border-4 border-surface-container ring-1 ring-outline-variant/20" data-alt="A high-quality professional photograph of a young African woman standing in a well-lit corporate corridor. The lighting is crisp and even, highlighting her confident demeanor. She is styled in smart-casual business wear featuring subtle, earthy orange and blue accents that nod to the brand palette. Her hair is styled naturally. The background is a luminous, out-of-focus modern glass architecture, conveying transparency and forward-thinking leadership." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8pr1m0cPWSJIO7nj4LtgUw5luZaC2Mmpvd3yoQXsp52zpMw8fL4mMxuI2X_TULAQZmdBCbi7EGg4l65UdHYIlhnkqOg21fqc0JECBpb3NjVl_PdRUhXlEx7R3xbsWRWcl6fj8BWog5Y8gqNvFYSQ_TnHkpW5Z1wEvoi5xhoMBZPo9dcvYMErK9GxcQi9mgF_RHUdWzH5CSp-dOvRSEIGdgXisTTYLo02sdeNKG7-t8-O-SRKE6ZCCC6hXNxAgitdz56O1rvniF21s"/>
+<div class="absolute bottom-0 right-0 w-4 h-4 bg-tertiary-fixed rounded-full border-2 border-surface-container-lowest" title="Online"></div>
+</div>
+<div class="flex flex-col items-center">
+<h3 class="text-headline-md font-headline-md text-on-background group-hover:text-primary transition-colors">Nneka Okafor</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">Head of Partnerships</p>
+</div>
+<div class="w-12 h-[1px] bg-outline-variant/40 my-1"></div>
+<div class="flex flex-wrap justify-center gap-2">
+<span class="px-2 py-1 bg-surface-container text-on-surface text-[11px] font-label-sm uppercase tracking-wider rounded">Relations</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface text-[11px] font-label-sm uppercase tracking-wider rounded">Global</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface text-[11px] font-label-sm uppercase tracking-wider rounded">Policy</span>
+</div>
+<button class="mt-2 w-full py-2.5 rounded-lg border border-primary text-primary font-emphasis text-emphasis hover:bg-primary/5 transition-colors flex items-center justify-center gap-2">
+                            View Profile
+                        </button>
+</article>
+<!-- Card 4 -->
+<article class="bg-surface-container-lowest rounded-lg shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border-t-[4px] border-t-tertiary-container p-6 flex flex-col items-center text-center gap-4 transition-transform hover:-translate-y-1 hover:shadow-[0px_8px_30px_rgba(0,0,0,0.10)] group">
+<div class="relative">
+<img class="w-24 h-24 rounded-full object-cover border-4 border-surface-container ring-1 ring-outline-variant/20" data-alt="A clean, corporate portrait of an African male executive in his early 30s. The shot is framed from the chest up against a pristine white studio background, bathed in soft, high-key lighting that emphasizes a modern and approachable brand tone. He is wearing a dark blue button-down shirt that contrasts neatly with the background. His expression is engaged and welcoming, representing accessible leadership." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDndEPfD14HB6Jk31sy7wghi1jII3zLP9lK8pgTf-HziwKmtQGjZiMDqYJNjCfht78ScpZ9TKq51Y5giKpooYDXvVbRtFhRw_yyhqUTJHHXZdo-dsd3HKaL_wxO2XLB6gieE8tVKCaJa2aEvPfzuc55i3DlYLffOi_wsW5ZyedfVHIf8H3Njf_iPMpdIUy4ApokYw7f64e1K15GLU-6VIfbe6QA4bU2qTbODz7juB-wbfp_MK5exqkLR2lr_lSaFGX9rCQsBTPLZAiN"/>
+</div>
+<div class="flex flex-col items-center">
+<h3 class="text-headline-md font-headline-md text-on-background group-hover:text-primary transition-colors">Tariq Hassan</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">Chief Operations Officer</p>
+</div>
+<div class="w-12 h-[1px] bg-outline-variant/40 my-1"></div>
+<div class="flex flex-wrap justify-center gap-2">
+<span class="px-2 py-1 bg-surface-container text-on-surface text-[11px] font-label-sm uppercase tracking-wider rounded">Operations</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface text-[11px] font-label-sm uppercase tracking-wider rounded">Logistics</span>
+</div>
+<button class="mt-2 w-full py-2.5 rounded-lg border border-primary text-primary font-emphasis text-emphasis hover:bg-primary/5 transition-colors flex items-center justify-center gap-2">
+                            View Profile
+                        </button>
+</article>
+<!-- Card 5 -->
+<article class="bg-surface-container-lowest rounded-lg shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border-t-[4px] border-t-tertiary-container p-6 flex flex-col items-center text-center gap-4 transition-transform hover:-translate-y-1 hover:shadow-[0px_8px_30px_rgba(0,0,0,0.10)] group">
+<div class="relative">
+<img class="w-24 h-24 rounded-full object-cover border-4 border-surface-container ring-1 ring-outline-variant/20" data-alt="A well-composed profile picture of a young African female professional seated in a modern co-working space. Bright, natural light filters in from the side, creating a dynamic yet soft illumination. She wears a professional mustard-yellow blouse that adds a vibrant accent color to the composition. The background features subtle geometric architectural details in light gray, aligning perfectly with a crisp, institutional design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoCn6BsjDajuKDhTYFoQf-KIrZvc9xc0SWdi1isf2rawuT96RyI-9YX17dgFSe6FZx-SqZcdpjRur-698jXAc5zAcCaa_XqNqkle4AWYzXiLv8ikFYu6-1sVrfL9EFvEYuxUVKWFd_TmGdjKuawE8OiEZAKvRCQulBhg5wYkL3lQpmQThhtagP24J9lLI_YbrUbCgcW7MZU2tIErdRDf_xRAV1cHN4ZrQsB-ShXhQVwnxfY4mn0alxMz_pFcLGmJba77YwcJgaq7I8"/>
+</div>
+<div class="flex flex-col items-center">
+<h3 class="text-headline-md font-headline-md text-on-background group-hover:text-primary transition-colors">Zainab Aliyu</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">Product Marketing Manager</p>
+</div>
+<div class="w-12 h-[1px] bg-outline-variant/40 my-1"></div>
+<div class="flex flex-wrap justify-center gap-2">
+<span class="px-2 py-1 bg-surface-container text-on-surface text-[11px] font-label-sm uppercase tracking-wider rounded">Marketing</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface text-[11px] font-label-sm uppercase tracking-wider rounded">Growth</span>
+</div>
+<button class="mt-2 w-full py-2.5 rounded-lg border border-primary text-primary font-emphasis text-emphasis hover:bg-primary/5 transition-colors flex items-center justify-center gap-2">
+                            View Profile
+                        </button>
+</article>
+<!-- Card 6 -->
+<article class="bg-surface-container-lowest rounded-lg shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border-t-[4px] border-t-tertiary-container p-6 flex flex-col items-center text-center gap-4 transition-transform hover:-translate-y-1 hover:shadow-[0px_8px_30px_rgba(0,0,0,0.10)] group">
+<div class="relative">
+<img class="w-24 h-24 rounded-full object-cover border-4 border-surface-container ring-1 ring-outline-variant/20" data-alt="A modern corporate portrait of an African male software engineer working in a bright, minimalist tech office. The scene is brightly lit with high-key lighting, producing a clean and sterile yet inviting mood. He is wearing a simple, high-quality black t-shirt and smiling gently. The out-of-focus background hints at sleek monitors and white desks, maintaining a strong focus on professional clarity and modern aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC31VYG5Cffsr1rf7epIeYmA797DzsbGSb4Dmd6lsEwc23K5dXHPKVUxCjR_aB0KNfz0v-3UuNUYSBHgjcRhymsgjRZNG9OsJ6wrdM9plQ1sK4QPdDuA986FFW_lM78uKqc-D34xZ0ZlUQXUVkYUzP4YCJNApSiRQ3OoGDetV-HdsrTBf8XeliZuH211pu05dDGqQ0Nv-aApldfPNMynXbygdrERgpq7wqyLmBK4IqpEnnyvPEpNwQs1ZzIwgHOcW7fV4zEGEEBtcek"/>
+<div class="absolute bottom-0 right-0 w-4 h-4 bg-tertiary-fixed rounded-full border-2 border-surface-container-lowest" title="Online"></div>
+</div>
+<div class="flex flex-col items-center">
+<h3 class="text-headline-md font-headline-md text-on-background group-hover:text-primary transition-colors">David Mensah</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">Senior Frontend Engineer</p>
+</div>
+<div class="w-12 h-[1px] bg-outline-variant/40 my-1"></div>
+<div class="flex flex-wrap justify-center gap-2">
+<span class="px-2 py-1 bg-surface-container text-on-surface text-[11px] font-label-sm uppercase tracking-wider rounded">Engineering</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface text-[11px] font-label-sm uppercase tracking-wider rounded">UI/UX</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface text-[11px] font-label-sm uppercase tracking-wider rounded">Web</span>
+</div>
+<button class="mt-2 w-full py-2.5 rounded-lg border border-primary text-primary font-emphasis text-emphasis hover:bg-primary/5 transition-colors flex items-center justify-center gap-2">
+                            View Profile
+                        </button>
+</article>
+</section>
+<!-- Infinite Scroll Loading Indicator -->
+<div class="w-full flex justify-center py-8">
+<div class="flex items-center gap-3 text-outline px-6 py-3 bg-surface-container-low rounded-full shadow-sm border border-outline-variant/50">
+<span class="material-symbols-outlined animate-spin text-tertiary-container">progress_activity</span>
+<span class="text-body-md font-emphasis">Loading more members...</span>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

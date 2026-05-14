@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding - Tell us about yourself</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#d9e2ff",
+                    "on-surface-variant": "#434651",
+                    "on-primary-fixed-variant": "#1b448c",
+                    "on-secondary-fixed-variant": "#6a3c00",
+                    "surface-tint": "#385ca5",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#f9e544",
+                    "tertiary-container": "#bead00",
+                    "secondary-fixed": "#ffdcbe",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#2d1600",
+                    "primary-container": "#0e3b83",
+                    "on-surface": "#1b1b1c",
+                    "on-tertiary-fixed-variant": "#4f4700",
+                    "outline": "#747782",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#1b1b1c",
+                    "on-primary-fixed": "#001944",
+                    "secondary-fixed-dim": "#ffb871",
+                    "surface-container-low": "#f6f3f3",
+                    "surface-container-highest": "#e5e2e2",
+                    "primary-fixed-dim": "#afc6ff",
+                    "on-tertiary-fixed": "#201c00",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#f0eded",
+                    "background": "#fcf9f9",
+                    "inverse-on-surface": "#f3f0f0",
+                    "secondary": "#8b5000",
+                    "on-primary-container": "#86a8f7",
+                    "surface-variant": "#e5e2e2",
+                    "surface": "#fcf9f9",
+                    "outline-variant": "#c4c6d2",
+                    "primary": "#00265e",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#dcd9d9",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#eae7e7",
+                    "secondary-container": "#fe9812",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#303031",
+                    "surface-bright": "#fcf9f9",
+                    "tertiary-fixed-dim": "#dbc826",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#afc6ff",
+                    "on-tertiary-container": "#474000",
+                    "on-secondary-container": "#653900",
+                    "tertiary": "#695f00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "xl": "80px",
+                    "sm": "12px",
+                    "md": "24px",
+                    "xs": "4px",
+                    "lg": "48px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Hanken Grotesk", "sans-serif"],
+                    "body-lg": ["Hanken Grotesk", "sans-serif"],
+                    "headline-lg": ["Hanken Grotesk", "sans-serif"],
+                    "emphasis": ["Hanken Grotesk", "sans-serif"],
+                    "body-md": ["Hanken Grotesk", "sans-serif"],
+                    "headline-lg-mobile": ["Hanken Grotesk", "sans-serif"],
+                    "label-sm": ["Hanken Grotesk", "sans-serif"],
+                    "display-lg": ["Hanken Grotesk", "sans-serif"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Ambient Shadows */
+        .shadow-level-1 { box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05); }
+        .shadow-level-2 { box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.10); }
+        
+        /* Simulated Afro font geometric pattern overlay */
+        .bg-pattern {
+            background-image: radial-gradient(circle at 2px 2px, rgba(14, 59, 131, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col relative pb-[100px] overflow-x-hidden antialiased">
+<!-- Subtle Background Pattern -->
+<div class="absolute inset-0 bg-pattern pointer-events-none z-0"></div>
+<!-- Minimal Header (Back-to-Main Exception for Focused Views) -->
+<header class="relative z-10 w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-md flex items-center justify-start">
+<button aria-label="Go back" class="flex items-center justify-center p-2 -ml-2 rounded-full text-on-background hover:bg-surface-container transition-colors cursor-pointer">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="relative z-10 flex-1 w-full max-w-[560px] mx-auto px-margin-mobile md:px-0 flex flex-col gap-lg">
+<!-- Progress Indicator -->
+<div class="flex w-full flex-row items-center justify-center gap-3 py-2">
+<div class="h-2 w-2 rounded-full bg-surface-dim"></div>
+<div class="h-2 w-2 rounded-full bg-primary-container"></div>
+<div class="h-2 w-2 rounded-full bg-surface-dim"></div>
+<div class="h-2 w-2 rounded-full bg-surface-dim"></div>
+<div class="h-2 w-2 rounded-full bg-surface-dim"></div>
+</div>
+<!-- Heading -->
+<div class="text-center md:text-left">
+<h1 class="text-[32px] font-bold leading-[1.3] text-on-background">Tell us about yourself</h1>
+<p class="text-[16px] font-light leading-[1.6] text-on-surface-variant mt-xs">Step 2 of 5: Basic identity</p>
+</div>
+<!-- Form Section -->
+<div class="flex flex-col gap-md">
+<!-- Full Name Input -->
+<div class="flex flex-col gap-xs">
+<label class="text-[16px] font-medium leading-[1.6] text-on-surface" for="full_name">Full name</label>
+<input class="w-full h-14 rounded-lg border border-outline-variant bg-surface-container-lowest focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container px-sm text-[16px] font-light placeholder:text-outline-variant transition-colors" id="full_name" placeholder="Enter your full name" type="text" value=""/>
+</div>
+<!-- Profile Photo Upload -->
+<div class="flex items-center justify-between gap-4 p-sm bg-surface-container-lowest rounded-lg border border-outline-variant shadow-level-1">
+<div class="flex items-center gap-md">
+<!-- Circular Preview -->
+<div class="h-14 w-14 rounded-full bg-surface-container bg-cover bg-center border border-outline-variant shrink-0" data-alt="A generic placeholder image showing a soft, out-of-focus silhouette of a person against a neutral warm grey background. The lighting is diffused and bright, creating a modern, professional, and accessible mood. The image serves as a visual prompt for a user profile photo within a clean, corporate web interface." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCZJtP80Ae67SwQVPiaRucgPOdC-bBtE4xqA6O0cB7iTSdKq07u5yADyzD8Ktw477UrFExGYHsYiULC8FjMPxgFLZR_vwTqmT9UbNxQc4Sn-r0bBd7t80FQF38wwoofk3HQv4g8UxzhrchSnyCLCz0QUK_K7rYA0pPaY1mNsPqbrBb7zRIKJ4POHDkqCiGgeEyYhVMG3u0T8aullg6z5TygQZ4FAj-mZCDG_de4OXKoVZUTk9nUPF6Ejrs4y3q_LQ1qzhCwY0o31GeP');">
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-[16px] font-medium leading-[1.6] text-on-surface line-clamp-1">Profile photo</p>
+<p class="text-[14px] font-light leading-[1.4] text-on-surface-variant line-clamp-1">Upload a clear photo of yourself</p>
+</div>
+</div>
+<div class="shrink-0">
+<button class="flex h-8 min-w-[64px] items-center justify-center rounded-lg bg-surface-container-high px-sm text-[14px] font-medium text-on-surface hover:bg-surface-dim transition-colors" type="button">
+                        Skip
+                    </button>
+</div>
+</div>
+<!-- Country of Residence Search/Dropdown -->
+<div class="flex flex-col gap-xs">
+<label class="text-[16px] font-medium leading-[1.6] text-on-surface" for="country">Country of residence</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-sm text-outline z-10" data-icon="search">search</span>
+<input class="w-full h-14 rounded-lg border border-outline-variant bg-surface-container-lowest focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container pl-12 pr-sm text-[16px] font-light placeholder:text-outline-variant transition-colors" id="country" placeholder="Search country" type="text"/>
+<span class="material-symbols-outlined absolute right-sm text-outline z-10 cursor-pointer" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Nationality Search/Dropdown -->
+<div class="flex flex-col gap-xs">
+<label class="text-[16px] font-medium leading-[1.6] text-on-surface" for="nationality">Nationality</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-sm text-outline z-10" data-icon="search">search</span>
+<input class="w-full h-14 rounded-lg border border-outline-variant bg-surface-container-lowest focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container pl-12 pr-sm text-[16px] font-light placeholder:text-outline-variant transition-colors" id="nationality" placeholder="Search nationality" type="text"/>
+<span class="material-symbols-outlined absolute right-sm text-outline z-10 cursor-pointer" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Sticky Bottom Navigation -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-container-lowest border-t border-surface-container-high px-margin-mobile md:px-margin-desktop py-sm z-50 shadow-[0_-4px_20px_rgba(0,0,0,0.02)]">
+<div class="max-w-[1280px] mx-auto flex items-center justify-between">
+<button class="px-sm py-2 text-[16px] font-medium text-primary-container bg-transparent hover:bg-surface-container transition-colors rounded-lg">
+                Back
+            </button>
+<button class="px-md py-3 text-[16px] font-medium text-on-secondary bg-secondary-container rounded-lg shadow-level-1 hover:shadow-level-2 transition-all">
+                Next
+            </button>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Discussions - NGN Portal</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#f0eded",
+                        "surface": "#fcf9f9",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#c4c6d2",
+                        "on-secondary-container": "#653900",
+                        "secondary-container": "#fe9812",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary-fixed-variant": "#4f4700",
+                        "secondary-fixed": "#ffdcbe",
+                        "inverse-on-surface": "#f3f0f0",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1b1b1c",
+                        "surface-container-highest": "#e5e2e2",
+                        "secondary-fixed-dim": "#ffb871",
+                        "tertiary-fixed-dim": "#dbc826",
+                        "outline": "#747782",
+                        "surface-tint": "#385ca5",
+                        "surface-container-high": "#eae7e7",
+                        "primary-container": "#0e3b83",
+                        "on-primary-fixed-variant": "#1b448c",
+                        "tertiary-fixed": "#f9e544",
+                        "on-secondary-fixed": "#2d1600",
+                        "on-primary-fixed": "#001944",
+                        "surface-bright": "#fcf9f9",
+                        "on-surface-variant": "#434651",
+                        "primary-fixed-dim": "#afc6ff",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#303031",
+                        "on-secondary-fixed-variant": "#6a3c00",
+                        "surface-variant": "#e5e2e2",
+                        "tertiary": "#695f00",
+                        "inverse-primary": "#afc6ff",
+                        "on-error-container": "#93000a",
+                        "on-background": "#1b1b1c",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f6f3f3",
+                        "primary-fixed": "#d9e2ff",
+                        "tertiary-container": "#bead00",
+                        "on-tertiary-fixed": "#201c00",
+                        "error-container": "#ffdad6",
+                        "primary": "#00265e",
+                        "on-tertiary-container": "#474000",
+                        "on-primary-container": "#86a8f7",
+                        "secondary": "#8b5000",
+                        "background": "#fcf9f9",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "gutter": "24px",
+                        "sm": "12px",
+                        "md": "24px",
+                        "margin-desktop": "64px",
+                        "lg": "48px",
+                        "base": "8px",
+                        "xl": "80px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Hanken Grotesk", "sans-serif"],
+                        "emphasis": ["Hanken Grotesk", "sans-serif"],
+                        "label-sm": ["Hanken Grotesk", "sans-serif"],
+                        "body-md": ["Hanken Grotesk", "sans-serif"],
+                        "headline-lg-mobile": ["Hanken Grotesk", "sans-serif"],
+                        "display-lg": ["Hanken Grotesk", "sans-serif"],
+                        "body-lg": ["Hanken Grotesk", "sans-serif"],
+                        "headline-lg": ["Hanken Grotesk", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Subtle geometric pattern overlay (Level 0.5) */
+        .bg-pattern {
+            background-image: radial-gradient(circle at 2px 2px, rgba(0, 38, 94, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container text-on-background font-body-md antialiased min-h-screen relative overflow-x-hidden pb-[90px]">
+<!-- Level 0.5 Pattern Background -->
+<div class="fixed inset-0 pointer-events-none bg-pattern z-0"></div>
+<div class="max-w-[1280px] mx-auto relative z-10 flex flex-col min-h-screen">
+<!-- Header -->
+<header class="bg-primary text-on-primary px-margin-mobile md:px-margin-desktop py-4 shadow-[0_4px_20px_rgba(0,0,0,0.1)] sticky top-0 z-30 flex items-center justify-between">
+<h1 class="font-headline-md text-headline-md">Discussions</h1>
+<div class="flex gap-2">
+<button aria-label="Search discussions" class="flex items-center justify-center p-2 rounded-full hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<!-- Filters (Sticky below header) -->
+<div class="px-margin-mobile md:px-margin-desktop py-4 flex gap-3 overflow-x-auto hide-scrollbar sticky top-[72px] z-20 bg-surface-container/95 backdrop-blur-sm border-b border-outline-variant/30">
+<button class="px-5 py-2 rounded-full bg-primary text-on-primary font-emphasis text-sm whitespace-nowrap shadow-sm transition-transform hover:scale-105">All Areas</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant font-emphasis text-sm whitespace-nowrap border border-outline-variant shadow-sm hover:bg-surface-container-low transition-colors">Governance</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant font-emphasis text-sm whitespace-nowrap border border-outline-variant shadow-sm hover:bg-surface-container-low transition-colors">Leadership</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant font-emphasis text-sm whitespace-nowrap border border-outline-variant shadow-sm hover:bg-surface-container-low transition-colors">Environment</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant font-emphasis text-sm whitespace-nowrap border border-outline-variant shadow-sm hover:bg-surface-container-low transition-colors">Economy</button>
+</div>
+<!-- Main Feed -->
+<main class="flex-1 px-margin-mobile md:px-margin-desktop py-6 flex flex-col gap-4">
+<!-- Thread Card 1 -->
+<article class="bg-surface-container-lowest rounded-lg p-5 shadow-[0_4px_20px_rgba(0,0,0,0.05)] border-t-[4px] border-secondary-container flex flex-col sm:flex-row gap-4 cursor-pointer hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-shadow group relative z-10">
+<div class="flex gap-4 w-full">
+<div class="shrink-0">
+<div class="w-12 h-12 rounded-full bg-cover bg-center border-2 border-surface-container" data-alt="A close-up portrait of a confident young African woman in professional attire, standing in a well-lit modern corporate office with large windows. The lighting is bright and soft, creating a clear, optimistic light-mode aesthetic. The color palette emphasizes clean whites, professional deep blues, and subtle warm orange accents. The mood is authoritative yet accessible, embodying the next generation of leadership." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBYC3VNPG0r0yB8PXTJWKh-tYNPDNkcCTjgkikqzBVjrDYq734gw9Jz72BtrYwBwXDb2dGmFyEQS1mfmiWHaQx5UbQhfZEk2hhUSKPdrODCcEu_yB2aPghA_VL4SQkYClp20nCzU5nefhyd-F9M3TIVfcfQDmA8zd--hJ2kHWCFGXz0HpGG6WCoYSYCxYnhtwc06TE5BRdNAC--RCuBxdCATRJSF2MLfZRHOL8Jl8zMW3oPL1eelr6GZIWPf8rvWh_AJusce-hvFoXQ');">
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<h2 class="font-emphasis text-emphasis text-on-surface mb-1 group-hover:text-primary transition-colors line-clamp-2">Strategies for Sustainable Urban Planning in Growing Hubs</h2>
+<p class="font-body-md text-sm text-on-surface-variant mb-3 line-clamp-2">How can emerging African cities balance rapid economic growth with crucial environmental sustainability? I'd love to hear examples of successful grassroots initiatives.</p>
+<div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs text-on-surface-variant font-label-sm">
+<span class="font-emphasis text-primary">Aminata Diallo</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant hidden sm:block"></span>
+<span>2h ago</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant hidden sm:block"></span>
+<span class="px-2.5 py-1 rounded-full bg-primary-container/10 text-primary font-emphasis">Environment</span>
+</div>
+</div>
+<div class="shrink-0 flex flex-col items-end justify-start pt-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant bg-surface-container-low px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]" data-icon="forum">forum</span>
+<span class="font-emphasis text-sm">24</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Thread Card 2 -->
+<article class="bg-surface-container-lowest rounded-lg p-5 shadow-[0_4px_20px_rgba(0,0,0,0.05)] border-t-[4px] border-primary-container flex flex-col sm:flex-row gap-4 cursor-pointer hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-shadow group relative z-10">
+<div class="flex gap-4 w-full">
+<div class="shrink-0">
+<div class="w-12 h-12 rounded-full bg-cover bg-center border-2 border-surface-container" data-alt="A candid headshot of a thoughtful young African man wearing a smart-casual blazer, positioned against a background featuring subtle geometric Afro-centric patterns. The environment is illuminated by high-key, natural light that enhances the crisp, modern light-mode design style. The colors blend neutral warm greys with striking touches of lime and deep navy blue. The overall atmosphere conveys intellect and forward-looking energy." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDxD6pj6IyRQiYz_AiYtIIJ2XZ-bEmDYtUNQjuWrbttSNEZVenZAK8tltRo47Y3JEvWmS3K9df7tYzxh8EhwJblGyFslVl_B3aaOcR_SoTVXx8-KlaLQM-kXCI7_CrzmViCfZz9I9MlBzfsseeGMaQMTBfGI_pf_GdObdsm7BakISsy2Hk_YfiSBnBkW6bm4EyacXKULf5SVDJnH6bpHX3HZsSWQjm8SjrPV88bLrsYug3x-UFeIQu0MPj5FLEMiC4gnhRs2CFcvh79');">
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<h2 class="font-emphasis text-emphasis text-on-surface mb-1 group-hover:text-primary transition-colors line-clamp-2">The Role of Tech Hubs in Shaping Public Policy</h2>
+<p class="font-body-md text-sm text-on-surface-variant mb-3 line-clamp-2">Are innovation clusters effectively translating their economic power into political influence to shape better digital infrastructure policies?</p>
+<div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs text-on-surface-variant font-label-sm">
+<span class="font-emphasis text-primary">Kwame Osei</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant hidden sm:block"></span>
+<span>5h ago</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant hidden sm:block"></span>
+<span class="px-2.5 py-1 rounded-full bg-primary-container/10 text-primary font-emphasis">Governance</span>
+</div>
+</div>
+<div class="shrink-0 flex flex-col items-end justify-start pt-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant bg-surface-container-low px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]" data-icon="forum">forum</span>
+<span class="font-emphasis text-sm">8</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Thread Card 3 -->
+<article class="bg-surface-container-lowest rounded-lg p-5 shadow-[0_4px_20px_rgba(0,0,0,0.05)] border-t-[4px] border-tertiary-container flex flex-col sm:flex-row gap-4 cursor-pointer hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-shadow group relative z-10">
+<div class="flex gap-4 w-full">
+<div class="shrink-0">
+<div class="w-12 h-12 rounded-full bg-cover bg-center border-2 border-surface-container" data-alt="A professional portrait of an energetic young leader from Africa, smiling warmly in an elegant institutional setting with out-of-focus architectural details. The lighting is meticulously balanced and bright, perfectly suited for a pristine light-mode user interface. The visual composition relies on crisp whites, reliable corporate blues, and a vibrant hint of bright orange. The mood is professional, culturally grounded, and welcoming." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAmBfnhqandMgL8t4ISKoaVnRSX5qfTAf8Nhbk1SXWP-Bi2P-0ew33wG4boJ401Yu1rnkDuuP_ArsTubCN3uOl7GW2EZpozhiganCIbocVPfoqiaH7JRTdSm0jmqK4kTTt5R_bWtNcIf4lEfMH3qt8C0zw3MImW5ZkA1LuZR21tRwwasCvU2G3wydDcpLQfZ9eyevwNYrYWVn3XIrGg1HIprNw5tj83zlNsRHbB0IFel67FrtxICO5dZt5G2juP63Lozsi4hYbrtawe');">
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<h2 class="font-emphasis text-emphasis text-on-surface mb-1 group-hover:text-primary transition-colors line-clamp-2">Cross-border Trade Agreements: Navigating the New Frameworks</h2>
+<p class="font-body-md text-sm text-on-surface-variant mb-3 line-clamp-2">Sharing some insights from the recent summit regarding simplified customs procedures. What challenges are your local businesses facing?</p>
+<div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs text-on-surface-variant font-label-sm">
+<span class="font-emphasis text-primary">Sarah Ndlovu</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant hidden sm:block"></span>
+<span>1d ago</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant hidden sm:block"></span>
+<span class="px-2.5 py-1 rounded-full bg-primary-container/10 text-primary font-emphasis">Economy</span>
+</div>
+</div>
+<div class="shrink-0 flex flex-col items-end justify-start pt-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant bg-surface-container-low px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]" data-icon="forum">forum</span>
+<span class="font-emphasis text-sm">42</span>
+</div>
+</div>
+</div>
+</article>
+</main>
+</div>
+<!-- Floating Action Button (Create Thread) -->
+<button aria-label="Create Thread" class="fixed bottom-[100px] right-4 md:right-margin-desktop bg-secondary-container text-on-primary w-[56px] h-[56px] rounded-full flex items-center justify-center shadow-[0_8px_30px_rgba(0,0,0,0.15)] hover:bg-[#e0860d] transition-colors z-40 focus:outline-none focus:ring-4 focus:ring-secondary-container/30">
+<span class="material-symbols-outlined text-[28px]" data-icon="edit" data-weight="fill">edit</span>
+</button>
+<!-- Shared Component: BottomNavBar (Strictly transcribed structure, placed at bottom) -->
+<nav class="fixed bottom-0 left-0 w-full z-50">
+<div class="flex gap-2 border-t border-[#e7ecf3] bg-slate-50 px-4 pb-3 pt-2">
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#4e6a97]" href="#">
+<div class="text-[#4e6a97] flex h-8 items-center justify-center" data-icon="House" data-size="24px" data-weight="regular">
+<span class="material-symbols-outlined">House</span>
+</div>
+<p class="text-[#4e6a97] text-xs font-medium leading-normal tracking-[0.015em]">Home</p>
+</a>
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#4e6a97]" href="#">
+<div class="text-[#4e6a97] flex h-8 items-center justify-center" data-icon="BookOpen" data-size="24px" data-weight="regular">
+<span class="material-symbols-outlined">BookOpen</span>
+</div>
+<p class="text-[#4e6a97] text-xs font-medium leading-normal tracking-[0.015em]">Courses</p>
+</a>
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 rounded-full text-[#0e131b]" href="#">
+<div class="text-[#0e131b] flex h-8 items-center justify-center" data-icon="ChatCircle" data-size="24px" data-weight="fill">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+</div>
+<p class="text-[#0e131b] text-xs font-medium leading-normal tracking-[0.015em]">Discussions</p>
+</a>
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#4e6a97]" href="#">
+<div class="text-[#4e6a97] flex h-8 items-center justify-center" data-icon="User" data-size="24px" data-weight="regular">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<p class="text-[#4e6a97] text-xs font-medium leading-normal tracking-[0.015em]">Profile</p>
+</a>
+</div>
+</nav>
+</body></html>

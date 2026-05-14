@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Account Setup - NGN Portal</title>
+<!-- Google Fonts: Hanken Grotesk for Theme -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#d9e2ff",
+                    "on-surface-variant": "#434651",
+                    "on-primary-fixed-variant": "#1b448c",
+                    "on-secondary-fixed-variant": "#6a3c00",
+                    "surface-tint": "#385ca5",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#f9e544",
+                    "tertiary-container": "#bead00",
+                    "secondary-fixed": "#ffdcbe",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#2d1600",
+                    "primary-container": "#0e3b83",
+                    "on-surface": "#1b1b1c",
+                    "on-tertiary-fixed-variant": "#4f4700",
+                    "outline": "#747782",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#1b1b1c",
+                    "on-primary-fixed": "#001944",
+                    "secondary-fixed-dim": "#ffb871",
+                    "surface-container-low": "#f6f3f3",
+                    "surface-container-highest": "#e5e2e2",
+                    "primary-fixed-dim": "#afc6ff",
+                    "on-tertiary-fixed": "#201c00",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#f0eded",
+                    "background": "#fcf9f9",
+                    "inverse-on-surface": "#f3f0f0",
+                    "secondary": "#8b5000",
+                    "on-primary-container": "#86a8f7",
+                    "surface-variant": "#e5e2e2",
+                    "surface": "#fcf9f9",
+                    "outline-variant": "#c4c6d2",
+                    "primary": "#00265e",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#dcd9d9",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#eae7e7",
+                    "secondary-container": "#fe9812",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#303031",
+                    "surface-bright": "#fcf9f9",
+                    "tertiary-fixed-dim": "#dbc826",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#afc6ff",
+                    "on-tertiary-container": "#474000",
+                    "on-secondary-container": "#653900",
+                    "tertiary": "#695f00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "xl": "80px",
+                    "sm": "12px",
+                    "md": "24px",
+                    "xs": "4px",
+                    "lg": "48px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Hanken Grotesk", "sans-serif"],
+                    "body-lg": ["Hanken Grotesk", "sans-serif"],
+                    "headline-lg": ["Hanken Grotesk", "sans-serif"],
+                    "emphasis": ["Hanken Grotesk", "sans-serif"],
+                    "body-md": ["Hanken Grotesk", "sans-serif"],
+                    "headline-lg-mobile": ["Hanken Grotesk", "sans-serif"],
+                    "label-sm": ["Hanken Grotesk", "sans-serif"],
+                    "display-lg": ["Hanken Grotesk", "sans-serif"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "700" }],
+                    "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "300" }],
+                    "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                    "emphasis": ["16px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                    "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "300" }],
+                    "headline-lg-mobile": ["28px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                    "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                    "display-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-background pb-32">
+<!-- Shared Component: TopAppBar (Strict Integration) -->
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-slate-50 group/design-root overflow-x-hidden" style='font-family: "Be Vietnam Pro", "Noto Sans", sans-serif;'>
+<div class="flex items-center bg-slate-50 p-4 pb-2 justify-between">
+<div class="text-[#0e131b] flex size-12 shrink-0 items-center" data-icon="ArrowLeft" data-size="24px" data-weight="regular">
+<span class="material-symbols-outlined" style="font-size: 24px;">arrow_back</span>
+</div>
+<h2 class="text-[#0e131b] text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Account setup</h2>
+</div>
+<div class="flex w-full flex-row items-center justify-center gap-3 py-5">
+<div class="h-2 w-2 rounded-full bg-[#0e3b83]"></div>
+<div class="h-2 w-2 rounded-full bg-[#d0d9e7]"></div>
+<div class="h-2 w-2 rounded-full bg-[#d0d9e7]"></div>
+<div class="h-2 w-2 rounded-full bg-[#d0d9e7]"></div>
+<div class="h-2 w-2 rounded-full bg-[#d0d9e7]"></div>
+</div>
+<h1 class="text-[#0e131b] tracking-light text-[32px] font-bold leading-tight px-4 text-center pb-3 pt-6">Create your account</h1>
+<div class="flex max-w-[480px] mx-auto w-full flex-wrap items-end gap-4 px-4 py-3">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-[#0e131b] text-base font-medium leading-normal pb-2">Email</p>
+<div class="flex w-full flex-1 items-stretch rounded-lg opacity-70">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0e131b] focus:outline-0 focus:ring-0 border border-[#d0d9e7] bg-slate-100 focus:border-[#d0d9e7] h-14 placeholder:text-[#4e6a97] p-[15px] rounded-r-none border-r-0 pr-2 text-base font-normal leading-normal" readonly="" value="alex.ndirangu@example.com"/>
+<div class="text-[#4e6a97] flex border border-[#d0d9e7] bg-slate-100 items-center justify-center pr-[15px] rounded-r-lg border-l-0" data-icon="CheckCircle" data-size="24px" data-weight="regular">
+<span class="material-symbols-outlined" style="font-size: 24px;">check_circle</span>
+</div>
+</div>
+</label>
+</div>
+<div class="flex max-w-[480px] mx-auto w-full flex-wrap items-end gap-4 px-4 py-3">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-[#0e131b] text-base font-medium leading-normal pb-2">Password</p>
+<div class="flex w-full flex-1 items-stretch rounded-lg">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0e131b] focus:outline-0 focus:ring-0 border border-[#d0d9e7] bg-slate-50 focus:border-[#d0d9e7] h-14 placeholder:text-[#4e6a97] p-[15px] rounded-r-none border-r-0 pr-2 text-base font-normal leading-normal" placeholder="Enter password" type="password" value="AfroFuture2024!"/>
+<div class="text-[#4e6a97] flex border border-[#d0d9e7] bg-slate-50 items-center justify-center pr-[15px] rounded-r-lg border-l-0" data-icon="Eye" data-size="24px" data-weight="regular">
+<span class="material-symbols-outlined" style="font-size: 24px;">visibility_off</span>
+</div>
+</div>
+</label>
+</div>
+<div class="h-5 bg-slate-50"></div>
+<!-- Custom Additions: Password Strength & Confirm Password -->
+<div class="flex flex-col bg-slate-50 w-full flex-1 -mt-5">
+<!-- Password Strength Indicator -->
+<div class="flex flex-col gap-2 px-4 py-1 mx-auto w-full max-w-[480px]">
+<div class="flex gap-2 w-full h-1.5">
+<div class="flex-1 rounded-full bg-secondary-container"></div>
+<div class="flex-1 rounded-full bg-secondary-container"></div>
+<div class="flex-1 rounded-full bg-secondary-container"></div>
+<div class="flex-1 rounded-full bg-surface-variant"></div>
+</div>
+<p class="text-label-sm text-on-surface-variant font-emphasis">Good password</p>
+</div>
+<!-- Confirm Password Input -->
+<div class="flex max-w-[480px] mx-auto w-full flex-wrap items-end gap-4 px-4 py-3 mt-2">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-on-background font-emphasis pb-2">Confirm Password</p>
+<div class="flex w-full flex-1 items-stretch rounded-lg shadow-[0px_4px_20px_rgba(0,0,0,0.05)]">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-on-background focus:outline-0 focus:ring-0 border border-outline-variant bg-surface focus:border-primary-container h-14 placeholder:text-outline p-[15px] rounded-r-none border-r-0 pr-2 font-body-md" placeholder="Re-enter password" type="password" value=""/>
+<div class="text-outline flex border border-outline-variant bg-surface items-center justify-center pr-[15px] rounded-r-lg border-l-0">
+<span class="material-symbols-outlined">visibility_off</span>
+</div>
+</div>
+</label>
+</div>
+<!-- Spacing to ensure content isn't hidden by sticky footer on smaller devices -->
+<div class="h-24 w-full"></div>
+</div>
+</div> <!-- End of Shared Component wrapper extension -->
+<!-- Sticky Bottom CTA -->
+<div class="fixed bottom-0 left-0 w-full p-4 bg-background/95 backdrop-blur-sm border-t border-surface-variant flex justify-center z-50">
+<div class="w-full max-w-[480px]">
+<button class="w-full bg-secondary-container text-white font-emphasis py-4 rounded-lg flex items-center justify-center transition-all active:scale-95 shadow-[0px_8px_30px_rgba(0,0,0,0.10)]">
+            Next
+        </button>
+</div>
+</div>
+</body></html>

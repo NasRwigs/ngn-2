@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mentorship Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-container": "#f0eded",
+                "surface": "#fcf9f9",
+                "surface-container-lowest": "#ffffff",
+                "outline-variant": "#c4c6d2",
+                "on-secondary-container": "#653900",
+                "secondary-container": "#fe9812",
+                "surface-dim": "#dcd9d9",
+                "on-tertiary-fixed-variant": "#4f4700",
+                "secondary-fixed": "#ffdcbe",
+                "inverse-on-surface": "#f3f0f0",
+                "on-tertiary": "#ffffff",
+                "on-surface": "#1b1b1c",
+                "surface-container-highest": "#e5e2e2",
+                "secondary-fixed-dim": "#ffb871",
+                "tertiary-fixed-dim": "#dbc826",
+                "outline": "#747782",
+                "surface-tint": "#385ca5",
+                "surface-container-high": "#eae7e7",
+                "primary-container": "#0e3b83",
+                "on-primary-fixed-variant": "#1b448c",
+                "tertiary-fixed": "#f9e544",
+                "on-secondary-fixed": "#2d1600",
+                "on-primary-fixed": "#001944",
+                "surface-bright": "#fcf9f9",
+                "on-surface-variant": "#434651",
+                "primary-fixed-dim": "#afc6ff",
+                "on-error": "#ffffff",
+                "inverse-surface": "#303031",
+                "on-secondary-fixed-variant": "#6a3c00",
+                "surface-variant": "#e5e2e2",
+                "tertiary": "#695f00",
+                "inverse-primary": "#afc6ff",
+                "on-error-container": "#93000a",
+                "on-background": "#1b1b1c",
+                "on-secondary": "#ffffff",
+                "surface-container-low": "#f6f3f3",
+                "primary-fixed": "#d9e2ff",
+                "tertiary-container": "#bead00",
+                "on-tertiary-fixed": "#201c00",
+                "error-container": "#ffdad6",
+                "primary": "#00265e",
+                "on-tertiary-container": "#474000",
+                "on-primary-container": "#86a8f7",
+                "secondary": "#8b5000",
+                "background": "#fcf9f9",
+                "error": "#ba1a1a",
+                "on-primary": "#ffffff"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "xs": "4px",
+                "gutter": "24px",
+                "sm": "12px",
+                "md": "24px",
+                "margin-desktop": "64px",
+                "lg": "48px",
+                "base": "8px",
+                "xl": "80px",
+                "margin-mobile": "16px"
+        },
+        "fontFamily": {
+                "headline-md": [
+                        "Hanken Grotesk"
+                ],
+                "emphasis": [
+                        "Hanken Grotesk"
+                ],
+                "label-sm": [
+                        "Hanken Grotesk"
+                ],
+                "body-md": [
+                        "Hanken Grotesk"
+                ],
+                "headline-lg-mobile": [
+                        "Hanken Grotesk"
+                ],
+                "display-lg": [
+                        "Hanken Grotesk"
+                ],
+                "body-lg": [
+                        "Hanken Grotesk"
+                ],
+                "headline-lg": [
+                        "Hanken Grotesk"
+                ]
+        }
+    }
+  }
+</script>
+<style>
+    body { font-family: 'Hanken Grotesk', sans-serif; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col pb-20">
+<!-- Header -->
+<header class="flex items-center bg-surface p-4 pb-2 justify-between sticky top-0 z-10 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+<div class="text-on-surface flex size-12 shrink-0 items-center cursor-pointer" data-icon="ArrowLeft" data-size="24px" data-weight="regular">
+<span class="material-symbols-outlined" style="font-size: 24px;">arrow_back</span>
+</div>
+<h2 class="text-on-surface font-headline-md text-[20px] flex-1 text-center pr-12">Mentorship Dashboard</h2>
+</header>
+<!-- Tabs -->
+<div class="pb-3 bg-surface sticky top-[64px] z-10 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+<div class="flex overflow-x-auto no-scrollbar border-b border-outline-variant px-4 gap-8">
+<a class="flex shrink-0 flex-col items-center justify-center border-b-[3px] border-b-primary text-primary pb-[13px] pt-4" href="#">
+<p class="font-emphasis text-sm">My Pairings</p>
+</a>
+<a class="flex shrink-0 flex-col items-center justify-center border-b-[3px] border-b-transparent text-on-surface-variant hover:text-on-surface transition-colors pb-[13px] pt-4" href="#">
+<p class="font-emphasis text-sm">Circles</p>
+</a>
+<a class="flex shrink-0 flex-col items-center justify-center border-b-[3px] border-b-transparent text-on-surface-variant hover:text-on-surface transition-colors pb-[13px] pt-4" href="#">
+<p class="font-emphasis text-sm">Sessions</p>
+</a>
+<a class="flex shrink-0 flex-col items-center justify-center border-b-[3px] border-b-transparent text-on-surface-variant hover:text-on-surface transition-colors pb-[13px] pt-4" href="#">
+<p class="font-emphasis text-sm">Skills</p>
+</a>
+</div>
+</div>
+<main class="flex-1 overflow-y-auto max-w-[1280px] w-full mx-auto pb-lg">
+<!-- Active Pairings -->
+<div class="p-4 @container flex flex-col gap-sm">
+<!-- Card 1: Active -->
+<div class="flex flex-col items-stretch justify-start rounded-lg @xl:flex-row @xl:items-start shadow-[0_4px_20px_rgba(0,0,0,0.05)] bg-surface border-t-4 border-t-primary overflow-hidden">
+<div class="w-full @xl:w-48 bg-center bg-no-repeat aspect-video @xl:aspect-square bg-cover shrink-0" data-alt="A professional portrait of a smiling young African woman with natural hair, wearing a smart business blazer in a bright, modern corporate office. The lighting is soft and flattering, creating a warm, approachable mood. The image fits perfectly within a light-mode UI, featuring crisp details and a clean background that emphasizes her confident expression." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDN3BMrmupe8qMs3haZktujBACO314q2WTu1MHL9HgN-7LRa809-WfPh50_kvvp4z4jKEFjrTMHz4iRXhJJx19KleUeZtYFmN9Q96KdlTn3BQYYe8rVrHv0asX6UC260hJbGwM_NxPnkOAxlsZh8U7k8d4aY7amiTYaa1Z5fichMid_6qDgjDq8J-9XsRECioQeJPZ4b5AlWws0haRFNTjW_DoGr65Gc0jViK_2CW-I6xorjWuZdIelZJ-JwGFhunm3X4tRhYumtkwn');"></div>
+<div class="flex w-full grow flex-col items-stretch justify-center gap-2 py-4 @xl:px-6 px-4">
+<div class="flex justify-between items-start">
+<div>
+<span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-emphasis bg-[#e6f4ea] text-[#1e8e3e] mb-1">Active</span>
+<p class="text-on-surface font-headline-md text-lg">Jane Doe</p>
+<p class="text-on-surface-variant text-sm">Senior Frontend Engineer at TechCorp</p>
+</div>
+<div class="text-primary cursor-pointer hover:bg-surface-container rounded-full p-2 transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 mt-2">
+<p class="text-on-surface font-emphasis text-sm">Goals:</p>
+<ul class="text-on-surface-variant text-sm list-disc list-inside">
+<li>Master React Performance Optimization</li>
+<li>Develop Design System Architecture</li>
+</ul>
+</div>
+<!-- Progress Bar -->
+<div class="mt-3">
+<div class="flex justify-between text-xs mb-1">
+<span class="text-on-surface-variant font-emphasis">Session Progress</span>
+<span class="text-primary font-emphasis">4 of 10</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 40%"></div>
+</div>
+</div>
+<div class="flex items-center gap-3 justify-end mt-4">
+<button class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-transparent border-2 border-primary text-primary font-emphasis text-sm hover:bg-primary-fixed transition-colors">
+<span>View Detail</span>
+</button>
+<button class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-[#f39000] text-white font-emphasis text-sm hover:bg-[#d98100] transition-colors shadow-[0_8px_30px_rgba(243,144,0,0.2)]">
+<span>Log a Session</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2: Pending -->
+<div class="flex flex-col items-stretch justify-start rounded-lg @xl:flex-row @xl:items-start shadow-[0_4px_20px_rgba(0,0,0,0.05)] bg-surface border-t-4 border-t-outline-variant overflow-hidden">
+<div class="w-full @xl:w-48 bg-center bg-no-repeat aspect-video @xl:aspect-square bg-cover shrink-0 grayscale opacity-80" data-alt="A portrait of a thoughtful young African man in a casual business shirt, standing outdoors with a subtly blurred architectural background. The lighting is natural and bright, suited for a clean light-mode interface. The image has a slightly muted tone to visually indicate a pending status, conveying a sense of anticipation and professional readiness." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD7chIoR08xFEPZjMEq8-dROR2LrowBh5HgLeHfixuJ4YCSi05ThuHkVK4V3oUGN7jaau0yKAL3lQM6uGooWQOygKPEqKcUrU3PZYoy1mjXtzm7_QlAjEzDfREkM1A4qxb8VZaf_b84kFJbPPUmTNXLkeSflcyWUUL2cYlDLS2-tkjZJcC1XVpKqTgokU8200aAW_B2iILwPuW2TEhwY_F-aJcTYf8IliB0jT_HhOVkMiUfq-T6y4ylJS4zLSyZWDy9P2Sf-GPsNNT5');"></div>
+<div class="flex w-full grow flex-col items-stretch justify-center gap-2 py-4 @xl:px-6 px-4">
+<div class="flex justify-between items-start">
+<div>
+<span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-emphasis bg-surface-container-highest text-on-surface-variant mb-1">Pending Response</span>
+<p class="text-on-surface font-headline-md text-lg">John Smith</p>
+<p class="text-on-surface-variant text-sm">Product Manager at InnovateLLC</p>
+</div>
+</div>
+<div class="flex flex-col gap-1 mt-2">
+<p class="text-on-surface font-emphasis text-sm">Goals:</p>
+<ul class="text-on-surface-variant text-sm list-disc list-inside">
+<li>Transition to Product Leadership</li>
+<li>Agile Methodologies</li>
+</ul>
+</div>
+<div class="flex items-center gap-3 justify-end mt-4">
+<button class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-transparent border-2 border-outline text-on-surface-variant font-emphasis text-sm hover:bg-surface-container transition-colors">
+<span>Cancel Request</span>
+</button>
+<button class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white font-emphasis text-sm hover:bg-primary-container transition-colors shadow-[0_4px_20px_rgba(0,38,94,0.15)]">
+<span>View Detail</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Suggested Mentors Section -->
+<div class="mt-lg">
+<div class="px-4 mb-sm flex justify-between items-end">
+<h3 class="text-on-surface font-headline-md text-xl">Suggested Mentors</h3>
+<a class="text-primary font-emphasis text-sm hover:underline" href="#">View All</a>
+</div>
+<div class="flex overflow-x-auto no-scrollbar gap-4 px-4 pb-4 snap-x">
+<!-- Mentor Card 1 -->
+<div class="w-[240px] shrink-0 bg-surface rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-surface-container-highest flex flex-col items-center p-4 snap-start">
+<img alt="Mentor" class="w-20 h-20 rounded-full object-cover mb-3" data-alt="A close-up portrait of an experienced African business leader with a warm, encouraging smile. The background is a clean, bright white studio setting, perfectly matching a modern light-mode design system. The lighting is crisp, highlighting the subject's approachability and authority in a corporate context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9PMXZSlIUrBqkaF7qY21RAQZmCbcWs4PfEmSAUKrj6dvxO-SFlHzqeYX2zDfmRApYHjaVkY399xFb0caXBWTakb-lP44PJcrYNKXruAtS1Twe1K45AX9NNm8LZGGcNrrAOOwvucmbgaCj7CB2-tzQFVVHcQO2c4NPvkDGeE7y3aJsHo-Nt82koAJ1HTaoHOzQEY2Rb_PY7xDhXAik-2RWkZ2Hl7jQUNDZOqf4IVQWO7kRFP0nRQVxZiJBcG179HbiNyc6VJ3GJKk0"/>
+<h4 class="text-on-surface font-emphasis text-base text-center">Dr. Amina Yusuf</h4>
+<p class="text-on-surface-variant text-xs text-center mb-1">Director of Engineering</p>
+<p class="text-primary text-xs font-emphasis text-center mb-4">FinTech Solutions</p>
+<button class="w-full cursor-pointer items-center justify-center rounded-lg h-8 px-4 bg-transparent border-2 border-primary text-primary font-emphasis text-sm hover:bg-primary hover:text-white transition-colors">
+                        Connect
+                    </button>
+</div>
+<!-- Mentor Card 2 -->
+<div class="w-[240px] shrink-0 bg-surface rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-surface-container-highest flex flex-col items-center p-4 snap-start">
+<img alt="Mentor" class="w-20 h-20 rounded-full object-cover mb-3" data-alt="A portrait of a confident male tech executive with glasses, wearing a sharp blue suit against a soft grey background. The professional studio lighting emphasizes clarity and focus, fitting seamlessly into a structured, high-end corporate application. The mood is authoritative yet accessible." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2UJ6FGYb50rqhB45JjGzRb71jyEwxRbpQ9M4Wr5WT5EBf539fEh7CxhwpfAcNxbh9L2DGSr9eA9r1U8MogzbxvLnSVqghGzOjQoA6OJYGKuVgc9DPGootRC6PS5ai6_u_Fo9Q_pg3ZmI5v1I5snFe-d-0l6pIOU3ay3OTEMtYqjg20MEpn396dFkFmW16J1FIUqovJW_xcZdDot9MTCrY16aB4flTKgmZqlpbULsEOJ7L3gaARXQNJCe8NnCA0vRZ1xfyxiL2Bgds"/>
+<h4 class="text-on-surface font-emphasis text-base text-center">Samuel Osei</h4>
+<p class="text-on-surface-variant text-xs text-center mb-1">VP of Product</p>
+<p class="text-primary text-xs font-emphasis text-center mb-4">Pan-African Hub</p>
+<button class="w-full cursor-pointer items-center justify-center rounded-lg h-8 px-4 bg-transparent border-2 border-primary text-primary font-emphasis text-sm hover:bg-primary hover:text-white transition-colors">
+                        Connect
+                    </button>
+</div>
+<!-- Mentor Card 3 -->
+<div class="w-[240px] shrink-0 bg-surface rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-surface-container-highest flex flex-col items-center p-4 snap-start">
+<img alt="Mentor" class="w-20 h-20 rounded-full object-cover mb-3" data-alt="A vibrant portrait of a young female creative director with stylish braided hair, laughing warmly. The lighting is high-key and bright, set against a pristine white background to align with a modern, optimistic light-mode aesthetic. The image exudes energy, creativity, and supportive leadership." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClY_FpG0yr0SfkFlPhVVKl6snVEwaPmlGqS46AZLUT5r9TbZxqDihrDj9_6sK8KCnHO74y0yhaI9ALqWv_-K_wNXu2hSoMyoffBhYj_jOwi8IbIOdbzry2NuBOs9euSCd0_pLDjrRiZCkadyELZghgTzN-SkUxCoouM2PHgQ7XGWI7lQ3jHAsCaCfFKHDGqG1Ri03X5y_ZkvCUe_LWgH3i3KBxgguBfFEOLt6-ix18svtpeaXsOww6zMEIeZen0LazWGlhwyiiIvTS"/>
+<h4 class="text-on-surface font-emphasis text-base text-center">Grace Nnaji</h4>
+<p class="text-on-surface-variant text-xs text-center mb-1">Head of Design</p>
+<p class="text-primary text-xs font-emphasis text-center mb-4">Creative Collective</p>
+<button class="w-full cursor-pointer items-center justify-center rounded-lg h-8 px-4 bg-transparent border-2 border-primary text-primary font-emphasis text-sm hover:bg-primary hover:text-white transition-colors">
+                        Connect
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<div class="fixed bottom-0 left-0 right-0 flex gap-2 border-t border-surface-container-highest bg-surface px-4 pb-3 pt-2 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] z-20">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<div class="flex h-8 items-center justify-center" data-icon="House" data-size="24px" data-weight="regular">
+<span class="material-symbols-outlined" style="font-size: 24px;">home</span>
+</div>
+<p class="text-xs font-emphasis leading-normal tracking-[0.015em]">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<div class="flex h-8 items-center justify-center" data-icon="Users" data-size="24px" data-weight="regular">
+<span class="material-symbols-outlined" style="font-size: 24px;">group</span>
+</div>
+<p class="text-xs font-emphasis leading-normal tracking-[0.015em]">Network</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#">
+<div class="flex h-8 items-center justify-center bg-primary-fixed w-16 rounded-full" data-icon="Chalkboard" data-size="24px" data-weight="fill">
+<span class="material-symbols-outlined" style="font-size: 24px; font-variation-settings: 'FILL' 1;">co_present</span>
+</div>
+<p class="text-xs font-emphasis leading-normal tracking-[0.015em] font-bold">Mentorship</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<div class="flex h-8 items-center justify-center" data-icon="User" data-size="24px" data-weight="regular">
+<span class="material-symbols-outlined" style="font-size: 24px;">person</span>
+</div>
+<p class="text-xs font-emphasis leading-normal tracking-[0.015em]">Profile</p>
+</a>
+</div>
+</body></html>

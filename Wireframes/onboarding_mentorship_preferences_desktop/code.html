@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding - Mentorship Preferences</title>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "tertiary-container": "#bead00",
+                "on-tertiary-fixed-variant": "#4f4700",
+                "on-primary": "#ffffff",
+                "tertiary-fixed": "#f9e544",
+                "outline-variant": "#c4c6d2",
+                "on-secondary-fixed": "#2d1600",
+                "inverse-surface": "#303031",
+                "primary-fixed-dim": "#afc6ff",
+                "on-background": "#1b1b1c",
+                "surface": "#fcf9f9",
+                "on-secondary": "#ffffff",
+                "primary-container": "#0e3b83",
+                "error": "#ba1a1a",
+                "surface-variant": "#e5e2e2",
+                "on-secondary-container": "#653900",
+                "primary-fixed": "#d9e2ff",
+                "surface-dim": "#dcd9d9",
+                "surface-container-highest": "#e5e2e2",
+                "primary": "#00265e",
+                "on-primary-fixed-variant": "#1b448c",
+                "on-tertiary": "#ffffff",
+                "error-container": "#ffdad6",
+                "on-tertiary-container": "#474000",
+                "on-surface-variant": "#434651",
+                "on-primary-fixed": "#001944",
+                "background": "#fcf9f9",
+                "tertiary-fixed-dim": "#dbc826",
+                "surface-container-high": "#eae7e7",
+                "secondary-fixed": "#ffdcbe",
+                "on-tertiary-fixed": "#201c00",
+                "on-error": "#ffffff",
+                "surface-container-low": "#f6f3f3",
+                "surface-container-lowest": "#ffffff",
+                "surface-container": "#f0eded",
+                "on-surface": "#1b1b1c",
+                "surface-tint": "#385ca5",
+                "secondary-fixed-dim": "#ffb871",
+                "tertiary": "#695f00",
+                "surface-bright": "#fcf9f9",
+                "on-primary-container": "#86a8f7",
+                "secondary-container": "#fe9812",
+                "on-secondary-fixed-variant": "#6a3c00",
+                "inverse-on-surface": "#f3f0f0",
+                "on-error-container": "#93000a",
+                "inverse-primary": "#afc6ff",
+                "outline": "#747782",
+                "secondary": "#8b5000"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "sm": "12px",
+                "lg": "48px",
+                "margin-mobile": "16px",
+                "base": "8px",
+                "xl": "80px",
+                "gutter": "24px",
+                "xs": "4px",
+                "md": "24px",
+                "margin-desktop": "64px"
+        },
+        "fontFamily": {
+                "display-lg": [
+                        "Hanken Grotesk", "sans-serif"
+                ],
+                "body-lg": [
+                        "Hanken Grotesk", "sans-serif"
+                ],
+                "body-md": [
+                        "Hanken Grotesk", "sans-serif"
+                ],
+                "headline-md": [
+                        "Hanken Grotesk", "sans-serif"
+                ],
+                "label-sm": [
+                        "Hanken Grotesk", "sans-serif"
+                ],
+                "emphasis": [
+                        "Hanken Grotesk", "sans-serif"
+                ],
+                "headline-lg-mobile": [
+                        "Hanken Grotesk", "sans-serif"
+                ],
+                "headline-lg": [
+                        "Hanken Grotesk", "sans-serif"
+                ]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body {
+    font-family: 'Hanken Grotesk', sans-serif;
+  }
+  /* Custom geometric pattern overlay */
+  .pattern-overlay {
+    background-image: radial-gradient(#0e3b83 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.03;
+  }
+</style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen">
+<!-- Main Layout Wrapper -->
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background group/design-root overflow-x-hidden" style="--radio-dot-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27%230e3b83%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3ccircle cx=%278%27 cy=%278%27 r=%273%27/%3e%3c/svg%3e');">
+<!-- Background Pattern -->
+<div class="absolute inset-0 pattern-overlay pointer-events-none z-0"></div>
+<div class="layout-container flex h-full grow flex-col relative z-10">
+<div class="px-margin-mobile md:px-margin-desktop flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col w-full max-w-[1280px] flex-1">
+<!-- Simple Header (Focused View) -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-outline-variant px-4 py-4 md:px-10 md:py-6 mb-8 bg-surface rounded-t-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)]">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-primary text-headline-md font-bold leading-tight tracking-tight">MIF NGN Portal</h2>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-on-surface-variant font-body-md hidden md:block">Step 5 of 5</span>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-primary-fixed" data-alt="A professional headshot of a young African woman with natural hair, smiling subtly. She is wearing a modern, tailored navy blazer. The lighting is soft and natural, suggesting an approachable yet authoritative corporate environment." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC5MR76netmvCp8NEAda-S0e88eUYBH-uezjDBXhV2HFjPm4tJJ8RvMs9MvNRd8nnPtt4qiKE1sCjCEgJhTGWmTk-lNMozTz9icU6-ruJV-IwxP4pR8L1nibmHbWwCE1JGWJgCodmNINnhFqthQXD_tZH024CWvHzmi5qvaYu_wa-1VY9wrT3IelaTCGi50aOx9ihuByAjoDHGmANDbUkgmh3-vQHyW7BRKWaxKh7cMK-LPMKD1qMBlc03PpJEcqkQjNUomfGTMUJjm");'></div>
+</div>
+</header>
+<!-- Two Column Layout -->
+<div class="flex flex-col md:flex-row gap-gutter h-full min-h-[700px]">
+<!-- Sidebar Navigation (Immutable structure from shared component) -->
+<div class="w-full md:w-64 shrink-0 flex flex-col gap-4 bg-surface p-4 rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-surface-container-high h-fit">
+<div class="flex gap-3 items-center mb-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12 shadow-sm" data-alt="A professional headshot of a young African woman with natural hair, smiling subtly. She is wearing a modern, tailored navy blazer. The lighting is soft and natural, suggesting an approachable yet authoritative corporate environment." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAU_CuM6zQunQ6Bu4rputeSSoBFMu9Y5u9zV3TLIUw9XhiPYJ6pth8aIjhkrnYm35XnULuVrNcKR6pyRNrfZ04ih_mUTxjI7_s7TLt_yiFQmr6Rliw3ViQFGFSLhCME0t0aMVL97IrlZbqUqqmiF-ULM5kjf5dhTIO3ZCNRR8Pv7wEcsaOitpXFc5CXvNxi7QvqpynqN-xPuLLofqEbM83EbAILS2sp9Bc9xeziQWBqxqTVIwd2DZTpESJgVHR8a3odfDCz5nhsuxtP");'></div>
+<div class="flex flex-col">
+<h1 class="text-on-surface text-emphasis leading-normal font-bold">Amina Diallo</h1>
+<p class="text-on-surface-variant text-sm font-normal leading-normal">Onboarding</p>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-surface-container-low transition-colors cursor-not-allowed opacity-50">
+<div class="text-on-surface-variant flex items-center justify-center" data-icon="home" data-weight="regular">
+<span class="material-symbols-outlined">home</span>
+</div>
+<p class="text-on-surface-variant text-sm font-medium leading-normal">Welcome</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-surface-container-low transition-colors cursor-not-allowed opacity-50">
+<div class="text-on-surface-variant flex items-center justify-center" data-icon="person" data-weight="regular">
+<span class="material-symbols-outlined">person</span>
+</div>
+<p class="text-on-surface-variant text-sm font-medium leading-normal">Basic Info</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-surface-container-low transition-colors cursor-not-allowed opacity-50">
+<div class="text-on-surface-variant flex items-center justify-center" data-icon="work" data-weight="regular">
+<span class="material-symbols-outlined">work</span>
+</div>
+<p class="text-on-surface-variant text-sm font-medium leading-normal">Experience</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-surface-container-low transition-colors cursor-not-allowed opacity-50">
+<div class="text-on-surface-variant flex items-center justify-center" data-icon="favorite" data-weight="regular">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+<p class="text-on-surface-variant text-sm font-medium leading-normal">Interests</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary text-on-primary shadow-sm relative overflow-hidden">
+<div class="absolute inset-0 bg-white opacity-10"></div>
+<div class="flex items-center justify-center relative z-10" data-icon="groups" data-weight="fill">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">groups</span>
+</div>
+<p class="text-on-primary text-sm font-bold leading-normal relative z-10">Mentorship</p>
+</div>
+</div>
+</div>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col bg-surface rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-surface-container-high p-6 md:p-10">
+<div class="flex flex-col gap-2 mb-8">
+<h2 class="text-on-surface text-headline-lg font-bold leading-tight">Mentorship Preferences</h2>
+<p class="text-on-surface-variant text-body-md font-normal">Tell us how you'd like to participate in the MIF NGN mentorship program. You can choose to guide others, seek guidance, or both.</p>
+</div>
+<!-- Role Selection -->
+<div class="flex flex-col gap-4 mb-10">
+<label class="flex items-start gap-4 rounded-xl border-2 border-outline-variant p-5 cursor-pointer hover:border-primary-fixed transition-colors bg-surface-container-lowest">
+<input class="mt-0.5 h-5 w-5 border-2 border-outline-variant rounded-full bg-transparent text-primary focus:ring-primary focus:ring-offset-0" name="mentorship_role" type="radio"/>
+<div class="flex grow flex-col">
+<p class="text-on-surface text-emphasis font-bold leading-normal mb-1">I want to be a Mentor</p>
+<p class="text-on-surface-variant text-sm font-normal leading-normal">Share your knowledge, professional insights, and experience with emerging leaders.</p>
+</div>
+</label>
+<label class="flex items-start gap-4 rounded-xl border-2 border-outline-variant p-5 cursor-pointer hover:border-primary-fixed transition-colors bg-surface-container-lowest">
+<input class="mt-0.5 h-5 w-5 border-2 border-outline-variant rounded-full bg-transparent text-primary focus:ring-primary focus:ring-offset-0" name="mentorship_role" type="radio"/>
+<div class="flex grow flex-col">
+<p class="text-on-surface text-emphasis font-bold leading-normal mb-1">I want to be a Mentee</p>
+<p class="text-on-surface-variant text-sm font-normal leading-normal">Learn from experienced professionals and gain guidance for your career trajectory.</p>
+</div>
+</label>
+<label class="flex items-start gap-4 rounded-xl border-2 border-primary p-5 cursor-pointer bg-primary-fixed/20 shadow-[0px_8px_30px_rgba(0,0,0,0.05)]">
+<input checked="" class="mt-0.5 h-5 w-5 border-2 border-primary rounded-full bg-transparent text-primary focus:ring-primary focus:ring-offset-0" name="mentorship_role" type="radio"/>
+<div class="flex grow flex-col">
+<p class="text-on-surface text-emphasis font-bold leading-normal mb-1">I want to be both</p>
+<p class="text-on-surface-variant text-sm font-normal leading-normal">Actively participate in a two-way exchange: share your expertise while learning from others.</p>
+</div>
+</label>
+</div>
+<div class="h-px w-full bg-surface-container-highest mb-10"></div>
+<!-- Conditional Tag Inputs (Simulating 'Both' selected state) -->
+<div class="flex flex-col gap-8">
+<!-- Skills Offered -->
+<div class="flex flex-col gap-3">
+<h3 class="text-on-surface text-headline-md font-bold leading-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container" data-icon="lightbulb" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+                                    Skills you can offer as a Mentor
+                                </h3>
+<p class="text-on-surface-variant text-sm mb-2">Add up to 5 core competencies you feel confident teaching.</p>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-outline" data-icon="search">search</span>
+<input class="w-full bg-surface-container-lowest text-on-surface border border-outline rounded-lg pl-10 pr-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-outline" placeholder="e.g. Policy Analysis, Public Speaking, Data Strategy..." type="text"/>
+</div>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-primary-container text-on-primary-container text-label-sm font-bold rounded-full">
+                                        Public Policy
+                                        <button class="hover:text-primary flex items-center justify-center"><span class="material-symbols-outlined text-[16px]" data-icon="close">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-primary-container text-on-primary-container text-label-sm font-bold rounded-full">
+                                        Strategic Comms
+                                        <button class="hover:text-primary flex items-center justify-center"><span class="material-symbols-outlined text-[16px]" data-icon="close">close</span></button>
+</span>
+</div>
+</div>
+<!-- Skills Sought -->
+<div class="flex flex-col gap-3">
+<h3 class="text-on-surface text-headline-md font-bold leading-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="school" style="font-variation-settings: 'FILL' 1;">school</span>
+                                    Skills you are looking to develop
+                                </h3>
+<p class="text-on-surface-variant text-sm mb-2">What areas are you most eager to learn about from a mentor?</p>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-outline" data-icon="search">search</span>
+<input class="w-full bg-surface-container-lowest text-on-surface border border-outline rounded-lg pl-10 pr-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-outline" placeholder="e.g. Fundraising, Team Management, Tech Leadership..." type="text"/>
+</div>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-surface-container-high text-on-surface-variant text-label-sm border border-outline-variant font-bold rounded-full">
+                                        Financial Modeling
+                                        <button class="hover:text-error flex items-center justify-center"><span class="material-symbols-outlined text-[16px]" data-icon="close">close</span></button>
+</span>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="mt-auto pt-12 flex items-center justify-between">
+<button class="flex items-center gap-2 text-primary font-bold hover:bg-surface-container p-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+                                Back to Interests
+                            </button>
+<button class="bg-secondary-container text-on-secondary-container font-bold py-3.5 px-8 rounded-lg shadow-[0px_4px_14px_rgba(254,152,18,0.3)] hover:opacity-90 hover:shadow-[0px_6px_20px_rgba(254,152,18,0.4)] transition-all flex items-center gap-2 text-emphasis">
+                                Complete Profile
+                                <span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding - Professional Context</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-container": "#bead00",
+                      "on-tertiary-fixed-variant": "#4f4700",
+                      "on-primary": "#ffffff",
+                      "tertiary-fixed": "#f9e544",
+                      "outline-variant": "#c4c6d2",
+                      "on-secondary-fixed": "#2d1600",
+                      "inverse-surface": "#303031",
+                      "primary-fixed-dim": "#afc6ff",
+                      "on-background": "#1b1b1c",
+                      "surface": "#fcf9f9",
+                      "on-secondary": "#ffffff",
+                      "primary-container": "#0e3b83",
+                      "error": "#ba1a1a",
+                      "surface-variant": "#e5e2e2",
+                      "on-secondary-container": "#653900",
+                      "primary-fixed": "#d9e2ff",
+                      "surface-dim": "#dcd9d9",
+                      "surface-container-highest": "#e5e2e2",
+                      "primary": "#00265e",
+                      "on-primary-fixed-variant": "#1b448c",
+                      "on-tertiary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-container": "#474000",
+                      "on-surface-variant": "#434651",
+                      "on-primary-fixed": "#001944",
+                      "background": "#fcf9f9",
+                      "tertiary-fixed-dim": "#dbc826",
+                      "surface-container-high": "#eae7e7",
+                      "secondary-fixed": "#ffdcbe",
+                      "on-tertiary-fixed": "#201c00",
+                      "on-error": "#ffffff",
+                      "surface-container-low": "#f6f3f3",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container": "#f0eded",
+                      "on-surface": "#1b1b1c",
+                      "surface-tint": "#385ca5",
+                      "secondary-fixed-dim": "#ffb871",
+                      "tertiary": "#695f00",
+                      "surface-bright": "#fcf9f9",
+                      "on-primary-container": "#86a8f7",
+                      "secondary-container": "#fe9812",
+                      "on-secondary-fixed-variant": "#6a3c00",
+                      "inverse-on-surface": "#f3f0f0",
+                      "on-error-container": "#93000a",
+                      "inverse-primary": "#afc6ff",
+                      "outline": "#747782",
+                      "secondary": "#8b5000"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "12px",
+                      "lg": "48px",
+                      "margin-mobile": "16px",
+                      "base": "8px",
+                      "xl": "80px",
+                      "gutter": "24px",
+                      "xs": "4px",
+                      "md": "24px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Hanken Grotesk", "sans-serif"],
+                      "body-lg": ["Hanken Grotesk", "sans-serif"],
+                      "body-md": ["Hanken Grotesk", "sans-serif"],
+                      "headline-md": ["Hanken Grotesk", "sans-serif"],
+                      "label-sm": ["Hanken Grotesk", "sans-serif"],
+                      "emphasis": ["Hanken Grotesk", "sans-serif"],
+                      "headline-lg-mobile": ["Hanken Grotesk", "sans-serif"],
+                      "headline-lg": ["Hanken Grotesk", "sans-serif"]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Hanken Grotesk', sans-serif;
+        }
+        /* Ambient pattern mimicking Afro geometric watermark overlay at 5% opacity */
+        .ambient-pattern {
+            background-image: repeating-linear-gradient(45deg, var(--tw-colors-primary-fixed) 0, var(--tw-colors-primary-fixed) 1px, transparent 1px, transparent 10px),
+                              repeating-linear-gradient(-45deg, var(--tw-colors-primary-fixed) 0, var(--tw-colors-primary-fixed) 1px, transparent 1px, transparent 10px);
+            opacity: 0.05;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col relative antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<div class="ambient-pattern absolute inset-0 z-[-1] pointer-events-none" data-alt="A subtle, highly transparent geometric background pattern intersecting at 45 degree angles, utilizing soft blue tones. The pattern serves as a modern, culturally inspired watermark over a bright, clean, light-grey canvas, creating a structured yet airy corporate aesthetic."></div>
+<!-- Minimal Header for Focused View (Onboarding) -->
+<header class="bg-primary text-on-primary py-sm px-margin-mobile md:px-margin-desktop flex items-center justify-between sticky top-0 z-10 shadow-sm">
+<button class="flex items-center gap-xs text-on-primary hover:text-primary-fixed transition-colors group">
+<span class="material-symbols-outlined text-[20px] group-hover:-translate-x-1 transition-transform">arrow_back</span>
+<span class="text-emphasis font-medium">Back to Profile</span>
+</button>
+<div class="text-headline-md font-bold tracking-tight text-on-primary">MIF <span class="text-secondary-fixed">NGN</span></div>
+<div class="w-20"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Wizard Content -->
+<main class="flex-1 flex flex-col items-center w-full max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop py-lg md:py-xl">
+<div class="w-full max-w-3xl bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-surface-variant p-md md:p-lg">
+<!-- Progress Indicator -->
+<div class="flex flex-col gap-sm mb-lg">
+<div class="flex justify-between items-end">
+<span class="text-label-sm font-bold text-outline tracking-[0.05em] uppercase">Step 3 of 4</span>
+<span class="text-label-sm font-bold text-primary tracking-[0.05em] uppercase">Professional Context</span>
+</div>
+<div class="flex gap-xs h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="bg-primary w-1/4 rounded-full"></div>
+<div class="bg-primary w-1/4 rounded-full"></div>
+<div class="bg-primary w-1/4 rounded-full relative">
+<div class="absolute inset-0 bg-white/20 animate-pulse"></div>
+</div>
+<div class="bg-surface-variant w-1/4 rounded-full"></div>
+</div>
+</div>
+<!-- Title & Subtitle -->
+<div class="mb-lg">
+<h1 class="text-display-lg font-bold text-on-background leading-tight mb-xs">Professional Context</h1>
+<p class="text-body-lg text-on-surface-variant max-w-2xl">Help us tailor your network experience by telling us about your current leadership role and primary areas of focus.</p>
+</div>
+<!-- Form Grid -->
+<form class="flex flex-col gap-lg">
+<!-- Row 1: Role & Organisation -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="flex flex-col gap-xs">
+<label class="text-emphasis font-medium text-on-background">Role</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-sm text-outline">work_outline</span>
+<input class="w-full pl-[40px] pr-sm py-[14px] bg-surface-container-low border border-outline-variant rounded-lg text-body-md text-on-background focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-outline focus:bg-surface-container-lowest" placeholder="e.g. Director of Policy" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="text-emphasis font-medium text-on-background">Organisation</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-sm text-outline">domain</span>
+<input class="w-full pl-[40px] pr-sm py-[14px] bg-surface-container-low border border-outline-variant rounded-lg text-body-md text-on-background focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-outline focus:bg-surface-container-lowest" placeholder="e.g. Ministry of Health" type="text"/>
+</div>
+</div>
+</div>
+<!-- Row 2: Sector Multi-select -->
+<div class="flex flex-col gap-sm">
+<div class="flex justify-between items-end mb-xs">
+<label class="text-emphasis font-medium text-on-background">Sector</label>
+<span class="text-label-sm text-outline font-medium">Select up to 3</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-sm">
+<!-- Selected State -->
+<div class="flex items-center justify-between p-sm border-2 border-primary bg-primary-fixed rounded-lg cursor-pointer transition-all shadow-sm">
+<span class="text-emphasis font-medium text-on-primary-fixed-variant">Public Sector</span>
+<span class="material-symbols-outlined text-primary" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- Unselected States -->
+<div class="flex items-center justify-between p-sm border border-outline-variant bg-surface-container-lowest rounded-lg cursor-pointer hover:border-outline hover:bg-surface-container-low transition-all">
+<span class="text-emphasis font-medium text-on-surface-variant">Technology &amp; AI</span>
+<span class="material-symbols-outlined text-outline-variant">add_circle</span>
+</div>
+<div class="flex items-center justify-between p-sm border border-outline-variant bg-surface-container-lowest rounded-lg cursor-pointer hover:border-outline hover:bg-surface-container-low transition-all">
+<span class="text-emphasis font-medium text-on-surface-variant">Finance &amp; Economy</span>
+<span class="material-symbols-outlined text-outline-variant">add_circle</span>
+</div>
+<!-- Selected State 2 -->
+<div class="flex items-center justify-between p-sm border-2 border-primary bg-primary-fixed rounded-lg cursor-pointer transition-all shadow-sm">
+<span class="text-emphasis font-medium text-on-primary-fixed-variant">Education</span>
+<span class="material-symbols-outlined text-primary" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex items-center justify-between p-sm border border-outline-variant bg-surface-container-lowest rounded-lg cursor-pointer hover:border-outline hover:bg-surface-container-low transition-all">
+<span class="text-emphasis font-medium text-on-surface-variant">Healthcare</span>
+<span class="material-symbols-outlined text-outline-variant">add_circle</span>
+</div>
+<div class="flex items-center justify-between p-sm border border-outline-variant bg-surface-container-lowest rounded-lg cursor-pointer hover:border-outline hover:bg-surface-container-low transition-all">
+<span class="text-emphasis font-medium text-on-surface-variant">Non-Profit / NGO</span>
+<span class="material-symbols-outlined text-outline-variant">add_circle</span>
+</div>
+</div>
+</div>
+<!-- Row 3: Areas of Expertise Tag Input -->
+<div class="flex flex-col gap-xs mt-sm">
+<div class="flex flex-col mb-xs">
+<label class="text-emphasis font-medium text-on-background">Areas of Expertise</label>
+<p class="text-body-md text-outline text-sm mt-xs">Type a keyword and press enter to add specific skills (e.g., Data Analysis, Civic Engagement).</p>
+</div>
+<div class="flex flex-wrap items-center gap-sm p-sm min-h-[60px] bg-surface-container-low border border-outline-variant rounded-lg focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all focus-within:bg-surface-container-lowest">
+<!-- Tags -->
+<span class="flex items-center gap-xs pl-sm pr-xs py-[6px] bg-secondary-fixed text-on-secondary-fixed-variant rounded-full text-label-sm font-medium border border-secondary-fixed-dim/50 shadow-sm">
+                            Public Policy
+                            <button class="flex items-center justify-center rounded-full hover:bg-white/50 transition-colors p-[2px]" type="button">
+<span class="material-symbols-outlined text-[16px] text-on-secondary-fixed-variant">close</span>
+</button>
+</span>
+<span class="flex items-center gap-xs pl-sm pr-xs py-[6px] bg-secondary-fixed text-on-secondary-fixed-variant rounded-full text-label-sm font-medium border border-secondary-fixed-dim/50 shadow-sm">
+                            Digital Transformation
+                            <button class="flex items-center justify-center rounded-full hover:bg-white/50 transition-colors p-[2px]" type="button">
+<span class="material-symbols-outlined text-[16px] text-on-secondary-fixed-variant">close</span>
+</button>
+</span>
+<!-- Input -->
+<input class="flex-1 min-w-[150px] bg-transparent outline-none text-body-md text-on-background placeholder:text-outline border-none focus:ring-0 p-0 h-[32px]" placeholder="Add expertise..." type="text"/>
+</div>
+</div>
+<!-- Form Actions / Footer -->
+<div class="flex flex-col-reverse sm:flex-row items-center justify-between gap-md mt-md pt-md border-t border-surface-variant">
+<button class="w-full sm:w-auto px-lg py-sm text-primary font-medium hover:bg-primary-fixed rounded-lg transition-colors focus:ring-2 focus:ring-primary focus:outline-none" type="button">
+                        Save as Draft
+                    </button>
+<button class="w-full sm:w-auto flex items-center justify-center gap-xs px-lg py-sm bg-primary text-on-primary rounded-lg font-medium hover:bg-on-primary-fixed transition-colors shadow-[0_4px_14px_rgba(0,38,94,0.2)] focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:outline-none" type="button">
+<span>Continue to Step 4</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</main>
+</body></html>

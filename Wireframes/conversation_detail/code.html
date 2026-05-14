@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Conversation Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#f0eded",
+                    "surface": "#fcf9f9",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#c4c6d2",
+                    "on-secondary-container": "#653900",
+                    "secondary-container": "#fe9812",
+                    "surface-dim": "#dcd9d9",
+                    "on-tertiary-fixed-variant": "#4f4700",
+                    "secondary-fixed": "#ffdcbe",
+                    "inverse-on-surface": "#f3f0f0",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#1b1b1c",
+                    "surface-container-highest": "#e5e2e2",
+                    "secondary-fixed-dim": "#ffb871",
+                    "tertiary-fixed-dim": "#dbc826",
+                    "outline": "#747782",
+                    "surface-tint": "#385ca5",
+                    "surface-container-high": "#eae7e7",
+                    "primary-container": "#0e3b83",
+                    "on-primary-fixed-variant": "#1b448c",
+                    "tertiary-fixed": "#f9e544",
+                    "on-secondary-fixed": "#2d1600",
+                    "on-primary-fixed": "#001944",
+                    "surface-bright": "#fcf9f9",
+                    "on-surface-variant": "#434651",
+                    "primary-fixed-dim": "#afc6ff",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#303031",
+                    "on-secondary-fixed-variant": "#6a3c00",
+                    "surface-variant": "#e5e2e2",
+                    "tertiary": "#695f00",
+                    "inverse-primary": "#afc6ff",
+                    "on-error-container": "#93000a",
+                    "on-background": "#1b1b1c",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f6f3f3",
+                    "primary-fixed": "#d9e2ff",
+                    "tertiary-container": "#bead00",
+                    "on-tertiary-fixed": "#201c00",
+                    "error-container": "#ffdad6",
+                    "primary": "#00265e",
+                    "on-tertiary-container": "#474000",
+                    "on-primary-container": "#ffffff",
+                    "secondary": "#8b5000",
+                    "background": "#fcf9f9",
+                    "error": "#ba1a1a",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "gutter": "24px",
+                    "sm": "12px",
+                    "md": "24px",
+                    "margin-desktop": "64px",
+                    "lg": "48px",
+                    "base": "8px",
+                    "xl": "80px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Hanken Grotesk"],
+                    "emphasis": ["Hanken Grotesk"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                    "emphasis": ["16px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "300"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "300"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-background antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+<div class="relative flex h-auto min-h-screen w-full max-w-md mx-auto flex-col bg-surface group/design-root overflow-x-hidden shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border-x border-outline-variant/30">
+<!-- Header -->
+<div class="flex items-center bg-surface p-4 pb-2 justify-between border-b border-surface-container-high sticky top-0 z-10">
+<button aria-label="Go back" class="text-on-surface flex size-12 shrink-0 items-center justify-center hover:bg-surface-container-low rounded-full transition-colors" data-icon="ArrowLeft" data-size="24px">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<h2 class="text-on-surface text-headline-md tracking-[-0.015em] flex-1 ml-2">John Doe</h2>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 shrink-0 border border-outline-variant/50" data-alt="A close-up, professional portrait of a young African male leader smiling confidently. The lighting is bright and modern, creating a clean light-mode aesthetic. The background is a soft, blurred corporate environment with subtle hints of MIF Blue and Orange." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDPR0SbBRq3ZGCJxSqHIhlCFXdiGLZH8DJrmZ2ePzyjsD5rZU23IyavL5_xxVpGDKFeXtaSBQ9D4ir6vX5HtQGPrKuqDc9E8D-d6maHv8IgQL_zMDR4X10AomqS7izCV-Ni0MERWARoxbYbPGqrMU_pwYigTqyT-KktGmCQui2yu50QrwPUw_yc5L8Eotzhn3WsUNscbOetqzgLUj9mgRvcpRXgSwyxp-rz1jx2uL2l1hanpacEqBU8Y7ioJazUYCFbqrcccFXXzby6");'></div>
+</div>
+<!-- Chat Area -->
+<div class="flex flex-col flex-1 overflow-y-auto p-4 gap-6 bg-background">
+<!-- Partner Message -->
+<div class="flex items-end gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-8 shrink-0 mb-1" data-alt="A close-up, professional portrait of a young African male leader smiling confidently. The lighting is bright and modern, creating a clean light-mode aesthetic. The background is a soft, blurred corporate environment with subtle hints of MIF Blue and Orange." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBYDaJQM7OJ_-6pXz6B35iZLebPFn5-d-3HRqKZwfwzjI1zTnapZWpmU600fnDZYOZpZrLi5WtNsoVtzUaILn_aPs5l1gdWbs5YNnUDzcW0AoKu7VMJXdQRIJ_LEcdO4AFEouidv1gsuMv3nlcmF05qJ2ApLctV2EAHTmCDMXfSg_1lSfAECmOvQvegi9hvvyGdqr2Nm4alYtFzkh3AFqMMexFmnpEGUX3fsrnIL2zPn_nazIhVDLXhXXP4m53m_dRd8cc8dbtJRt8u");'></div>
+<div class="flex flex-1 flex-col gap-1 items-start">
+<p class="text-on-surface-variant text-label-sm ml-1">John Doe • 10:42 AM</p>
+<div class="flex max-w-[85%] rounded-2xl rounded-bl-sm px-4 py-3 bg-surface-container-high text-on-surface shadow-[0px_4px_20px_rgba(0,0,0,0.05)] text-body-md">
+                    Hey, how are you doing? Are we still on for the leadership sync later today?
+                </div>
+</div>
+</div>
+<!-- Own Message -->
+<div class="flex items-end gap-3 justify-end mt-2">
+<div class="flex flex-1 flex-col gap-1 items-end">
+<p class="text-on-surface-variant text-label-sm mr-1">Me • 10:45 AM</p>
+<div class="flex max-w-[85%] rounded-2xl rounded-br-sm px-4 py-3 bg-primary-container text-on-primary-container shadow-[0px_4px_20px_rgba(0,0,0,0.05)] text-body-md">
+                    I'm doing well, thanks! Yes, absolutely. I've prepared the notes on the new initiative. I'll send them over now.
+                </div>
+</div>
+</div>
+<!-- Partner Message -->
+<div class="flex items-end gap-3 mt-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-8 shrink-0 mb-1" data-alt="A close-up, professional portrait of a young African male leader smiling confidently. The lighting is bright and modern, creating a clean light-mode aesthetic. The background is a soft, blurred corporate environment with subtle hints of MIF Blue and Orange." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDpvxAIQ3FFAUeJfmSVxuLocNfED5uZuGN-UoAS8X9g3-EkUEpCXxigPvWqbjz_AG_cZPlVv02an9Onj1hkuTV--Vg_2Jg_FiH6OlyTM4yiEgDuFLZo_0L5HFuY3y9KWwQnBh2z-zNjZmo-jbIKotEf0X3d6dlFtK1_1gipD-0LRAzXQ-Jt1vgA_eCKQKx7ejRLo0xK7_TSViQlnWP77zL5cpT_q08HrcY5vqpOaAd3bPfWA_Ck7o4lyGq8ed41lzapGYccWwaHaEgQ");'></div>
+<div class="flex flex-1 flex-col gap-1 items-start">
+<p class="text-on-surface-variant text-label-sm ml-1">John Doe • 10:48 AM</p>
+<div class="flex max-w-[85%] rounded-2xl rounded-bl-sm px-4 py-3 bg-surface-container-high text-on-surface shadow-[0px_4px_20px_rgba(0,0,0,0.05)] text-body-md">
+                    Great! Did you get the foundational documents I sent over yesterday? We should review those first.
+                </div>
+</div>
+</div>
+</div>
+<!-- Composer -->
+<div class="flex items-center px-4 py-3 gap-3 bg-surface border-t border-surface-container-high sticky bottom-0 w-full z-10 shadow-[0px_-4px_20px_rgba(0,0,0,0.05)]">
+<button aria-label="Attach file" class="flex items-center justify-center p-2 text-outline hover:text-primary transition-colors rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-[24px]" data-icon="Paperclip">attach_file</span>
+</button>
+<label class="flex flex-col flex-1 h-12">
+<div class="flex w-full flex-1 items-stretch rounded-full h-full bg-surface-container-low border border-outline-variant focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-full rounded-r-none text-on-surface focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-outline px-4 text-body-md" placeholder="Type a message..." value=""/>
+<div class="flex items-center justify-center pr-2 rounded-r-full bg-transparent">
+<button aria-label="Voice message" class="flex items-center justify-center p-2 text-outline hover:text-primary transition-colors rounded-full">
+<span class="material-symbols-outlined text-[20px]" data-icon="Microphone">mic</span>
+</button>
+</div>
+</div>
+</label>
+<button aria-label="Send message" class="flex items-center justify-center size-12 rounded-full bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed transition-colors shadow-[0px_8px_30px_rgba(0,0,0,0.10)] shrink-0">
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</div>
+</div>
+</body></html>

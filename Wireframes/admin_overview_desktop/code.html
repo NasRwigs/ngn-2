@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Dashboard - Overview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#bead00",
+                        "on-tertiary-fixed-variant": "#4f4700",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#f9e544",
+                        "outline-variant": "#c4c6d2",
+                        "on-secondary-fixed": "#2d1600",
+                        "inverse-surface": "#303031",
+                        "primary-fixed-dim": "#afc6ff",
+                        "on-background": "#1b1b1c",
+                        "surface": "#fcf9f9",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#0e3b83",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e5e2e2",
+                        "on-secondary-container": "#653900",
+                        "primary-fixed": "#d9e2ff",
+                        "surface-dim": "#dcd9d9",
+                        "surface-container-highest": "#e5e2e2",
+                        "primary": "#00265e",
+                        "on-primary-fixed-variant": "#1b448c",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#474000",
+                        "on-surface-variant": "#434651",
+                        "on-primary-fixed": "#001944",
+                        "background": "#fcf9f9",
+                        "tertiary-fixed-dim": "#dbc826",
+                        "surface-container-high": "#eae7e7",
+                        "secondary-fixed": "#ffdcbe",
+                        "on-tertiary-fixed": "#201c00",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f6f3f3",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#f0eded",
+                        "on-surface": "#1b1b1c",
+                        "surface-tint": "#385ca5",
+                        "secondary-fixed-dim": "#ffb871",
+                        "tertiary": "#695f00",
+                        "surface-bright": "#fcf9f9",
+                        "on-primary-container": "#86a8f7",
+                        "secondary-container": "#fe9812",
+                        "on-secondary-fixed-variant": "#6a3c00",
+                        "inverse-on-surface": "#f3f0f0",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#afc6ff",
+                        "outline": "#747782",
+                        "secondary": "#8b5000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "lg": "48px",
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "xl": "80px",
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "emphasis": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "300" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "300" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "emphasis": ["16px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex">
+<!-- Sidebar Component -->
+<div class="relative flex h-auto min-h-screen w-[280px] flex-col bg-surface-container-low border-r border-outline-variant shrink-0 z-10 shadow-[4px_0px_20px_rgba(0,0,0,0.05)]">
+<div class="flex h-full flex-col justify-between p-md">
+<div class="flex flex-col gap-lg">
+<div class="flex gap-sm items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12 shadow-[0px_4px_20px_rgba(0,0,0,0.05)]" data-alt="A professional headshot avatar placeholder for a Super Admin profile picture. The style is clean, modern, and suitable for a corporate dashboard light mode environment with subtle shadow depth." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC2l7LJIj1qIhJLB6qeW2TJPbjBgrdtmbmpP9vvQdQJm3cWTO5qJA2N3hJHLNCGcF89vG8HkN2dl0AQW_qN9BH46SuvsIjrK-n703Izteez3pIki9wFXBALRBFB7mF3zUxt2ayDAglo7kkfBMEIQKnU6BIoN54OGOxUIzlxRCWmYnsh9BHZGu8ZDlCTGs18VNxxjwC4L1GE2ShcA_gsOwTNCIZuo3O2yMTc4k2yWPktlVkmNCP-MLuHXMKbmSzAZ1ExZvrPr4NnZWGJ");'></div>
+<div class="flex flex-col">
+<h1 class="text-on-background font-emphasis text-emphasis leading-normal">Admin Dashboard</h1>
+<p class="text-on-surface-variant font-body-md text-sm leading-normal">Super Admin</p>
+</div>
+</div>
+<nav class="flex flex-col gap-xs">
+<a class="flex items-center gap-sm px-sm py-base rounded-lg bg-primary-container text-on-primary shadow-[0px_4px_20px_rgba(0,0,0,0.05)] transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<p class="font-emphasis text-emphasis leading-normal">Overview</p>
+</a>
+<a class="flex items-center gap-sm px-sm py-base rounded-lg hover:bg-surface-container-high text-on-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<p class="font-emphasis text-emphasis leading-normal">Members</p>
+</a>
+<a class="flex items-center gap-sm px-sm py-base rounded-lg hover:bg-surface-container-high text-on-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined">link</span>
+<p class="font-emphasis text-emphasis leading-normal">Mentorships</p>
+</a>
+<a class="flex items-center gap-sm px-sm py-base rounded-lg hover:bg-surface-container-high text-on-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<p class="font-emphasis text-emphasis leading-normal">Reports</p>
+</a>
+<a class="flex items-center gap-sm px-sm py-base rounded-lg hover:bg-surface-container-high text-on-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="font-emphasis text-emphasis leading-normal">Settings</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-md">
+<button class="flex w-full cursor-pointer items-center justify-center rounded-lg h-12 px-md bg-secondary-container text-on-secondary-container font-emphasis text-emphasis shadow-[0px_8px_30px_rgba(0,0,0,0.10)] hover:bg-opacity-90 transition-all">
+<span class="truncate">Invite Member</span>
+</button>
+<div class="flex flex-col gap-xs border-t border-outline-variant pt-sm">
+<a class="flex items-center gap-sm px-sm py-base rounded-lg hover:bg-surface-container-high text-on-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined">help</span>
+<p class="font-emphasis text-emphasis leading-normal">Help Center</p>
+</a>
+<a class="flex items-center gap-sm px-sm py-base rounded-lg hover:bg-surface-container-high text-on-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<p class="font-emphasis text-emphasis leading-normal">Log Out</p>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto bg-background relative">
+<!-- Ambient Pattern Overlay -->
+<div class="absolute inset-0 opacity-5 pointer-events-none z-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48cGF0aCBkPSJNMCAwbDQwIDQwaC00MEgweiIgZmlsbD0iIzAwMjY1ZSIvPjwvc3ZnPg==')]"></div>
+<div class="max-w-[1280px] mx-auto p-margin-desktop relative z-10 flex flex-col gap-xl">
+<!-- Page Header -->
+<header>
+<h2 class="font-headline-lg text-headline-lg text-on-background">Overview</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-xs">Platform health and key metrics at a glance.</p>
+</header>
+<!-- Top Stats Row -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="bg-surface rounded-lg p-md shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border-t-[4px] border-primary-container flex flex-col gap-base">
+<p class="font-emphasis text-emphasis text-on-surface-variant">Total Members</p>
+<p class="font-headline-lg text-headline-lg text-on-background">1,245</p>
+<p class="font-label-sm text-label-sm text-[#07883b] flex items-center gap-xs"><span class="material-symbols-outlined text-sm">trending_up</span> +12%</p>
+</div>
+<div class="bg-surface rounded-lg p-md shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border-t-[4px] border-secondary-container flex flex-col gap-base">
+<p class="font-emphasis text-emphasis text-on-surface-variant">Active Pairs</p>
+<p class="font-headline-lg text-headline-lg text-on-background">432</p>
+<p class="font-label-sm text-label-sm text-error flex items-center gap-xs"><span class="material-symbols-outlined text-sm">trending_down</span> -2%</p>
+</div>
+<div class="bg-surface rounded-lg p-md shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border-t-[4px] border-tertiary-container flex flex-col gap-base">
+<p class="font-emphasis text-emphasis text-on-surface-variant">Pending Requests</p>
+<p class="font-headline-lg text-headline-lg text-on-background">56</p>
+<p class="font-label-sm text-label-sm text-[#07883b] flex items-center gap-xs"><span class="material-symbols-outlined text-sm">trending_up</span> +5%</p>
+</div>
+<div class="bg-surface rounded-lg p-md shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border-t-[4px] border-primary-fixed flex flex-col gap-base">
+<p class="font-emphasis text-emphasis text-on-surface-variant">Avg Duration</p>
+<p class="font-headline-lg text-headline-lg text-on-background">4.2 Mo</p>
+<p class="font-label-sm text-label-sm text-[#07883b] flex items-center gap-xs"><span class="material-symbols-outlined text-sm">trending_up</span> +1%</p>
+</div>
+</section>
+<!-- Charts Section -->
+<section class="flex flex-col gap-md">
+<h3 class="font-headline-md text-headline-md text-on-background">Mentorship Health &amp; Activity</h3>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<!-- Member Activity Chart -->
+<div class="bg-surface rounded-lg shadow-[0px_4px_20px_rgba(0,0,0,0.05)] p-md flex flex-col gap-md">
+<div>
+<p class="font-emphasis text-emphasis text-on-surface-variant">Member Activity</p>
+<div class="flex justify-between items-end">
+<p class="font-headline-md text-headline-md text-on-background mt-xs">Active Engagements</p>
+<p class="font-label-sm text-label-sm text-[#07883b]">+8% vs Last 6 Mo</p>
+</div>
+</div>
+<div class="flex-1 min-h-[200px] bg-surface-container-lowest rounded border border-outline-variant p-sm flex flex-col justify-end relative">
+<!-- Faux Line Chart using SVG -->
+<svg class="absolute inset-0 w-full h-[80%] bottom-0" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M0,80 Q10,60 20,70 T40,50 T60,60 T80,30 T100,40" fill="none" stroke="#0e3b83" stroke-linecap="round" stroke-width="2"></path>
+<path d="M0,80 Q10,60 20,70 T40,50 T60,60 T80,30 T100,40 L100,100 L0,100 Z" fill="url(#blue-grad)" opacity="0.2"></path>
+<defs>
+<lineargradient id="blue-grad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#0e3b83"></stop>
+<stop offset="100%" stop-color="#ffffff" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="flex justify-between w-full z-10 pt-sm mt-auto border-t border-outline-variant">
+<span class="font-label-sm text-label-sm text-outline">Jan</span>
+<span class="font-label-sm text-label-sm text-outline">Feb</span>
+<span class="font-label-sm text-label-sm text-outline">Mar</span>
+<span class="font-label-sm text-label-sm text-outline">Apr</span>
+<span class="font-label-sm text-label-sm text-outline">May</span>
+<span class="font-label-sm text-label-sm text-outline">Jun</span>
+</div>
+</div>
+</div>
+<!-- Mentorship Health Index -->
+<div class="bg-surface rounded-lg shadow-[0px_4px_20px_rgba(0,0,0,0.05)] p-md flex flex-col gap-md">
+<div>
+<p class="font-emphasis text-emphasis text-on-surface-variant">Mentorship Health Index</p>
+<div class="flex justify-between items-end">
+<p class="font-headline-md text-headline-md text-on-background mt-xs">85% Healthy</p>
+<p class="font-label-sm text-label-sm text-[#07883b]">+3% Current Month</p>
+</div>
+</div>
+<div class="flex-1 min-h-[200px] flex items-end justify-around gap-sm pt-md">
+<!-- Faux Bar Chart -->
+<div class="flex flex-col items-center gap-xs w-full">
+<div class="w-full bg-primary-fixed rounded-t-sm relative group h-[140px]">
+<div class="absolute bottom-0 w-full bg-primary-container rounded-t-sm transition-all" style="height: 80%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Excellent</span>
+</div>
+<div class="flex flex-col items-center gap-xs w-full">
+<div class="w-full bg-primary-fixed rounded-t-sm relative h-[140px]">
+<div class="absolute bottom-0 w-full bg-secondary-container rounded-t-sm transition-all" style="height: 60%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Good</span>
+</div>
+<div class="flex flex-col items-center gap-xs w-full">
+<div class="w-full bg-primary-fixed rounded-t-sm relative h-[140px]">
+<div class="absolute bottom-0 w-full bg-tertiary-container rounded-t-sm transition-all" style="height: 30%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Fair</span>
+</div>
+<div class="flex flex-col items-center gap-xs w-full">
+<div class="w-full bg-primary-fixed rounded-t-sm relative h-[140px]">
+<div class="absolute bottom-0 w-full bg-error rounded-t-sm transition-all" style="height: 15%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline">At Risk</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Requires Attention Section -->
+<section class="flex flex-col gap-md">
+<h3 class="font-headline-md text-headline-md text-on-background flex items-center gap-sm">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">warning</span>
+                    Requires Attention
+                </h3>
+<div class="bg-surface rounded-lg shadow-[0px_4px_20px_rgba(0,0,0,0.05)] overflow-hidden">
+<div class="grid grid-cols-[1fr_2fr_1fr_auto] gap-sm p-sm border-b border-outline-variant bg-surface-container-low font-label-sm text-label-sm text-on-surface-variant uppercase">
+<div>Status</div>
+<div>Mentorship Pair</div>
+<div>Last Contact</div>
+<div>Action</div>
+</div>
+<!-- List Item 1 -->
+<div class="grid grid-cols-[1fr_2fr_1fr_auto] gap-sm p-sm border-b border-outline-variant items-center hover:bg-surface-container-lowest transition-colors">
+<div class="flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-emphasis text-emphasis text-error">Stalled</span>
+</div>
+<div class="flex items-center gap-sm">
+<div class="flex -space-x-2">
+<img alt="Avatar" class="w-8 h-8 rounded-full border-2 border-surface" data-alt="Small circular avatar placeholder for a mentor profile picture, clean minimal corporate style, light mode environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp6qWMOLcW6bVA3PF8jNGKpCP6vDn6Ub7NY254VibtMdplB29UxZIOkjgvuNErjf0jzZQyHLZKjITpqGzuybDp6q7AiUzyS8xmEky_2D6Ni4WwIzReBDZem3bk1J5vUIviNK73n709Fs77jaZEhtWfAnvu4U3XC9gdqepzzXRJoO-Br2RI_7O-tcBN89qTSN8cikhuOMvQ5gB7rTzB6L4b3yzMCgZEvhPfIIaaQW9Gus1ckpmfR-jqtzI8YwkKjda9ydNsaOxIOeW8"/>
+<img alt="Avatar" class="w-8 h-8 rounded-full border-2 border-surface" data-alt="Small circular avatar placeholder for a mentee profile picture, clean minimal corporate style, light mode environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdlL338-cmLGPkXvNsP2Pxrzi8iF6s9uVki5DrBFwhXaFtakAo7TYm-x6j1AbRFrZHIlEJrumrY3pDA93OzGx2Q-AB_xYBJlt_nUgkViEwnbSo2AGDmyjGGNu3QI4Q8DvV4O2CTZOfiRYFbT1YH7AYDyCoCt68o2Mju29K0FHD5QXnQcHyi3ENYWpqM6xSfuzWOYQpLxH6rmwVais6TjGqh95D5mg1CaeDFrlqxThuIvT2WnfHP2zLEQwTb9i0JBlHc3uQPeK7bC7l"/>
+</div>
+<span class="font-body-md text-body-md text-on-background">Sarah J. &amp; Kwame O.</span>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant">4 weeks ago</div>
+<div>
+<button class="px-sm py-xs border-2 border-primary-container text-primary-container rounded font-label-sm hover:bg-primary-container hover:text-on-primary transition-colors">Review</button>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="grid grid-cols-[1fr_2fr_1fr_auto] gap-sm p-sm border-b border-outline-variant items-center hover:bg-surface-container-lowest transition-colors">
+<div class="flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+<span class="font-emphasis text-emphasis text-tertiary-container">Conflict</span>
+</div>
+<div class="flex items-center gap-sm">
+<div class="flex -space-x-2">
+<img alt="Avatar" class="w-8 h-8 rounded-full border-2 border-surface" data-alt="Small circular avatar placeholder for a mentor profile picture, clean minimal corporate style, light mode environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADJqvrJvmLHK8SqQCLhwBSRqIzDdrDJaw7-UT1jXtLMS08rZpPLV-NoHZzOo4JXRNppsy7_xPC7TYTRLkvqPWoU_24NiOMY0QgICMkMDbYo8DG9OYjbntUOYK2UYYjQQ6t3TPjAKaFPF_ewTY__j4fk9RfqlbjBoZukJYUPSgSkwwLOWmTaJjgPSvmkQ06sjh3C_CtzLcACWzCc8bt-w108Saw92LxlM4p4LJ9Ch8DkkEfE8sqgQsgbEI4psG3FBDJBiN6DczAW0Z5"/>
+<img alt="Avatar" class="w-8 h-8 rounded-full border-2 border-surface" data-alt="Small circular avatar placeholder for a mentee profile picture, clean minimal corporate style, light mode environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzIGOkLXjQgkKOTUwdlVjesWbcaVxJOcI-iNywS2WEU1UZWiqDeO4QebofHv2QB_qz3rAzl3iXDErPemnnOOrPypWWJSHXe6Toc2ShW9ySfO7L5mJ7cOAH7EHkuoX006X8wTgNx1YvGDgO9JYmHbHz7-vVDISFbI6_19FQHOQyuonoHa2-8tCbxyF3v_4TF1LxOHYnxXp7chxDTDNSJo-UCZ7Wjp4TCKa8iUUdyLTtsC5eGtGXRO9uBo3Z_35UVkH3EhFfg1QkOoKH"/>
+</div>
+<span class="font-body-md text-body-md text-on-background">David M. &amp; Amina B.</span>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant">2 days ago</div>
+<div>
+<button class="px-sm py-xs border-2 border-primary-container text-primary-container rounded font-label-sm hover:bg-primary-container hover:text-on-primary transition-colors">Review</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>

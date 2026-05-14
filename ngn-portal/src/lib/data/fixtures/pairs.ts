@@ -1,0 +1,131 @@
+import type { Pair, MentorshipRequest, Session } from "../types";
+
+export const PAIRS: Pair[] = [
+  {
+    id: "p_sarah_david",
+    mentorId: "m_david",
+    menteeId: "m_sarah",
+    status: "Active",
+    startedAt: "2026-01-15",
+    programmeMonths: 6,
+    monthsCompleted: 4,
+    cohort: "Cohort '26",
+    cadence: "biweekly",
+    nextMeetingAt: "2026-05-24T14:00:00Z",
+    goals: [
+      {
+        id: "g1",
+        title: "Master React Performance Optimization",
+        successCriteria: "Ship a performance-focused refactor to production with measurable LCP improvement.",
+        status: "in_progress",
+        notes: "Started with profiling foundation.",
+      },
+      {
+        id: "g2",
+        title: "Develop Design System Architecture",
+        successCriteria: "Document and adopt internal design tokens.",
+        status: "completed",
+      },
+      {
+        id: "g3",
+        title: "Lead a cross-team technical initiative",
+        successCriteria: "Lead one cross-team project end-to-end.",
+        status: "not_started",
+      },
+    ],
+  },
+  {
+    id: "p_kwame_amina",
+    mentorId: "m_amina",
+    menteeId: "m_kwame",
+    status: "Active",
+    startedAt: "2026-02-01",
+    programmeMonths: 6,
+    monthsCompleted: 3,
+    cohort: "Cohort '26",
+    cadence: "monthly",
+    nextMeetingAt: "2026-05-29T15:00:00Z",
+    goals: [
+      {
+        id: "g1",
+        title: "Transition to executive leadership",
+        successCriteria: "Land a Director-level role or earn equivalent scope.",
+        status: "in_progress",
+      },
+      {
+        id: "g2",
+        title: "Build executive presence",
+        successCriteria: "Deliver three external talks this cohort.",
+        status: "in_progress",
+      },
+    ],
+  },
+  {
+    id: "p_yusuf_amina",
+    mentorId: "m_amina",
+    menteeId: "m_yusuf",
+    status: "Pending",
+    startedAt: "2026-05-01",
+    programmeMonths: 6,
+    monthsCompleted: 0,
+    cohort: "Cohort '26",
+    cadence: "biweekly",
+    goals: [],
+  },
+];
+
+export const SESSIONS: Session[] = [
+  {
+    id: "s1",
+    pairId: "p_sarah_david",
+    date: "2026-04-20",
+    durationMinutes: 60,
+    format: "video",
+    notes: "Worked through profiling methodology. Identified two regressions to investigate.",
+    goalsDiscussed: ["g1"],
+    wellbeing: "good",
+  },
+  {
+    id: "s2",
+    pairId: "p_sarah_david",
+    date: "2026-04-06",
+    durationMinutes: 45,
+    format: "video",
+    notes: "Reviewed design tokens proposal. Ready to publish.",
+    goalsDiscussed: ["g2"],
+    wellbeing: "great",
+  },
+  {
+    id: "s3",
+    pairId: "p_sarah_david",
+    date: "2026-03-20",
+    durationMinutes: 60,
+    format: "video",
+    notes: "Kickoff for design system work.",
+    goalsDiscussed: ["g2"],
+    wellbeing: "great",
+  },
+  {
+    id: "s4",
+    pairId: "p_kwame_amina",
+    date: "2026-04-30",
+    durationMinutes: 60,
+    format: "video",
+    notes: "Career mapping conversation.",
+    goalsDiscussed: ["g1", "g2"],
+    wellbeing: "good",
+  },
+];
+
+export const MENTORSHIP_REQUESTS: MentorshipRequest[] = [
+  {
+    id: "r1",
+    fromUserId: "m_aisha",
+    toUserId: "m_fatou",
+    status: "pending",
+    motivation: "Looking for guidance on impact-finance career path.",
+    goals: "Build investment thesis skills. Land a fund role.",
+    preferredCadence: "monthly",
+    createdAt: "2026-05-05T10:00:00Z",
+  },
+];

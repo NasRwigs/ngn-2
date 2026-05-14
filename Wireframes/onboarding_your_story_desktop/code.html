@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding - Your Story</title>
+<!-- Google Fonts: Hanken Grotesk & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#bead00",
+                        "on-tertiary-fixed-variant": "#4f4700",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#f9e544",
+                        "outline-variant": "#c4c6d2",
+                        "on-secondary-fixed": "#2d1600",
+                        "inverse-surface": "#303031",
+                        "primary-fixed-dim": "#afc6ff",
+                        "on-background": "#1b1b1c",
+                        "surface": "#fcf9f9",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#0e3b83",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e5e2e2",
+                        "on-secondary-container": "#653900",
+                        "primary-fixed": "#d9e2ff",
+                        "surface-dim": "#dcd9d9",
+                        "surface-container-highest": "#e5e2e2",
+                        "primary": "#00265e",
+                        "on-primary-fixed-variant": "#1b448c",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#474000",
+                        "on-surface-variant": "#434651",
+                        "on-primary-fixed": "#001944",
+                        "background": "#fcf9f9",
+                        "tertiary-fixed-dim": "#dbc826",
+                        "surface-container-high": "#eae7e7",
+                        "secondary-fixed": "#ffdcbe",
+                        "on-tertiary-fixed": "#201c00",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f6f3f3",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#f0eded",
+                        "on-surface": "#1b1b1c",
+                        "surface-tint": "#385ca5",
+                        "secondary-fixed-dim": "#ffb871",
+                        "tertiary": "#695f00",
+                        "surface-bright": "#fcf9f9",
+                        "on-primary-container": "#86a8f7",
+                        "secondary-container": "#fe9812",
+                        "on-secondary-fixed-variant": "#6a3c00",
+                        "inverse-on-surface": "#f3f0f0",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#afc6ff",
+                        "outline": "#747782",
+                        "secondary": "#8b5000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "lg": "48px",
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "xl": "80px",
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Hanken Grotesk", "sans-serif"],
+                        "body-lg": ["Hanken Grotesk", "sans-serif"],
+                        "body-md": ["Hanken Grotesk", "sans-serif"],
+                        "headline-md": ["Hanken Grotesk", "sans-serif"],
+                        "label-sm": ["Hanken Grotesk", "sans-serif"],
+                        "emphasis": ["Hanken Grotesk", "sans-serif"],
+                        "headline-lg-mobile": ["Hanken Grotesk", "sans-serif"],
+                        "headline-lg": ["Hanken Grotesk", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "300" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "300" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "emphasis": ["16px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased">
+<!-- Shared Component Base (Strict Inclusion) -->
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-slate-50 group/design-root overflow-x-hidden" style='font-family: "Be Vietnam Pro", "Noto Sans", sans-serif;'>
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1 bg-surface shadow-[0px_4px_20px_rgba(0,0,0,0.05)] rounded-lg overflow-hidden border border-surface-variant">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-outline-variant px-10 py-4 bg-surface-container-lowest">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-primary text-headline-md tracking-[-0.015em]">NGN Portal</h2>
+</div>
+<div class="flex gap-4">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-6 bg-surface-container hover:bg-surface-container-high text-on-surface text-label-sm transition-colors">
+<span>Back</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-6 bg-secondary text-on-secondary text-label-sm font-bold shadow-[0px_4px_12px_rgba(243,144,0,0.2)] hover:bg-[#d97c00] transition-colors">
+<span>Save &amp; Continue</span>
+</button>
+</div>
+</header>
+<div class="flex flex-col gap-3 p-10 pb-4">
+<div class="flex gap-6 justify-between">
+<p class="text-on-surface text-emphasis">Step 4 of 5: Your Story</p>
+<p class="text-on-surface-variant text-label-sm">80% Completed</p>
+</div>
+<div class="rounded-full bg-surface-container overflow-hidden h-2">
+<div class="h-full rounded-full bg-primary" style="width: 80%;"></div>
+</div>
+</div>
+<div class="flex flex-wrap justify-between gap-3 px-10 py-6">
+<div class="flex min-w-72 flex-col gap-4">
+<h1 class="text-on-surface text-display-lg">Tell Us Your Story</h1>
+<p class="text-on-surface-variant text-body-lg max-w-2xl">Share your background, languages, and online presence to help the network understand your unique journey and expertise.</p>
+</div>
+</div>
+<!-- Form Content Area -->
+<div class="px-10 pb-12 flex flex-col gap-xl">
+<!-- Bio Section (from shared, adapted to theme classes for consistency in the injected area) -->
+<div class="flex flex-col gap-4">
+<div>
+<h2 class="text-on-surface text-headline-md">Professional Bio</h2>
+<p class="text-on-surface-variant text-body-md mt-1">A brief summary of your achievements and current focus.</p>
+</div>
+<div class="flex max-w-[640px] flex-wrap items-end gap-4">
+<label class="flex flex-col w-full">
+<textarea class="form-input flex w-full resize-y rounded-lg text-on-surface focus:ring-2 focus:ring-primary border border-outline-variant bg-surface-container-lowest focus:border-primary min-h-[160px] placeholder:text-outline p-4 text-body-md shadow-sm transition-shadow" placeholder="Write a short bio about yourself..."></textarea>
+</label>
+</div>
+</div>
+<!-- Injected New Fields -->
+<!-- Languages Multi-select -->
+<div class="flex flex-col gap-4 border-t border-surface-variant pt-lg">
+<div>
+<h2 class="text-on-surface text-headline-md">Languages Spoken</h2>
+<p class="text-on-surface-variant text-body-md mt-1">Select the languages you are fluent in to foster cross-border collaboration.</p>
+</div>
+<div class="relative max-w-[640px]">
+<div class="flex items-center w-full border border-outline-variant rounded-lg bg-surface-container-lowest p-3 shadow-sm focus-within:ring-2 focus-within:ring-primary focus-within:border-primary transition-all">
+<span class="material-symbols-outlined text-outline ml-1 mr-3" data-icon="language">language</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-body-md text-on-surface placeholder:text-outline p-0" placeholder="Search and add languages..." type="text"/>
+<span class="material-symbols-outlined text-outline ml-2 cursor-pointer hover:text-on-surface" data-icon="expand_more">expand_more</span>
+</div>
+<!-- Selected Chips -->
+<div class="flex flex-wrap gap-sm mt-4">
+<span class="inline-flex items-center bg-primary-fixed text-on-primary-fixed rounded-full px-4 py-1.5 text-emphasis shadow-sm border border-primary-fixed-dim">
+                                    English
+                                    <button class="ml-2 focus:outline-none hover:text-primary transition-colors flex items-center justify-center rounded-full hover:bg-white/20 p-0.5" type="button"><span class="material-symbols-outlined text-[18px]" data-icon="close">close</span></button>
+</span>
+<span class="inline-flex items-center bg-primary-fixed text-on-primary-fixed rounded-full px-4 py-1.5 text-emphasis shadow-sm border border-primary-fixed-dim">
+                                    French
+                                    <button class="ml-2 focus:outline-none hover:text-primary transition-colors flex items-center justify-center rounded-full hover:bg-white/20 p-0.5" type="button"><span class="material-symbols-outlined text-[18px]" data-icon="close">close</span></button>
+</span>
+<span class="inline-flex items-center bg-surface-container-highest text-on-surface rounded-full px-4 py-1.5 text-emphasis border border-outline-variant hover:bg-surface-variant cursor-pointer transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px] mr-1" data-icon="add">add</span>
+                                    Add Language
+                                </span>
+</div>
+</div>
+</div>
+<!-- Timezone Select -->
+<div class="flex flex-col gap-4 border-t border-surface-variant pt-lg">
+<div>
+<h2 class="text-on-surface text-headline-md">Timezone</h2>
+<p class="text-on-surface-variant text-body-md mt-1">This helps us coordinate events and meetings across the network.</p>
+</div>
+<div class="relative w-full max-w-[480px]">
+<select class="w-full appearance-none border border-outline-variant rounded-lg bg-surface-container-lowest p-4 pr-12 text-body-md text-on-surface focus:border-primary focus:ring-2 focus:ring-primary shadow-sm transition-shadow">
+<option disabled="" selected="" value="">Select your current timezone</option>
+<option>GMT (Greenwich Mean Time)</option>
+<option>WAT (West Africa Time)</option>
+<option>CAT (Central Africa Time)</option>
+<option>EAT (East Africa Time)</option>
+<option>SAST (South African Standard Time)</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-outline">
+<span class="material-symbols-outlined" data-icon="schedule">schedule</span>
+</div>
+</div>
+</div>
+<!-- Social Links -->
+<div class="flex flex-col gap-4 border-t border-surface-variant pt-lg">
+<div>
+<h2 class="text-on-surface text-headline-md">Online Presence</h2>
+<p class="text-on-surface-variant text-body-md mt-1">Connect your professional profiles so others can find your work.</p>
+</div>
+<div class="flex flex-col gap-md max-w-[640px]">
+<div class="flex flex-col gap-2">
+<label class="text-label-sm text-on-surface ml-1">LinkedIn URL</label>
+<div class="flex items-stretch w-full border border-outline-variant rounded-lg bg-surface-container-lowest overflow-hidden focus-within:border-primary focus-within:ring-2 focus-within:ring-primary shadow-sm transition-all">
+<div class="bg-surface-container px-4 py-3 border-r border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-outline" data-icon="link">link</span>
+</div>
+<input class="w-full border-none focus:ring-0 bg-transparent p-3 text-body-md text-on-surface placeholder:text-outline" placeholder="https://linkedin.com/in/yourprofile" type="url"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-sm text-on-surface ml-1">Personal Website <span class="text-outline font-normal">(Optional)</span></label>
+<div class="flex items-stretch w-full border border-outline-variant rounded-lg bg-surface-container-lowest overflow-hidden focus-within:border-primary focus-within:ring-2 focus-within:ring-primary shadow-sm transition-all">
+<div class="bg-surface-container px-4 py-3 border-r border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-outline" data-icon="public">public</span>
+</div>
+<input class="w-full border-none focus:ring-0 bg-transparent p-3 text-body-md text-on-surface placeholder:text-outline" placeholder="https://yourwebsite.com" type="url"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- End Form Content Area -->
+</div>
+</div>
+</div>
+</div>
+</body></html>

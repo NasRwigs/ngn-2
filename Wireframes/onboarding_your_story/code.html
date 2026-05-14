@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Accept Invitation - Your Story</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#d9e2ff",
+                        "on-surface-variant": "#434651",
+                        "on-primary-fixed-variant": "#1b448c",
+                        "on-secondary-fixed-variant": "#6a3c00",
+                        "surface-tint": "#385ca5",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#f9e544",
+                        "tertiary-container": "#bead00",
+                        "secondary-fixed": "#ffdcbe",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#2d1600",
+                        "primary-container": "#0e3b83",
+                        "on-surface": "#1b1b1c",
+                        "on-tertiary-fixed-variant": "#4f4700",
+                        "outline": "#747782",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#1b1b1c",
+                        "on-primary-fixed": "#001944",
+                        "secondary-fixed-dim": "#ffb871",
+                        "surface-container-low": "#f6f3f3",
+                        "surface-container-highest": "#e5e2e2",
+                        "primary-fixed-dim": "#afc6ff",
+                        "on-tertiary-fixed": "#201c00",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#f0eded",
+                        "background": "#fcf9f9",
+                        "inverse-on-surface": "#f3f0f0",
+                        "secondary": "#8b5000",
+                        "on-primary-container": "#86a8f7",
+                        "surface-variant": "#e5e2e2",
+                        "surface": "#fcf9f9",
+                        "outline-variant": "#c4c6d2",
+                        "primary": "#00265e",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#dcd9d9",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#eae7e7",
+                        "secondary-container": "#fe9812",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#303031",
+                        "surface-bright": "#fcf9f9",
+                        "tertiary-fixed-dim": "#dbc826",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#afc6ff",
+                        "on-tertiary-container": "#474000",
+                        "on-secondary-container": "#653900",
+                        "tertiary": "#695f00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "xl": "80px",
+                        "sm": "12px",
+                        "md": "24px",
+                        "xs": "4px",
+                        "lg": "48px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "emphasis": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- Shared Component Container (Strict Literal Inclusion) -->
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-slate-50 group/design-root overflow-x-hidden" style='font-family: "Be Vietnam Pro", "Noto Sans", sans-serif;'>
+<!-- BEGIN SHARED COMPONENT LITERAL -->
+<div class="flex items-center bg-slate-50 p-4 pb-2 justify-between">
+<h2 class="text-[#0e131b] text-lg font-bold leading-tight tracking-[-0.015em] flex-1">Create Account</h2>
+</div>
+<div class="flex w-full flex-row items-center justify-center gap-3 py-5">
+<div class="h-2 w-2 rounded-full bg-[#d0d9e7]"></div>
+<div class="h-2 w-2 rounded-full bg-[#d0d9e7]"></div>
+<div class="h-2 w-2 rounded-full bg-[#d0d9e7]"></div>
+<div class="h-2 w-2 rounded-full bg-[#0e3b83]"></div>
+<div class="h-2 w-2 rounded-full bg-[#d0d9e7]"></div>
+</div>
+<h2 class="text-[#0e131b] tracking-light text-[28px] font-bold leading-tight px-4 text-left pb-3 pt-5">Introduce yourself to the network</h2>
+<div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-[#0e131b] text-base font-medium leading-normal pb-2">Bio (max 300 words)</p>
+<textarea class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0e131b] focus:outline-0 focus:ring-0 border border-[#d0d9e7] bg-slate-50 focus:border-[#d0d9e7] min-h-36 placeholder:text-[#4e6a97] p-[15px] text-base font-normal leading-normal" placeholder="Tell us about yourself"></textarea>
+</label>
+</div>
+<p class="text-[#4e6a97] text-sm font-normal leading-normal pb-3 pt-1 px-4">0/300 words</p>
+<div class="h-5 bg-slate-50"></div>
+<!-- END SHARED COMPONENT LITERAL -->
+<!-- Form Extension Area -->
+<div class="flex flex-col gap-md px-margin-mobile md:px-margin-desktop pb-32 max-w-[480px] font-body-md">
+<!-- Languages Spoken -->
+<div class="flex flex-col gap-xs">
+<label class="font-emphasis text-on-surface">Languages spoken</label>
+<div class="flex w-full flex-wrap items-center gap-base rounded-lg border border-outline-variant bg-surface-container-lowest p-sm min-h-[50px] focus-within:border-primary transition-colors">
+<!-- Selected Pills -->
+<span class="flex items-center gap-xs rounded bg-primary-fixed px-sm py-1 font-label-sm text-on-primary-fixed-variant">
+                    English 
+                    <span class="material-symbols-outlined text-[14px] cursor-pointer" data-icon="close">close</span>
+</span>
+<span class="flex items-center gap-xs rounded bg-primary-fixed px-sm py-1 font-label-sm text-on-primary-fixed-variant">
+                    French 
+                    <span class="material-symbols-outlined text-[14px] cursor-pointer" data-icon="close">close</span>
+</span>
+<input class="flex-1 bg-transparent border-none outline-none focus:ring-0 p-0 text-on-surface font-body-md placeholder:text-outline" placeholder="Add a language..." type="text"/>
+</div>
+</div>
+<!-- Timezone Detection -->
+<div class="flex flex-col gap-xs pt-base">
+<label class="font-emphasis text-on-surface">Timezone</label>
+<div class="relative">
+<select class="form-select flex w-full appearance-none rounded-lg border border-outline-variant bg-surface-container-lowest p-sm pr-10 font-body-md text-on-surface outline-none focus:border-primary focus:ring-0 transition-colors">
+<option>(GMT+00:00) London</option>
+<option>(GMT+01:00) West Central Africa</option>
+<option>(GMT+02:00) Cairo</option>
+<option>(GMT+03:00) Nairobi</option>
+</select>
+<span class="material-symbols-outlined absolute right-sm top-1/2 -translate-y-1/2 text-outline pointer-events-none" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+<p class="font-label-sm text-on-surface-variant pt-xs">Detected automatically. You can override if needed.</p>
+</div>
+<!-- Optional Links Section -->
+<div class="flex flex-col gap-sm pt-md">
+<h3 class="font-headline-md text-on-surface">Digital Presence <span class="text-outline font-body-md">(Optional)</span></h3>
+<!-- LinkedIn -->
+<div class="flex flex-col gap-xs">
+<label class="font-emphasis text-on-surface">LinkedIn Profile URL</label>
+<div class="relative flex items-center rounded-lg border border-outline-variant bg-surface-container-lowest focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined pl-sm text-outline" data-icon="link">link</span>
+<input class="flex-1 bg-transparent p-sm border-none outline-none focus:ring-0 font-body-md text-on-surface placeholder:text-outline" placeholder="https://linkedin.com/in/yourprofile" type="url"/>
+</div>
+</div>
+<!-- Website -->
+<div class="flex flex-col gap-xs">
+<label class="font-emphasis text-on-surface">Personal Website</label>
+<div class="relative flex items-center rounded-lg border border-outline-variant bg-surface-container-lowest focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined pl-sm text-outline" data-icon="language">language</span>
+<input class="flex-1 bg-transparent p-sm border-none outline-none focus:ring-0 font-body-md text-on-surface placeholder:text-outline" placeholder="https://yourwebsite.com" type="url"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Navigation (Action Bar for Forms) -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-container-lowest border-t border-outline-variant px-margin-mobile md:px-margin-desktop py-4 flex justify-between items-center z-10">
+<button class="px-md py-sm font-emphasis text-primary bg-transparent border-2 border-primary rounded-lg transition-colors hover:bg-primary-fixed">
+            Back
+        </button>
+<button class="px-xl py-sm font-emphasis text-on-secondary-container bg-secondary-container rounded-lg shadow-[0px_4px_20px_rgba(0,0,0,0.05)] transition-transform hover:scale-[1.02]">
+            Continue
+        </button>
+</div>
+</div>
+</body></html>

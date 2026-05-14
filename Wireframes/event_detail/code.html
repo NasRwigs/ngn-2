@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Event Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container": "#f0eded",
+                      "surface": "#fcf9f9",
+                      "surface-container-lowest": "#ffffff",
+                      "outline-variant": "#c4c6d2",
+                      "on-secondary-container": "#653900",
+                      "secondary-container": "#fe9812",
+                      "surface-dim": "#dcd9d9",
+                      "on-tertiary-fixed-variant": "#4f4700",
+                      "secondary-fixed": "#ffdcbe",
+                      "inverse-on-surface": "#f3f0f0",
+                      "on-tertiary": "#ffffff",
+                      "on-surface": "#1b1b1c",
+                      "surface-container-highest": "#e5e2e2",
+                      "secondary-fixed-dim": "#ffb871",
+                      "tertiary-fixed-dim": "#dbc826",
+                      "outline": "#747782",
+                      "surface-tint": "#385ca5",
+                      "surface-container-high": "#eae7e7",
+                      "primary-container": "#0e3b83",
+                      "on-primary-fixed-variant": "#1b448c",
+                      "tertiary-fixed": "#f9e544",
+                      "on-secondary-fixed": "#2d1600",
+                      "on-primary-fixed": "#001944",
+                      "surface-bright": "#fcf9f9",
+                      "on-surface-variant": "#434651",
+                      "primary-fixed-dim": "#afc6ff",
+                      "on-error": "#ffffff",
+                      "inverse-surface": "#303031",
+                      "on-secondary-fixed-variant": "#6a3c00",
+                      "surface-variant": "#e5e2e2",
+                      "tertiary": "#695f00",
+                      "inverse-primary": "#afc6ff",
+                      "on-error-container": "#93000a",
+                      "on-background": "#1b1b1c",
+                      "on-secondary": "#ffffff",
+                      "surface-container-low": "#f6f3f3",
+                      "primary-fixed": "#d9e2ff",
+                      "tertiary-container": "#bead00",
+                      "on-tertiary-fixed": "#201c00",
+                      "error-container": "#ffdad6",
+                      "primary": "#00265e",
+                      "on-tertiary-container": "#474000",
+                      "on-primary-container": "#86a8f7",
+                      "secondary": "#8b5000",
+                      "background": "#fcf9f9",
+                      "error": "#ba1a1a",
+                      "on-primary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xs": "4px",
+                      "gutter": "24px",
+                      "sm": "12px",
+                      "md": "24px",
+                      "margin-desktop": "64px",
+                      "lg": "48px",
+                      "base": "8px",
+                      "xl": "80px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "emphasis": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg-mobile": [
+                              "Hanken Grotesk"
+                      ],
+                      "display-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "Hanken Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "emphasis": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "300"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "300"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md antialiased pb-24">
+<!-- Shared TopAppBar -->
+<div class="relative flex h-auto w-full flex-col bg-slate-50 group/design-root overflow-x-hidden" style='font-family: "Be Vietnam Pro", "Noto Sans", sans-serif;'>
+<div class="flex items-center bg-slate-50 p-4 pb-2 justify-between">
+<div class="text-[#0e131b] flex size-12 shrink-0 items-center cursor-pointer" data-icon="ArrowLeft" data-size="24px" data-weight="regular">
+<span class="material-symbols-outlined">arrow_left</span>
+</div>
+<h2 class="text-[#0e131b] text-lg font-bold leading-tight tracking-[-0.015em] flex-1">Event Details</h2>
+</div>
+<div class="@container">
+<div class="@[480px]:px-4 @[480px]:py-3">
+<div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden bg-slate-50 @[480px]:rounded-lg min-h-[218px]" data-alt="A vibrant, modern conference hall setup featuring bright stage lighting casting dynamic geometric shadows. The stage backdrop incorporates subtle Afro-geometric patterns in a light-mode color palette of pristine whites and warm greys, punctuated by energetic accents of vibrant orange and lime green. The atmosphere is professional, forward-looking, and culturally resonant, capturing the essence of an authoritative yet accessible pan-African leadership event." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBwMdU4m_vRfrcUWUnmZ8kgUVzAiSqtSZtGprdpdbmZR5Ov4dn-E4NB_TOW0ENR-YCpOgTopqV1b8V0_ymd9RkPIcb3069ZjNfysAIxcnc567UssX9STdUOUXW2Lk6CD-ClWJ4-wCyJ7IqK8cfIA0j7gcrdiZMLIdhFPp9zoN3PS5HaewOpCu9KfS4whm-l4vQsPzHl_-SrXL9umSYzeMMw91IZgl7vv2h2TntBeZTyUyudaxdzZ-JSgLl7d-7tnYf81ezxqh7vZJci");'></div>
+</div>
+</div>
+<h2 class="text-[#0e131b] tracking-light text-[28px] font-bold leading-tight px-4 text-left pb-3 pt-5">Future of AI Conference 2024</h2>
+<div class="flex items-center gap-4 bg-slate-50 px-4 min-h-14">
+<div class="text-[#0e131b] flex items-center justify-center rounded-lg bg-[#e7ecf3] shrink-0 size-10" data-icon="Calendar" data-size="24px" data-weight="regular">
+<span class="material-symbols-outlined">calendar_today</span>
+</div>
+<p class="text-[#0e131b] text-base font-normal leading-normal flex-1 truncate">October 15, 2024 • 9:00 AM - 5:00 PM</p>
+</div>
+<div class="flex items-center gap-4 bg-slate-50 px-4 min-h-14">
+<div class="text-[#0e131b] flex items-center justify-center rounded-lg bg-[#e7ecf3] shrink-0 size-10" data-icon="MapPin" data-size="24px" data-weight="regular">
+<span class="material-symbols-outlined">MapPin</span>
+</div>
+<p class="text-[#0e131b] text-base font-normal leading-normal flex-1 truncate">San Francisco Convention Center</p>
+</div>
+<div class="h-5 bg-slate-50 border-b-4 border-secondary-container"></div>
+</div>
+<!-- Main Content Area -->
+<main class="w-full max-w-[1280px] mx-auto pt-md">
+<!-- About Section -->
+<section class="px-margin-mobile mb-lg">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">About the Event</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                Join industry leaders, researchers, and policymakers for a comprehensive exploration of the next frontier in artificial intelligence. This year's conference focuses on ethical frameworks, generative models, and the socio-economic impacts of AI deployment across emerging markets.
+            </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Attendees will participate in hands-on workshops, engaging panel discussions, and networking sessions designed to foster collaboration and innovation. We will delve deep into how AI can be leveraged to solve critical regional challenges while maintaining robust ethical standards.
+            </p>
+</section>
+<!-- Speakers Section -->
+<section class="mb-lg">
+<div class="px-margin-mobile flex justify-between items-end mb-sm">
+<h3 class="font-headline-md text-headline-md text-on-surface">Speakers</h3>
+</div>
+<div class="flex overflow-x-auto gap-md px-margin-mobile snap-x snap-mandatory hide-scrollbar pb-sm">
+<!-- Speaker Card 1 -->
+<div class="min-w-[160px] snap-start bg-surface rounded-lg p-sm shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-surface-variant flex flex-col items-center text-center">
+<img alt="Dr. Amina Yusuf" class="w-[80px] h-[80px] rounded-full mb-sm object-cover border-2 border-surface-container" data-alt="A professional headshot of a distinguished African woman in her late 40s. She is smiling warmly, wearing a tailored navy blue blazer over a crisp white shirt. The background is a soft, light grey wall with subtle geometric patterns barely visible. The lighting is bright and even, conveying a modern, authoritative, and approachable corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4vq47C2Lwmq1UslDcktwsH4F6wlLzoCD9h2vGgEb1ClIUOQPfW6DHsehf0vNYYcgw6uRgoe6VPZAi-uTDsrg8HIQdDZG3GvYL1IGu77iWYAu3Oqazw0LFf7Jxf94qzhZZGjWlQofnBjUdb4ATNn_Jun4KresaWixPg1eJMJhyoQ3BYwZQW2duV6MLI7Nhtrzrky_T_v5XQjbRLHk5zsWGHqln7lkXbBXObnt4UhmdfMyEGF1YkYvQ2bl1vw9NrdxqU3aqqHujI9f_"/>
+<h4 class="font-emphasis text-emphasis text-on-surface mb-xs">Dr. Amina Yusuf</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Director of AI Ethics, Global Tech</p>
+</div>
+<!-- Speaker Card 2 -->
+<div class="min-w-[160px] snap-start bg-surface rounded-lg p-sm shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-surface-variant flex flex-col items-center text-center">
+<img alt="Marcus Chen" class="w-[80px] h-[80px] rounded-full mb-sm object-cover border-2 border-surface-container" data-alt="A professional headshot of an Asian man in his 30s. He has short black hair, wearing clear-rimmed glasses and a smart casual grey sweater. The background is a clean, well-lit modern office environment with white walls. The lighting is soft and flattering, emphasizing a clean, contemporary professional style associated with a modern tech leadership network." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmQtOJ94TvzI5R1fBirBuhU7ysOmDTroREbbG18awMOmTe_yMJooCdprBAs92MYpaiYKelcom4167lzrD42AcFRhfm-tDtSKJATcwuuy0XJkX5K9ju9-OFrFdYWVKLb9cjoC82UzAPVLp5QKtSbzxMeMDH66f-qAuq0LoCFkVl04XaDVxtqBKkn7sSDzQuOWGYftKDi6Eg5wyxZIHEjR2t4dGsHs_whR6TK8w4hz7bPO9k4PCPi4lKGgerhTwvSPW3qpQEc1SCrhbD"/>
+<h4 class="font-emphasis text-emphasis text-on-surface mb-xs">Marcus Chen</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Lead Researcher, Future Labs</p>
+</div>
+<!-- Speaker Card 3 -->
+<div class="min-w-[160px] snap-start bg-surface rounded-lg p-sm shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-surface-variant flex flex-col items-center text-center">
+<img alt="Sarah Jenkins" class="w-[80px] h-[80px] rounded-full mb-sm object-cover border-2 border-surface-container" data-alt="A professional headshot of a Caucasian woman in her 50s. She has shoulder-length blonde hair and is wearing a vibrant orange silk blouse that pops against the background. The background is a minimalist, warm grey surface. The bright, high-key lighting creates a sharp, clean image that feels energetic and aligned with a modern, high-end corporate brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQI5_1pP_01gtXlfj_ORjgPBkjA43SRzNdFLBdBTc1Bl5siYGLuabuIuiDprxJKzyunqmOjfWcUjvOOAoNl3ICTkSWWmCqktBx0CkLW_zRw5OcQp7zr0q-nqZPtL8VISgqXnjC-knEXAYlkuHayOKwQ5bIoyb-zkN46rGL5SzYIhsCFAWbpvgtcMfx-EGGi5r_kQ4uL3YcrVLdywVIzSLAh_pgXdEbKsnrGQTEYppNf5Rwr1P7FItNhr4TND-XTbvrNVitQT5IB6rH"/>
+<h4 class="font-emphasis text-emphasis text-on-surface mb-xs">Sarah Jenkins</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">VP of Engineering, Innovate Inc.</p>
+</div>
+<!-- Speaker Card 4 -->
+<div class="min-w-[160px] snap-start bg-surface rounded-lg p-sm shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-surface-variant flex flex-col items-center text-center">
+<div class="w-[80px] h-[80px] rounded-full mb-sm bg-surface-container-high flex items-center justify-center border-2 border-surface-container">
+<span class="material-symbols-outlined text-outline" style="font-size: 32px;">person</span>
+</div>
+<h4 class="font-emphasis text-emphasis text-on-surface mb-xs">David Osei</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Founder, DataSystems Africa</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Sticky Bottom Bar -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-container-lowest border-t border-surface-variant p-margin-mobile shadow-[0px_-8px_30px_rgba(0,0,0,0.05)] z-50">
+<div class="max-w-[1280px] mx-auto flex items-center justify-between gap-md">
+<button class="bg-transparent text-primary-container font-emphasis text-emphasis px-sm py-sm rounded-lg flex items-center gap-xs hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined" style="font-size: 20px;">calendar_add_on</span>
+                Add to Calendar
+            </button>
+<button class="bg-secondary-container text-on-secondary-container font-emphasis text-emphasis px-md py-sm rounded-lg shadow-[0px_4px_20px_rgba(254,152,18,0.3)] flex-1 text-center hover:opacity-90 transition-opacity">
+                Register Now
+            </button>
+</div>
+</div>
+</body></html>

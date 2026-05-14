@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Overview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#f0eded",
+                        "surface": "#fcf9f9",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#c4c6d2",
+                        "on-secondary-container": "#653900",
+                        "secondary-container": "#fe9812",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary-fixed-variant": "#4f4700",
+                        "secondary-fixed": "#ffdcbe",
+                        "inverse-on-surface": "#f3f0f0",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1b1b1c",
+                        "surface-container-highest": "#e5e2e2",
+                        "secondary-fixed-dim": "#ffb871",
+                        "tertiary-fixed-dim": "#dbc826",
+                        "outline": "#747782",
+                        "surface-tint": "#385ca5",
+                        "surface-container-high": "#eae7e7",
+                        "primary-container": "#0e3b83",
+                        "on-primary-fixed-variant": "#1b448c",
+                        "tertiary-fixed": "#f9e544",
+                        "on-secondary-fixed": "#2d1600",
+                        "on-primary-fixed": "#001944",
+                        "surface-bright": "#fcf9f9",
+                        "on-surface-variant": "#434651",
+                        "primary-fixed-dim": "#afc6ff",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#303031",
+                        "on-secondary-fixed-variant": "#6a3c00",
+                        "surface-variant": "#e5e2e2",
+                        "tertiary": "#695f00",
+                        "inverse-primary": "#afc6ff",
+                        "on-error-container": "#93000a",
+                        "on-background": "#1b1b1c",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f6f3f3",
+                        "primary-fixed": "#d9e2ff",
+                        "tertiary-container": "#bead00",
+                        "on-tertiary-fixed": "#201c00",
+                        "error-container": "#ffdad6",
+                        "primary": "#00265e",
+                        "on-tertiary-container": "#474000",
+                        "on-primary-container": "#86a8f7",
+                        "secondary": "#8b5000",
+                        "background": "#fcf9f9",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "xs": "4px",
+                        "gutter": "24px",
+                        "sm": "12px",
+                        "md": "24px",
+                        "margin-desktop": "64px",
+                        "lg": "48px",
+                        "base": "8px",
+                        "xl": "80px",
+                        "margin-mobile": "16px"
+                    },
+                    fontFamily: {
+                        "headline-md": ["Hanken Grotesk"],
+                        "emphasis": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"]
+                    },
+                    fontSize: {
+                        "headline-md": ["24px", { lineHeight: "1.4", fontWeight: "700" }],
+                        "emphasis": ["16px", { lineHeight: "1.6", fontWeight: "500" }],
+                        "label-sm": ["12px", { lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "500" }],
+                        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "300" }],
+                        "headline-lg-mobile": ["28px", { lineHeight: "1.3", fontWeight: "700" }],
+                        "display-lg": ["48px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "300" }],
+                        "headline-lg": ["32px", { lineHeight: "1.3", fontWeight: "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface pb-[80px] min-h-screen">
+<!-- Header -->
+<header class="bg-primary text-on-primary px-margin-mobile py-sm flex items-center justify-between shadow-md">
+<h1 class="font-headline-md">Admin Portal</h1>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined cursor-pointer">notifications</span>
+<img alt="Admin Avatar" class="w-8 h-8 rounded-full border-2 border-on-primary" data-alt="A close-up portrait of a professional African woman with natural hair, smiling warmly. The lighting is bright and even, set against a clean, light mode studio background. The overall style is corporate modern, fitting a high-level executive dashboard profile picture. Colors are natural with high contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbxiqaGCWVtL_k-LCENwtwDHVm5id2BJUuXYGTZXW2Qxb27qjqiClKyaCV2e5IZc-Qf2GFfN5kbq6gs11cVvBta4snU9f2oXdBfWNLO3CI8XhFPM8G_5QdluMhFK8b8m3WwOCGH9NeE1xgOu7lDTyLe6IpMIXHP3ykTkYUUOMJj0TgJgupWku2aPp4S22PHS0mPZ5tkHWQg-lFLoYLKw7AqwlzmG8lBku2wmTNFSScB5UNfwwvnw4isKetx3rw1Bf7UgLx4eKhGDY5"/>
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto pt-md">
+<!-- Page Title -->
+<div class="px-margin-mobile mb-md flex items-center justify-between">
+<div>
+<h2 class="font-display-lg text-primary">Overview</h2>
+<p class="font-body-md text-on-surface-variant mt-xs">High-level metrics and system health.</p>
+</div>
+<button class="bg-secondary-container text-on-secondary-container font-emphasis py-xs px-sm rounded-lg flex items-center gap-xs shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                Export Report
+            </button>
+</div>
+<!-- High Level Stats -->
+<div class="px-margin-mobile grid grid-cols-1 md:grid-cols-3 gap-sm mb-lg">
+<div class="bg-surface-container-lowest p-sm rounded-xl shadow-sm border border-outline-variant flex flex-col justify-between border-t-4 border-t-primary-container">
+<div class="flex items-center gap-xs text-on-surface-variant mb-base">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span class="font-label-sm uppercase">Total Members</span>
+</div>
+<div class="flex items-end justify-between">
+<span class="font-display-lg text-on-surface">1,245</span>
+<span class="font-label-sm text-primary-container bg-primary-fixed px-xs py-[2px] rounded-DEFAULT flex items-center mb-xs">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> 12%
+                    </span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-sm rounded-xl shadow-sm border border-outline-variant flex flex-col justify-between border-t-4 border-t-secondary-container">
+<div class="flex items-center gap-xs text-on-surface-variant mb-base">
+<span class="material-symbols-outlined text-[20px]">handshake</span>
+<span class="font-label-sm uppercase">Active Pairs</span>
+</div>
+<div class="flex items-end justify-between">
+<span class="font-display-lg text-on-surface">432</span>
+<span class="font-label-sm text-primary-container bg-primary-fixed px-xs py-[2px] rounded-DEFAULT flex items-center mb-xs">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> 5%
+                    </span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-sm rounded-xl shadow-sm border border-outline-variant flex flex-col justify-between border-t-4 border-t-tertiary-fixed">
+<div class="flex items-center gap-xs text-on-surface-variant mb-base">
+<span class="material-symbols-outlined text-[20px]">pending_actions</span>
+<span class="font-label-sm uppercase">Pending Applications</span>
+</div>
+<div class="flex items-end justify-between">
+<span class="font-display-lg text-on-surface">28</span>
+<span class="font-label-sm text-on-surface-variant bg-surface-variant px-xs py-[2px] rounded-DEFAULT flex items-center mb-xs">
+<span class="material-symbols-outlined text-[14px]">trending_down</span> 2%
+                    </span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter px-margin-mobile">
+<!-- Left Column: Health Metrics -->
+<div class="lg:col-span-1 space-y-md">
+<h3 class="font-headline-md text-primary">Mentorship Health</h3>
+<div class="bg-surface-container-lowest p-sm rounded-xl shadow-sm border border-outline-variant">
+<div class="flex items-center justify-between mb-xs">
+<span class="font-emphasis text-on-surface">Avg. Sessions / Month</span>
+<span class="material-symbols-outlined text-outline">calendar_month</span>
+</div>
+<div class="flex items-end gap-sm">
+<span class="font-display-lg text-primary">2.4</span>
+<span class="font-body-md text-on-surface-variant pb-xs">Target: 2.0</span>
+</div>
+<div class="w-full bg-surface-variant h-2 rounded-full mt-sm overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 80%;"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-sm rounded-xl shadow-sm border border-outline-variant">
+<div class="flex items-center justify-between mb-xs">
+<span class="font-emphasis text-on-surface">Avg. Satisfaction</span>
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div class="flex items-end gap-sm">
+<span class="font-display-lg text-primary">4.8</span>
+<span class="font-body-md text-on-surface-variant pb-xs">/ 5.0</span>
+</div>
+<div class="w-full bg-surface-variant h-2 rounded-full mt-sm overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 96%;"></div>
+</div>
+</div>
+</div>
+<!-- Right Column: Requires Attention -->
+<div class="lg:col-span-2 space-y-sm">
+<div class="flex items-center justify-between border-b border-outline-variant pb-xs">
+<h3 class="font-headline-md text-error flex items-center gap-xs">
+<span class="material-symbols-outlined text-[24px]">error</span>
+                        Requires Attention
+                    </h3>
+<button class="text-primary font-emphasis text-sm hover:underline">View All</button>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant overflow-hidden">
+<!-- Item 1 -->
+<div class="p-sm flex items-center justify-between border-b border-outline-variant hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-sm">
+<div class="flex -space-x-4">
+<img alt="Mentor Avatar" class="w-10 h-10 rounded-full border-2 border-surface-container-lowest" data-alt="A portrait of an older African male executive wearing a sharp suit and glasses. The lighting is crisp and modern, set against a pristine white studio background. The mood is authoritative yet accessible, fitting a senior mentor profile within a corporate NGN portal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVvDAYgzUgbpGb_T4AH1xPEIytYz4mLDOUEKsx1c-CaX8j1579cEo-lRIUAGussiAtuqGEp6s7OYaaMCgGjbwOuBc2gW4HnsyYY8z9dAIe9vGNKUkEVIrGH753JYXrtZAwNzxpe0StabGBm12jZm5RCBDYYq48ulia819SetcUvv4-B_bXOLtI5Y0Vmoov75PH1TgKFM8vHbbd8JSFO_MyB7lakpGCgVi0Xnq-2ItyfLGf8Nw0fWYUXlXTn9qSaV-VEszFyd85IaD9"/>
+<img alt="Mentee Avatar" class="w-10 h-10 rounded-full border-2 border-surface-container-lowest" data-alt="A vibrant portrait of a young African female professional in contemporary business casual attire. Bright, even lighting highlights a confident expression against a neutral gray background. The aesthetic is clean, optimistic, and highly professional, typical of a rising star mentee." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8ZSev1-ecavVYHsZpO0XMmUM8ktRuv52_BDnnSemojnlTWGI6cF1F9ZdXBJIO37YkF5pZW8CRgL41A2iDQEEm4_NcCC5gxPNWDtr2TRyrvCtBQhVJGfIVQZwpkf1YuMI3hO0LAprEU6e-q-PetEBgcyX-Jk-rAHtaEbouVFk9vXAjy7tLe6qn6HxUlSY2dOIpWs1s-E9Y1hid_veiR5jl1Fwwsn9AZ-rAMdG0n_hgZboiO-Kwxbv5a9rp8j99T3O43WKQoGuI9aER"/>
+</div>
+<div>
+<h4 class="font-emphasis text-on-surface">K. Mensah &amp; A. Diallo</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Cohort '24 • Tech Policy</p>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<span class="bg-error-container text-on-error-container font-label-sm px-xs py-[2px] rounded-full hidden sm:block">No meetings &gt; 30 days</span>
+<button class="text-primary hover:bg-primary-fixed p-xs rounded-full transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-sm flex items-center justify-between border-b border-outline-variant hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-sm">
+<div class="flex -space-x-4">
+<img alt="Mentor Avatar" class="w-10 h-10 rounded-full border-2 border-surface-container-lowest" data-alt="A portrait of a middle-aged African woman in elegant traditional-modern hybrid attire. She has a serious but supportive expression. The shot is lit with soft, high-key studio lighting over a white background, embodying the prestigious and culturally grounded visual identity of the NGN network." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAo3ZpGySk0RzNee_-R3oJyi-a5mE5byS5NzGknjl6oRhfT4mGbZqeLIlkGSB9SvRBUO9-jhnR2P_5CJYB3FTuss5Vp_BuxrvyRX9lV1O3kKHSXAOgfrzDiHP9l8aygrKbZtCB4Uy-3M7XNaqI8XqBhpNj541pjHU6Xewtcq3gIdCdZ8AbrqGw3oZDIbwMiHVW8M3QpwnNIERwBtQffM3esIGqh7WE5vR2h8zDRIiJTvAi9RIkP_ozU7LMN1fYEIa1I_fETm2VlHiFi"/>
+<img alt="Mentee Avatar" class="w-10 h-10 rounded-full border-2 border-surface-container-lowest" data-alt="A headshot of a young African male entrepreneur wearing a crisp blue button-down shirt. The lighting is bright and engaging, creating a positive and forward-looking mood. The background is a stark white, maintaining the portal's clean, minimalist corporate design language." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWL_gjLSLgbGHE4gEgIx3xn5yzbsRUXDmQ5Tzu-4SrZImGRTmay4Ce7v0_DgduZttAlvCx7uklUxJ678le3eGoe-PWRAjEtlXMKo89EPITRJnDwRk-OqL36QyhEjNYAnEcNb-W1AcC9nXHY_lmsSH7bGauwjnhAJ7pe_v3rn4M5ktVLuHg8naG51LC4-6IGWb5XpcAaw5X5_OOLwQjmqQ2adoX8rg4DK-k5FMjgRcvkAeS0T0DoPZzzQK7pTR71pTG3z-0D8jWronp"/>
+</div>
+<div>
+<h4 class="font-emphasis text-on-surface">Dr. Osei &amp; E. Kiprono</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Cohort '23 • Public Health</p>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-sm px-xs py-[2px] rounded-full hidden sm:block">Low Satisfaction Score</span>
+<button class="text-primary hover:bg-primary-fixed p-xs rounded-full transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="p-sm flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-sm">
+<div class="flex -space-x-4">
+<img alt="Mentor Avatar" class="w-10 h-10 rounded-full border-2 border-surface-container-lowest" data-alt="A close-up portrait of an authoritative African man with a graying beard, wearing a tailored navy suit. The image utilizes high contrast, crisp lighting to convey experience and gravitas. The background is pure white, aligning with the clean, structured aesthetic of the dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhEs-R4UpI_pfUFfyMiQ91zU77qwAZzNBJyMan_v0pwLWtePZ9BSLQp4xjNzKvfDb6m4QHu0mw-dgnvjcJbtQAcLBstsp9x1UOhMGXGzDbgp2Tf6WxO3EqZUPnVVMrO308kvfKpsEHSht_k_iuAtt80JP9IlUYZvetNeghVadof-1sOBHLBGZu2nOrXWhIFBDedHBpoGCcV3FmMcuIj-j9OwR-KNMAWh411go3v_C3z9p5iDLjhTXLcZmaYLw9WLGJsgE7NWa1pJqo"/>
+<img alt="Mentee Avatar" class="w-10 h-10 rounded-full border-2 border-surface-container-lowest" data-alt="A bright portrait of a young African woman with locs, smiling energetically. She wears a modern, bright orange blouse that subtly references the MIF brand colors. The lighting is pristine and shadowless, set against a minimalist white backdrop for a highly professional look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3E1L1Hwan_i52oUAnqqX0X0EGGznCbemTeqMzir2tmTFfYHzn32kZVvszMgI2wg5QvoBaTrSLteqbw-P1yx5MKHl1V77aCUEuYaUxEkR-YC3pNPbd9JDnCUPkodllmyJ-DXc_iapSDL43BBeuTrzGb2QyP-YDGkJf5Nxeqw1Z6W_OXAhnJWWBot0BwoA1ikb52JFv8OtMiUQWH4L6c8gxkNr2StgWJJmW4x9UVzV2L2tYZDjf9Yhnbsg_TBa1mgH85r0Tz9VvfuLn"/>
+</div>
+<div>
+<h4 class="font-emphasis text-on-surface">S. Ndlovu &amp; M. Kone</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Cohort '24 • Finance</p>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<span class="bg-error-container text-on-error-container font-label-sm px-xs py-[2px] rounded-full hidden sm:block">Action Plan Overdue</span>
+<button class="text-primary hover:bg-primary-fixed p-xs rounded-full transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation (Shared Component Integration) -->
+<div class="fixed bottom-0 w-full z-50">
+<div class="flex gap-2 border-t border-outline-variant bg-surface-container-lowest px-4 pb-3 pt-2">
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 rounded-full text-primary" href="#">
+<div class="text-primary flex h-8 items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+</div>
+<p class="text-primary font-label-sm leading-normal">Dashboard</p>
+</a>
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 text-outline" href="#">
+<div class="text-outline flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">group</span>
+</div>
+<p class="text-outline font-label-sm leading-normal">Directory</p>
+</a>
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 text-outline" href="#">
+<div class="text-outline flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">bar_chart</span>
+</div>
+<p class="text-outline font-label-sm leading-normal">Reports</p>
+</a>
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 text-outline" href="#">
+<div class="text-outline flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">settings</span>
+</div>
+<p class="text-outline font-label-sm leading-normal">Settings</p>
+</a>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NGN Portal - Home Dashboard</title>
+<!-- Google Fonts: Hanken Grotesk -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#86a8f7",
+                    "on-tertiary-container": "#474000",
+                    "tertiary-fixed-dim": "#dbc826",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed": "#001944",
+                    "surface-container-low": "#f6f3f3",
+                    "secondary": "#8b5000",
+                    "primary": "#00265e",
+                    "secondary-fixed-dim": "#ffb871",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#f9e544",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#f0eded",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#6a3c00",
+                    "surface-tint": "#385ca5",
+                    "on-primary-fixed-variant": "#1b448c",
+                    "surface-variant": "#e5e2e2",
+                    "on-surface-variant": "#434651",
+                    "primary-fixed": "#d9e2ff",
+                    "surface-container-highest": "#e5e2e2",
+                    "inverse-surface": "#303031",
+                    "inverse-on-surface": "#f3f0f0",
+                    "inverse-primary": "#afc6ff",
+                    "background": "#fcf9f9",
+                    "error-container": "#ffdad6",
+                    "tertiary-container": "#bead00",
+                    "surface-dim": "#dcd9d9",
+                    "secondary-container": "#fe9812",
+                    "outline-variant": "#c4c6d2",
+                    "on-surface": "#1b1b1c",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#2d1600",
+                    "secondary-fixed": "#ffdcbe",
+                    "primary-fixed-dim": "#afc6ff",
+                    "tertiary": "#695f00",
+                    "outline": "#747782",
+                    "on-tertiary-fixed-variant": "#4f4700",
+                    "surface-container-high": "#eae7e7",
+                    "on-secondary-container": "#653900",
+                    "primary-container": "#0e3b83",
+                    "error": "#ba1a1a",
+                    "on-background": "#1b1b1c",
+                    "surface-bright": "#fcf9f9",
+                    "surface": "#fcf9f9",
+                    "on-tertiary-fixed": "#201c00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "80px",
+                    "sm": "12px",
+                    "xs": "4px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "64px",
+                    "lg": "48px",
+                    "md": "24px",
+                    "gutter": "24px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Hanken Grotesk", "sans-serif"],
+                    "headline-lg": ["Hanken Grotesk", "sans-serif"],
+                    "label-sm": ["Hanken Grotesk", "sans-serif"],
+                    "headline-lg-mobile": ["Hanken Grotesk", "sans-serif"],
+                    "emphasis": ["Hanken Grotesk", "sans-serif"],
+                    "body-md": ["Hanken Grotesk", "sans-serif"],
+                    "body-lg": ["Hanken Grotesk", "sans-serif"],
+                    "headline-md": ["Hanken Grotesk", "sans-serif"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Subtle geometric pattern overlay for background */
+        .bg-pattern {
+            background-image: radial-gradient(circle at 2px 2px, rgba(0, 38, 94, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased relative min-h-screen pb-24">
+<!-- Background Pattern -->
+<div class="absolute inset-0 bg-pattern pointer-events-none z-0"></div>
+<main class="relative z-10 max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-md flex flex-col gap-lg">
+<!-- Header -->
+<header class="flex items-center justify-between pt-sm pb-md border-b border-surface-variant">
+<div class="flex items-center gap-sm">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12 shadow-sm border border-outline-variant" data-alt="A professional yet approachable headshot portrait of a young African woman smiling warmly. She is wearing modern, stylish business casual attire suitable for a corporate leadership environment. The lighting is soft and flattering, creating a bright, optimistic light-mode aesthetic. The background is a clean, minimal office setting with subtle hints of corporate blue and vibrant orange accents." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAslAkzUOoqZ7YGFz8U0_up7cBCBcZgVKFoefnAptxXwMbrlRtE4SNU0-qZCz5tNogaFFYEZbg-tQreYzQqushu8f_2DPPyVn4mMIp-Ui46aYPK7PpKFIfr99-XKpKnn462W74pqd39rsWBfAgVlhUdRRFanqoScoNhHzirGTJlaSirfAsmHKOWCd9uykgUcB3kknK7p3mBG9zUgAxMnRzl9Z9BkuF-K6m5YojNsMRZyI6kGh-J3dwiJwVefsvFXoKXVxRISaNs7zC_");'>
+</div>
+<h1 class="text-headline-md text-on-surface">Good morning, Jane</h1>
+</div>
+<button aria-label="Notifications" class="flex items-center justify-center size-12 rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant relative">
+<span class="material-symbols-outlined text-3xl" data-icon="notifications">notifications</span>
+<span class="absolute top-3 right-3 size-2.5 bg-error rounded-full border border-surface-container-lowest"></span>
+</button>
+</header>
+<!-- My Mentorship Card -->
+<section>
+<h2 class="text-emphasis text-on-surface-variant mb-sm px-xs">Current Mentorship</h2>
+<div class="flex flex-col @xl:flex-row items-stretch rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] bg-surface-container-lowest border-t-4 border-secondary-container overflow-hidden">
+<div class="w-full @xl:w-1/3 bg-center bg-no-repeat aspect-video @xl:aspect-square bg-cover" data-alt="A professional portrait of an experienced African male mentor looking directly at the camera with a supportive and knowledgeable expression. He is dressed in a crisp blazer over a collared shirt. The setting is a well-lit, contemporary workspace with a shallow depth of field. The overall visual tone aligns with a modern corporate portal, utilizing soft white lighting and neutral background tones." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBX6FBt7IeGp7zjsrIfWNizBzUxKmSnl9oEksZknhvW4RtCe103mrskCs8FL2nWqLsYMnUsFhjhl1oFDJ28dOkfkMmM8KicAoQSctEieTDMlUxdTutJ3eymu9o2pq3itn-UjghLwLLb2DiTNTJdWCP-O8qOlI_CHx-i4oSyHodE8qr9NY6Sg37yN2YmyS34J5M-ff8qAjvfg7WMhpWnZQO1sjq1nX2yU5ppbiH9LSCRsfL2XpmKsKrnRXeWqN6IfnaZF17rt1xG859D");'>
+</div>
+<div class="flex w-full grow flex-col justify-center gap-2 p-md">
+<p class="text-label-sm text-outline uppercase tracking-wider">My Mentor</p>
+<h3 class="text-headline-md text-on-surface">John Doe</h3>
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-md mt-sm">
+<div class="flex flex-col gap-xs">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-lg" data-icon="flag">flag</span>
+<p class="text-body-md font-medium">Mid-programme check-in</p>
+</div>
+<div class="flex items-center gap-xs text-outline">
+<span class="material-symbols-outlined text-lg" data-icon="progress_activity">progress_activity</span>
+<p class="text-body-sm">Session progress: 3/6</p>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-2 bg-surface-variant rounded-full mt-1 overflow-hidden">
+<div class="h-full bg-primary w-1/2 rounded-full"></div>
+</div>
+</div>
+<button class="flex items-center justify-center gap-xs h-12 px-6 rounded-lg bg-secondary-container text-on-secondary-container font-emphasis shadow-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" data-icon="edit_calendar">edit_calendar</span>
+<span>Log a Session</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Actions -->
+<section>
+<h2 class="text-emphasis text-on-surface-variant mb-sm px-xs">Quick Actions</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-sm md:gap-md">
+<button class="flex flex-col items-center justify-center p-md bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.10)] border border-surface-variant transition-all group text-primary-container">
+<div class="size-12 rounded-full bg-primary-fixed flex items-center justify-center mb-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="group">group</span>
+</div>
+<span class="text-emphasis text-on-surface text-center">Browse Directory</span>
+</button>
+<button class="flex flex-col items-center justify-center p-md bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.10)] border border-surface-variant transition-all group text-primary-container">
+<div class="size-12 rounded-full bg-primary-fixed flex items-center justify-center mb-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="person_search">person_search</span>
+</div>
+<span class="text-emphasis text-on-surface text-center">Find a Mentor</span>
+</button>
+<button class="flex flex-col items-center justify-center p-md bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.10)] border border-surface-variant transition-all group text-primary-container">
+<div class="size-12 rounded-full bg-primary-fixed flex items-center justify-center mb-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="manage_accounts">manage_accounts</span>
+</div>
+<span class="text-emphasis text-on-surface text-center">Edit Profile</span>
+</button>
+<button class="flex flex-col items-center justify-center p-md bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.10)] border border-surface-variant transition-all group text-primary-container">
+<div class="size-12 rounded-full bg-primary-fixed flex items-center justify-center mb-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="psychology">psychology</span>
+</div>
+<span class="text-emphasis text-on-surface text-center">Browse Skills</span>
+</button>
+</div>
+</section>
+<!-- Upcoming Events -->
+<section>
+<div class="flex items-center justify-between mb-sm px-xs">
+<h2 class="text-emphasis text-on-surface-variant">Upcoming Events</h2>
+<a class="text-label-sm text-primary-container font-bold uppercase tracking-wider hover:underline flex items-center" href="#">
+                    View All <span class="material-symbols-outlined text-sm ml-1" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+<div class="flex overflow-x-auto gap-md pb-xs -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0 hide-scrollbar" style="scrollbar-width: none;">
+<!-- Event Card 1 -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-surface-variant overflow-hidden min-w-[280px] max-w-[320px] flex-shrink-0">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="A dynamic photograph of a professional panel discussion taking place in a modern conference hall. Several diverse thought leaders are seated on stage, actively engaging in conversation. The scene is brightly lit with professional stage lighting, emphasizing a clean, corporate atmosphere. The surrounding design elements feature subtle geometric patterns and a color palette dominated by deep blues and vibrant orange highlights." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAQrmuxHECaSCYVkdBUHJ7sQbmNJohD_6T_k_IF9XUJIXycw8Sd12l4313lI1BO2b8pJAHr-x3Uu1TGZtA5zfSaeC3lncwJMB4maLnSVXLxaOe8dXsBkMJ9WhtG0wV2f_fiIbaJrMSw9kPchNcAogwbleh6dSElq0_vEREc41C8hznQzXqh1lly0JdiPw045Se40EYB3Vl_UsICudMcopRgz2cYQFfVzihXAZESj23PlDYdJmhzzqMO7RsmEjKiI-57YazFIBsgOPhC");'>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<div class="flex gap-2 mb-1">
+<span class="bg-primary-fixed text-on-primary-fixed text-[10px] uppercase font-bold px-2 py-1 rounded">Leadership</span>
+</div>
+<h3 class="text-emphasis text-on-surface leading-tight line-clamp-2">Annual Governance Symposium 2024</h3>
+<div class="flex items-center gap-1 text-sm text-on-surface-variant mt-2">
+<span class="material-symbols-outlined text-base" data-icon="calendar_today">calendar_today</span>
+<span>Oct 15, 2024 • 10:00 AM</span>
+</div>
+</div>
+</div>
+<!-- Event Card 2 -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-surface-variant overflow-hidden min-w-[280px] max-w-[320px] flex-shrink-0">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="An engaging image showing a collaborative workshop environment where a diverse group of young professionals are gathered around a table. They are looking at documents and discussing ideas enthusiastically. The room is flooded with natural daylight from large windows, creating a fresh, energetic light-mode aesthetic. The scene conveys active learning and networking within a modern institutional setting." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBbyn6qH__J1YpxzliNoL5pTnXTlal-govELgvqTjswA1ZwAEP2hC1tlp06MPAog8a6Avh27xujSPP8RrH08HgYaNxen5XX1vo5m-UoPHirlEU5G_iyBTGOhlnuRHFwiDDW7coqWgKq085edQ4PrtIL2-hHEJryg_NektVmaizqBVu5lFWy9s3EqqETJxwYkcQbJVq5L6oJhO80p76rQcLrw4uz7GNZhiOrrikTEwAC7oGDosXGKjog16Ua7rcP2mOSLku_BArbmc1I");'>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<div class="flex gap-2 mb-1">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] uppercase font-bold px-2 py-1 rounded">Workshop</span>
+</div>
+<h3 class="text-emphasis text-on-surface leading-tight line-clamp-2">Public Speaking for Emerging Leaders</h3>
+<div class="flex items-center gap-1 text-sm text-on-surface-variant mt-2">
+<span class="material-symbols-outlined text-base" data-icon="calendar_today">calendar_today</span>
+<span>Oct 22, 2024 • 2:00 PM</span>
+</div>
+</div>
+</div>
+<!-- Event Card 3 -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-surface-variant overflow-hidden min-w-[280px] max-w-[320px] flex-shrink-0">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="A high-quality image depicting a modern digital interface representing a webinar or online learning session. A diverse professional is seen presenting on a sleek laptop screen, surrounded by clean, minimalist desk accessories. The lighting is bright and clear, contributing to a professional, accessible corporate style. Subtle accents of bright lime and orange add a touch of forward-looking energy." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBrJ33e2HxdLBgZqa7JZBLLn_GChunXwolfAzcOxsPYN2s6zzzM-oRmQE_tFkHWQkSy7SEi_JL8T9vG8xFkS_Rr4_PAdZ3mBVez0Zls-k7pKVF-clG_t7yO_hbu9P0M7kUYRatBkIUo9DNL6gFPdlclR4ZqfMGWh9EJ_c6YmAlGFFJNo_cOmzBRKTNuUuoRnHIoFJtvotiKfXy6jmgJWSOhPEuNh28o4QFR2bhpO6gdR3QQGfhUd4ZQEDDJMHm-UGPBLFut2Xs7vgRz");'>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<div class="flex gap-2 mb-1">
+<span class="bg-surface-variant text-on-surface-variant text-[10px] uppercase font-bold px-2 py-1 rounded">Webinar</span>
+</div>
+<h3 class="text-emphasis text-on-surface leading-tight line-clamp-2">Navigating Policy Frameworks in Africa</h3>
+<div class="flex items-center gap-1 text-sm text-on-surface-variant mt-2">
+<span class="material-symbols-outlined text-base" data-icon="calendar_today">calendar_today</span>
+<span>Nov 05, 2024 • 11:00 AM</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Shared Bottom Nav Bar (Strict Application) -->
+<div class="fixed bottom-0 left-0 w-full z-50 bg-surface-container-lowest border-t border-outline-variant pb-safe shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<div class="max-w-7xl mx-auto flex gap-2 px-4 pb-3 pt-2">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary-container" href="#">
+<div class="flex h-8 items-center justify-center" data-icon="home" data-size="24px" data-weight="fill">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+</div>
+<p class="text-[10px] font-bold uppercase tracking-wider text-primary-container border-b-2 border-secondary-container pb-1">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-outline hover:text-primary-container transition-colors" href="#">
+<div class="flex h-8 items-center justify-center" data-icon="calendar_month" data-size="24px" data-weight="regular">
+<span class="material-symbols-outlined">calendar_month</span>
+</div>
+<p class="text-[10px] font-medium uppercase tracking-wider">Events</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-outline hover:text-primary-container transition-colors" href="#">
+<div class="flex h-8 items-center justify-center" data-icon="group" data-size="24px" data-weight="regular">
+<span class="material-symbols-outlined">group</span>
+</div>
+<p class="text-[10px] font-medium uppercase tracking-wider">Mentorship</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-outline hover:text-primary-container transition-colors" href="#">
+<div class="flex h-8 items-center justify-center" data-icon="person" data-size="24px" data-weight="regular">
+<span class="material-symbols-outlined">person</span>
+</div>
+<p class="text-[10px] font-medium uppercase tracking-wider">Profile</p>
+</a>
+</div>
+</div>
+</body></html>

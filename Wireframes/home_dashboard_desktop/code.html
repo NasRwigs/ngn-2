@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Home Dashboard - NGN Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#bead00",
+                    "on-tertiary-fixed-variant": "#4f4700",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed": "#f9e544",
+                    "outline-variant": "#c4c6d2",
+                    "on-secondary-fixed": "#2d1600",
+                    "inverse-surface": "#303031",
+                    "primary-fixed-dim": "#afc6ff",
+                    "on-background": "#1b1b1c",
+                    "surface": "#fcf9f9",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#0e3b83",
+                    "error": "#ba1a1a",
+                    "surface-variant": "#e5e2e2",
+                    "on-secondary-container": "#653900",
+                    "primary-fixed": "#d9e2ff",
+                    "surface-dim": "#dcd9d9",
+                    "surface-container-highest": "#e5e2e2",
+                    "primary": "#00265e",
+                    "on-primary-fixed-variant": "#1b448c",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#474000",
+                    "on-surface-variant": "#434651",
+                    "on-primary-fixed": "#001944",
+                    "background": "#fcf9f9",
+                    "tertiary-fixed-dim": "#dbc826",
+                    "surface-container-high": "#eae7e7",
+                    "secondary-fixed": "#ffdcbe",
+                    "on-tertiary-fixed": "#201c00",
+                    "on-error": "#ffffff",
+                    "surface-container-low": "#f6f3f3",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#f0eded",
+                    "on-surface": "#1b1b1c",
+                    "surface-tint": "#385ca5",
+                    "secondary-fixed-dim": "#ffb871",
+                    "tertiary": "#695f00",
+                    "surface-bright": "#fcf9f9",
+                    "on-primary-container": "#86a8f7",
+                    "secondary-container": "#fe9812",
+                    "on-secondary-fixed-variant": "#6a3c00",
+                    "inverse-on-surface": "#f3f0f0",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#afc6ff",
+                    "outline": "#747782",
+                    "secondary": "#8b5000"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "lg": "48px",
+                    "margin-mobile": "16px",
+                    "base": "8px",
+                    "xl": "80px",
+                    "gutter": "24px",
+                    "xs": "4px",
+                    "md": "24px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "emphasis": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; }
+        .shadow-level-1 { box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05); }
+        .shadow-level-2 { box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.10); }
+        
+        /* Hide scrollbar for horizontal scroll area */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex antialiased">
+<!-- Sidebar Navigation (Extracted & Adapted for Desktop Layout) -->
+<aside class="w-[280px] h-screen sticky top-0 flex-shrink-0 border-r border-outline-variant bg-surface-container-lowest z-10 flex flex-col justify-between p-md">
+<div class="flex flex-col gap-lg">
+<!-- Brand Logo Area -->
+<div class="flex gap-3 items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="A close-up, abstract geometric pattern featuring intersecting lines and circles in subtle shades of corporate blue and white. The lighting is soft and even, creating a clean, modern, and professional aesthetic suitable for a high-end corporate portal logo or icon. The mood is structured and authoritative." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAB2cMvLLSHbvdBnZz0B9670VhcNehlUohBzqRs8zKI8f1V-dOtLCl5ndNN80gXN2yZ0MkgWz3P_t5DH3ZKphH4dQfrJpS2aIyEGEfn0_yypvt5v1bgIYN0iA5HqFXyXzVsEhFGJujola0bz6-QWj4ftQlS9zfUgvH5rgjUGymgP6mUrO6nzyihdWKXexsIXme5aWl3zcyqMqyOH6eXyRvbuuUYLjv-Qxoxcze2EnH7ITr0cxldWBbM3L6WXs00t9QcYt8pO3jGbQSg");'></div>
+<div class="flex flex-col">
+<h1 class="text-on-background font-headline-md text-lg leading-tight tracking-tight">MentorConnect</h1>
+<p class="text-outline font-body-md text-sm leading-tight">Grow Together</p>
+</div>
+</div>
+<!-- Nav Links from Shared Component -->
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary-container text-on-primary group transition-colors" href="#">
+<div class="text-on-primary" data-icon="House" data-weight="fill">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+</div>
+<p class="text-on-primary font-emphasis text-base leading-normal">Home</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-surface-container transition-colors" href="#">
+<div class="text-on-surface-variant" data-icon="Users" data-weight="regular">
+<span class="material-symbols-outlined">group</span>
+</div>
+<p class="text-on-background font-emphasis text-base leading-normal">My Mentorship</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-surface-container transition-colors" href="#">
+<div class="text-on-surface-variant" data-icon="Calendar" data-weight="regular">
+<span class="material-symbols-outlined">calendar_today</span>
+</div>
+<p class="text-on-background font-emphasis text-base leading-normal">Events</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-surface-container transition-colors" href="#">
+<div class="text-on-surface-variant" data-icon="Book" data-weight="regular">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<p class="text-on-background font-emphasis text-base leading-normal">Resources</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-surface-container transition-colors" href="#">
+<div class="text-on-surface-variant" data-icon="Gear" data-weight="regular">
+<span class="material-symbols-outlined">settings</span>
+</div>
+<p class="text-on-background font-emphasis text-base leading-normal">Settings</p>
+</a>
+</nav>
+</div>
+<!-- User Profile Mini -->
+<div class="mt-auto border-t border-outline-variant pt-4 flex items-center gap-3">
+<div class="size-10 rounded-full bg-cover bg-center" data-alt="A professional headshot of a young woman with a warm smile, wearing a tailored navy blue blazer. She is standing in a brightly lit, modern corporate atrium with blurred architectural lines in the background. The lighting is natural and flattering, creating a polished, authoritative yet approachable mood consistent with a modern leadership network." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCFZQqAtyK0QUhvivV-eoTbTx_MeJoxFWwdHZk6tVRmls0swgETJ4XeCuY_aTRMJpiCAxSqlw85rlJV-RlMs_omfqTCfGdEI1JEV4WiO8WBpzEpYbdPluJAw-qFDkUvzdvZat6KpSuSQZugJ8OI66Q7f1Qx8Q5PfFRPrXLFVbdVyfCSnPK7bigdgjC9x7tntBWAH5gPkEVyxHAMwhO3fdqrxiH6GWnZaiAhC2b60rDtZn4zS53ar7qtqhQN09U5rSQoa7BVsrAuIjuL');"></div>
+<div class="flex flex-col">
+<span class="font-emphasis text-sm text-on-background">Sarah Jenkins</span>
+<span class="font-body-md text-xs text-outline">Emerging Leader</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-screen overflow-y-auto relative">
+<!-- Subtle background pattern overlay -->
+<div class="absolute inset-0 opacity-5 pointer-events-none z-0" style="background-image: radial-gradient(#0e3b83 1px, transparent 1px); background-size: 24px 24px;"></div>
+<div class="max-w-[1280px] w-full mx-auto px-margin-desktop py-lg relative z-10 flex flex-col gap-lg">
+<!-- Header Section -->
+<header class="flex flex-col gap-xs">
+<h2 class="font-display-lg text-[40px] text-primary tracking-tight">Welcome back, Sarah!</h2>
+<p class="font-body-lg text-on-surface-variant max-w-2xl">Here's a quick overview of your mentorship journey and upcoming opportunities within the network.</p>
+</header>
+<!-- Quick Actions -->
+<section class="flex flex-wrap gap-md">
+<button class="bg-secondary-container hover:bg-[#e08610] text-on-primary font-emphasis px-6 py-3 rounded-lg flex items-center gap-2 transition-colors shadow-level-1">
+<span class="material-symbols-outlined">chat</span>
+                    Message Mentor
+                </button>
+<button class="border-2 border-primary-container text-primary-container hover:bg-primary-container/5 font-emphasis px-6 py-3 rounded-lg flex items-center gap-2 transition-colors shadow-level-1 bg-surface">
+<span class="material-symbols-outlined">edit_calendar</span>
+                    Log Meeting
+                </button>
+<button class="border border-outline-variant text-on-surface-variant hover:bg-surface-container font-emphasis px-6 py-3 rounded-lg flex items-center gap-2 transition-colors shadow-level-1 bg-surface">
+<span class="material-symbols-outlined">search</span>
+                    Find Resources
+                </button>
+</section>
+<!-- Dashboard Grid -->
+<div class="grid grid-cols-12 gap-gutter items-start">
+<!-- Main Column (Left - 8 cols) -->
+<div class="col-span-12 lg:col-span-8 flex flex-col gap-lg">
+<!-- My Mentorship Card -->
+<section class="flex flex-col gap-sm">
+<h3 class="font-headline-md text-on-background text-2xl">Active Mentorship</h3>
+<div class="bg-surface rounded-lg shadow-level-1 p-md flex flex-col md:flex-row gap-md items-center border-t-4 border-secondary-container">
+<div class="size-24 rounded-full bg-cover bg-center shrink-0 border-4 border-surface-container-low" data-alt="A professional headshot of a mature man with subtle grey hair, wearing a sharp grey suit without a tie. He looks directly at the camera with a confident, experienced expression. The background is a clean, bright white studio setting. The lighting is crisp and modern, reflecting a high-level corporate authority suitable for a senior mentor profile." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBOiYrq1S-DB85Mea9BCj3Bz8x7YSzvMHmJKeUQwZra5t5mURbPM58EYM0HyQCO_8vuJGfypEjSfgXhTZDPgcrHr23mFpbHTxzH5_b8ajQ7moiHyZWQDDftcl2E1RHKFkXzh3IBj0O_MJxHKOkPqV8PZz8mJO94al4HYoVOfyQdbbUjN8X-wd1i2ONNq9c19sOPFnf0ZkX9nvTgWrcinLCHtasrbCPk8RLt9cS2xFEYXwah0wqbtVMlBVuKv-IeRWCpt9tu_DQKrvTk');"></div>
+<div class="flex-1 flex flex-col gap-1 text-center md:text-left">
+<div class="flex items-center gap-2 justify-center md:justify-start">
+<h4 class="font-headline-md text-primary text-xl">David Chen</h4>
+<span class="bg-primary-fixed text-on-primary-fixed text-xs px-2 py-0.5 rounded-full font-label-sm">Senior Mentor</span>
+</div>
+<p class="font-body-md text-on-surface-variant">VP of Product Innovation @ GlobalTech</p>
+<div class="flex items-center gap-2 mt-2 text-sm text-outline justify-center md:justify-start">
+<span class="material-symbols-outlined text-[18px]">event</span>
+                                    Next sync: Oct 24, 2:00 PM GMT
+                                </div>
+</div>
+<div class="shrink-0 w-full md:w-auto mt-4 md:mt-0">
+<button class="w-full text-primary-container font-emphasis hover:underline flex items-center justify-center gap-1">
+                                    View Goals
+                                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Upcoming Events (Horizontal Scroll) -->
+<section class="flex flex-col gap-sm">
+<div class="flex justify-between items-end">
+<h3 class="font-headline-md text-on-background text-2xl">Upcoming Events</h3>
+<a class="text-primary font-emphasis text-sm hover:underline" href="#">View all</a>
+</div>
+<div class="flex overflow-x-auto gap-md pb-4 no-scrollbar -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
+<!-- Event Card 1 -->
+<div class="min-w-[280px] w-[280px] bg-surface rounded-lg shadow-level-1 overflow-hidden flex flex-col border-t-4 border-primary-container shrink-0 cursor-pointer hover:shadow-level-2 transition-shadow">
+<div class="h-32 bg-cover bg-center" data-alt="A wide shot of a modern, brightly lit conference hall filled with attendees seated in rows facing a well-lit stage. A presentation screen displays abstract data charts in deep blue and white. The atmosphere is professional, energetic, and focused on knowledge sharing, aligning with a high-end corporate leadership summit aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAc2_UVKVcujZpL_q6cgTOruEknXy0oR04QxmeBiTgSsq0_hQt7V4nJu9RDODJYCDtlA1vOjOFn74_71gSEd1v5vTk6LDFyS5-IANxxiv-XGnUYN_fgdKxstl8zIeslGixgB8oOt378JKHkglxsLNJUankgaZHNJd5uAEJuPq7pSCYYbpBeQXRXKweatFP0UvId1boNpQFo4Z_7GS4KFhy2KXsdk14nXYBtbkn18B3avjviMXiZCmV87AFqkdv25AqjRauNJ8oVosUy');"></div>
+<div class="p-4 flex flex-col gap-2 flex-1">
+<div class="flex justify-between items-start">
+<span class="text-xs font-label-sm text-secondary-container uppercase tracking-wider">Webinar</span>
+<span class="text-xs text-outline font-body-md">Oct 15</span>
+</div>
+<h4 class="font-emphasis text-on-background leading-snug line-clamp-2">Leading Through Change: Resilience in 2024</h4>
+<div class="mt-auto pt-3 flex items-center gap-1 text-sm text-outline">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                                        10:00 AM - 11:30 AM
+                                    </div>
+</div>
+</div>
+<!-- Event Card 2 -->
+<div class="min-w-[280px] w-[280px] bg-surface rounded-lg shadow-level-1 overflow-hidden flex flex-col border-t-4 border-[#84cc16] shrink-0 cursor-pointer hover:shadow-level-2 transition-shadow">
+<div class="h-32 bg-cover bg-center" data-alt="A close-up view of diverse professionals engaged in a lively roundtable discussion in a sleek, glass-walled meeting room. Natural light floods the space, highlighting open notebooks and digital tablets on a wooden table. The mood is collaborative, dynamic, and focused on modern corporate networking and idea exchange." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPyc_XprdmisIrFpzkUypljJGYmbGbnpUDK7Lzs36D7Abgsw5uuH3Vw42GKkhP58YWjO8clQqoUtO1iphDmabYVikZDLDWcq_00OkO_bAJ7vK_qlFZP2N5m8yKcMRt5jbqYggphE9kexBN0X9MFzItge8geQqoT_ObsyUCEPcCx9Qc0OoTu_I2vwI4VeTo3RgCKm0-1v3EfJ_9W3JB1Wjqv-0vRJSs_YIHoYLLeiFg7zBvY1rGV9UvDzut1sXy7-dWl3B4kIAvp6m0');"></div>
+<div class="p-4 flex flex-col gap-2 flex-1">
+<div class="flex justify-between items-start">
+<span class="text-xs font-label-sm text-[#84cc16] uppercase tracking-wider">Workshop</span>
+<span class="text-xs text-outline font-body-md">Oct 22</span>
+</div>
+<h4 class="font-emphasis text-on-background leading-snug line-clamp-2">Strategic Thinking for Emerging Leaders</h4>
+<div class="mt-auto pt-3 flex items-center gap-1 text-sm text-outline">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                                        Virtual Room A
+                                    </div>
+</div>
+</div>
+<!-- Event Card 3 -->
+<div class="min-w-[280px] w-[280px] bg-surface rounded-lg shadow-level-1 overflow-hidden flex flex-col border-t-4 border-primary-container shrink-0 cursor-pointer hover:shadow-level-2 transition-shadow">
+<div class="h-32 bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-outline-variant">groups</span>
+</div>
+<div class="p-4 flex flex-col gap-2 flex-1">
+<div class="flex justify-between items-start">
+<span class="text-xs font-label-sm text-secondary-container uppercase tracking-wider">Networking</span>
+<span class="text-xs text-outline font-body-md">Nov 05</span>
+</div>
+<h4 class="font-emphasis text-on-background leading-snug line-clamp-2">Regional Cohort Mixer - West Africa</h4>
+<div class="mt-auto pt-3 flex items-center gap-1 text-sm text-outline">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                                        Accra, Ghana (Hybrid)
+                                    </div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Side Column (Right - 4 cols) -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-sm">
+<h3 class="font-headline-md text-on-background text-2xl">Recent Activity</h3>
+<div class="bg-surface rounded-lg shadow-level-1 p-md flex flex-col gap-0 border-t-4 border-surface-tint">
+<!-- Activity Item 1 -->
+<div class="flex gap-4 py-3 border-b border-surface-container">
+<div class="mt-1 size-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">forum</span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="font-body-md text-on-background text-sm"><span class="font-emphasis">David Chen</span> sent you a message regarding your Q3 goals.</p>
+<span class="text-xs text-outline">2 hours ago</span>
+</div>
+</div>
+<!-- Activity Item 2 -->
+<div class="flex gap-4 py-3 border-b border-surface-container">
+<div class="mt-1 size-8 rounded-full bg-secondary-fixed text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">article</span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="font-body-md text-on-background text-sm">New resource added to the library: <span class="font-emphasis">"Navigating Institutional Policy"</span>.</p>
+<span class="text-xs text-outline">Yesterday</span>
+</div>
+</div>
+<!-- Activity Item 3 -->
+<div class="flex gap-4 py-3 border-b border-surface-container">
+<div class="mt-1 size-8 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="font-body-md text-on-background text-sm">You completed the <span class="font-emphasis">Leadership Styles Assessment</span>.</p>
+<span class="text-xs text-outline">Oct 10</span>
+</div>
+</div>
+<!-- Activity Item 4 -->
+<div class="flex gap-4 pt-3 pb-1">
+<div class="mt-1 size-8 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">event_available</span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="font-body-md text-on-background text-sm">Meeting logged: <span class="font-emphasis">Initial Kickoff Sync</span>.</p>
+<span class="text-xs text-outline">Oct 01</span>
+</div>
+</div>
+<button class="mt-4 text-primary font-emphasis text-sm hover:underline text-center w-full py-2 bg-surface-container-low rounded">
+                            View All Activity
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

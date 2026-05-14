@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Events - NGN Portal</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#bead00",
+                        "on-tertiary-fixed-variant": "#4f4700",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#f9e544",
+                        "outline-variant": "#c4c6d2",
+                        "on-secondary-fixed": "#2d1600",
+                        "inverse-surface": "#303031",
+                        "primary-fixed-dim": "#afc6ff",
+                        "on-background": "#1b1b1c",
+                        "surface": "#fcf9f9",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#0e3b83",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e5e2e2",
+                        "on-secondary-container": "#653900",
+                        "primary-fixed": "#d9e2ff",
+                        "surface-dim": "#dcd9d9",
+                        "surface-container-highest": "#e5e2e2",
+                        "primary": "#00265e",
+                        "on-primary-fixed-variant": "#1b448c",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#474000",
+                        "on-surface-variant": "#434651",
+                        "on-primary-fixed": "#001944",
+                        "background": "#fcf9f9",
+                        "tertiary-fixed-dim": "#dbc826",
+                        "surface-container-high": "#eae7e7",
+                        "secondary-fixed": "#ffdcbe",
+                        "on-tertiary-fixed": "#201c00",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f6f3f3",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#f0eded",
+                        "on-surface": "#1b1b1c",
+                        "surface-tint": "#385ca5",
+                        "secondary-fixed-dim": "#ffb871",
+                        "tertiary": "#695f00",
+                        "surface-bright": "#fcf9f9",
+                        "on-primary-container": "#86a8f7",
+                        "secondary-container": "#fe9812",
+                        "on-secondary-fixed-variant": "#6a3c00",
+                        "inverse-on-surface": "#f3f0f0",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#afc6ff",
+                        "outline": "#747782",
+                        "secondary": "#8b5000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "lg": "48px",
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "xl": "80px",
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "emphasis": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "300" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "300" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "emphasis": ["16px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; }
+        .afro-pattern-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300265e' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased flex min-h-screen">
+<!-- SideNavBar (Strict inclusion as Destination screen) -->
+<aside class="w-64 flex-shrink-0 bg-surface border-r border-outline-variant/30 flex flex-col h-screen sticky top-0 overflow-y-auto">
+<div class="p-lg border-b border-outline-variant/30">
+<div class="flex items-center gap-sm">
+<div class="bg-primary rounded-full w-10 h-10 flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</div>
+<div class="flex flex-col">
+<h1 class="font-emphasis text-on-background">NGN Portal</h1>
+<p class="font-label-sm text-on-surface-variant">Mo Ibrahim Foundation</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 p-md flex flex-col gap-base">
+<a class="flex items-center gap-sm px-md py-sm rounded-lg hover:bg-surface-variant text-on-surface-variant hover:text-on-background transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home" data-weight="regular">home</span>
+<span class="font-emphasis">Home</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg bg-primary-container text-on-primary-container" href="#">
+<span class="material-symbols-outlined" data-icon="event" data-weight="fill" style="font-variation-settings: 'FILL' 1;">event</span>
+<span class="font-emphasis">Events</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg hover:bg-surface-variant text-on-surface-variant hover:text-on-background transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="group" data-weight="regular">group</span>
+<span class="font-emphasis">Mentorship</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg hover:bg-surface-variant text-on-surface-variant hover:text-on-background transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="forum" data-weight="regular">forum</span>
+<span class="font-emphasis">Community</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg hover:bg-surface-variant text-on-surface-variant hover:text-on-background transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings" data-weight="regular">settings</span>
+<span class="font-emphasis">Settings</span>
+</a>
+</nav>
+<div class="p-md border-t border-outline-variant/30">
+<button class="w-full flex items-center justify-center gap-sm bg-secondary-container text-on-secondary-container font-emphasis py-sm rounded-lg hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                Create Event
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-w-0 bg-background relative z-0">
+<!-- Decorative Pattern Background -->
+<div class="absolute inset-0 afro-pattern-bg z-[-1] pointer-events-none"></div>
+<!-- Header -->
+<header class="pt-margin-desktop px-margin-desktop pb-lg flex flex-col gap-md lg:flex-row lg:items-end justify-between">
+<div class="flex flex-col gap-xs max-w-2xl">
+<h2 class="font-display-lg text-primary">Events Programme</h2>
+<p class="font-body-lg text-on-surface-variant">Discover and register for upcoming leadership workshops, mentorship sessions, and exclusive networking opportunities.</p>
+</div>
+<!-- View Toggle & Search -->
+<div class="flex items-center gap-md">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="pl-lg pr-sm py-sm rounded-lg bg-surface border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none font-body-md w-64" placeholder="Search events..." type="text"/>
+</div>
+<div class="flex bg-surface-variant rounded-lg p-xs border border-outline-variant/30">
+<button aria-label="Calendar View" class="flex items-center justify-center px-sm py-xs rounded-md text-on-surface-variant hover:text-on-background transition-colors">
+<span class="material-symbols-outlined" data-icon="calendar_month" data-weight="regular">calendar_month</span>
+</button>
+<button aria-label="List View" class="flex items-center justify-center px-sm py-xs rounded-md bg-surface text-primary shadow-[0px_2px_4px_rgba(0,0,0,0.05)]">
+<span class="material-symbols-outlined" data-icon="view_list" data-weight="fill" style="font-variation-settings: 'FILL' 1;">view_list</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Filters / Tabs -->
+<div class="px-margin-desktop pb-lg">
+<div class="flex gap-sm border-b border-outline-variant/50 pb-sm overflow-x-auto no-scrollbar">
+<button class="px-md py-sm rounded-full bg-primary text-on-primary font-emphasis whitespace-nowrap">All Programmes</button>
+<button class="px-md py-sm rounded-full bg-surface border border-outline-variant text-on-surface-variant hover:bg-surface-variant font-emphasis whitespace-nowrap transition-colors">Mentorship</button>
+<button class="px-md py-sm rounded-full bg-surface border border-outline-variant text-on-surface-variant hover:bg-surface-variant font-emphasis whitespace-nowrap transition-colors">In Conversation</button>
+<button class="px-md py-sm rounded-full bg-surface border border-outline-variant text-on-surface-variant hover:bg-surface-variant font-emphasis whitespace-nowrap transition-colors">Workshops</button>
+<button class="px-md py-sm rounded-full bg-surface border border-outline-variant text-on-surface-variant hover:bg-surface-variant font-emphasis whitespace-nowrap transition-colors">Networking</button>
+</div>
+</div>
+<!-- Event Grid -->
+<div class="px-margin-desktop pb-margin-desktop grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Event Card 1 (Workshop) -->
+<article class="bg-surface rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] overflow-hidden flex flex-col border-t-4 border-tertiary-container hover:shadow-[0px_8px_30px_rgba(0,0,0,0.10)] transition-shadow">
+<div class="h-48 bg-cover bg-center relative" data-alt="A professional corporate workshop setting in a modern, brightly lit conference room. Participants are engaged in a collaborative discussion around a large wooden table. The lighting is soft and natural, emphasizing the corporate/modern aesthetic with clear whites, deep blues, and subtle lime accents. The mood is focused, authoritative, yet dynamic, perfectly reflecting the brand identity of an African leadership network." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYxggxWqy_AnD6dOAaAAg4HDcZ2H4mtlRe2NrR7lypqLppnFHoDxrD6ohPAGG0RNXoRXb-qgBGwLt8MXKlHWzALugkoO21wLD69sdLrwP7Hbawp23SG5XmHVrRS5YsE4s39cp9TybNIw-whaLUlq3tbh5zbSqpSRXWsqCUGrnB-fzFPe0At7g9l2LqF7l5TFcxDcIfmA57SsaKQ1CAYArZw7x0wnxUwUznXUhpWqUxtHECQRvRO8yleIq4U3n10Gcvp-vbqw9E175A')">
+<div class="absolute top-sm right-sm bg-surface/90 backdrop-blur px-sm py-xs rounded text-primary font-label-sm uppercase tracking-wider">Workshop</div>
+</div>
+<div class="p-md flex flex-col flex-1 gap-sm">
+<div class="flex flex-col gap-xs">
+<h3 class="font-headline-md text-on-background line-clamp-2">Strategic Leadership in Times of Crisis</h3>
+<p class="font-body-md text-on-surface-variant line-clamp-2">A deep dive into navigating organizational challenges with resilience and clarity.</p>
+</div>
+<div class="mt-auto pt-md border-t border-outline-variant/30 flex flex-col gap-xs">
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="schedule">schedule</span>
+<span class="font-label-sm">Oct 15, 2023 • 10:00 AM UTC</span>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="location_on">location_on</span>
+<span class="font-label-sm">Virtual</span>
+</div>
+</div>
+<button class="mt-sm w-full py-sm rounded-lg border-2 border-primary text-primary font-emphasis hover:bg-primary hover:text-on-primary transition-colors">
+                        View Details
+                    </button>
+</div>
+</article>
+<!-- Event Card 2 (In Conversation) -->
+<article class="bg-surface rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] overflow-hidden flex flex-col border-t-4 border-secondary-container hover:shadow-[0px_8px_30px_rgba(0,0,0,0.10)] transition-shadow">
+<div class="h-48 bg-cover bg-center relative" data-alt="Two professionals engaged in a thoughtful, one-on-one conversation on stage during a leadership summit. The setting is modern and sleek, featuring clean architectural lines and warm, directional lighting. The color palette highlights sharp contrasts between deep navy blues and vibrant orange accents, consistent with the corporate/modern brand. The atmosphere is insightful and inspiring, capturing a moment of profound mentorship." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAInj58PCdqLlC6kq9jIG6b1UlrfphByNfPQmCO8FQJszaLuq4vIG0Mcr4HohhXRrQgF21HPY-lsgV83I2KaFRwuAt3M05Zl2ACrWb6Jrexrq3FkqNFZdedSsEDOhPVEwXvLL-s4DEVrNEOgwgS72BpNTHie8iLRsQqVHS1-PfoxpH-GI9fl-gOzWdHllG0hV-OwZSi-wivHxs_9UKchD7Qwtboq9hhzoYbZYsYwlKl71VVSLPMcx8eS395uUl02EZ_oApy-KkGi_DP')">
+<div class="absolute top-sm right-sm bg-surface/90 backdrop-blur px-sm py-xs rounded text-secondary font-label-sm uppercase tracking-wider">In Conversation</div>
+</div>
+<div class="p-md flex flex-col flex-1 gap-sm">
+<div class="flex flex-col gap-xs">
+<h3 class="font-headline-md text-on-background line-clamp-2">Fireside Chat with Mo Ibrahim</h3>
+<p class="font-body-md text-on-surface-variant line-clamp-2">Discussing the future of governance and youth empowerment in Africa.</p>
+</div>
+<div class="mt-auto pt-md border-t border-outline-variant/30 flex flex-col gap-xs">
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="schedule">schedule</span>
+<span class="font-label-sm">Oct 22, 2023 • 2:00 PM UTC</span>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="location_on">location_on</span>
+<span class="font-label-sm">Hybrid • London</span>
+</div>
+</div>
+<button class="mt-sm w-full py-sm rounded-lg border-2 border-primary text-primary font-emphasis hover:bg-primary hover:text-on-primary transition-colors">
+                        View Details
+                    </button>
+</div>
+</article>
+<!-- Event Card 3 (Networking) -->
+<article class="bg-surface rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] overflow-hidden flex flex-col border-t-4 border-primary hover:shadow-[0px_8px_30px_rgba(0,0,0,0.10)] transition-shadow">
+<div class="h-48 bg-cover bg-center relative" data-alt="A lively, upscale networking event in an elegant, modern hall. Diverse groups of professionals are mingling, holding glasses, and engaged in animated discussions. The lighting is warm and inviting, layered over a sophisticated gray and white background with subtle geometric patterns subtly visible in the decor. The mood is energetic, accessible, and highly professional, reflecting an active community of young leaders." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDm5WQ-pLthmu6nbsQJUBdvT766m6Z4avDLgASLjhxF3Qe4gQDBdtNz87QFl5aSbH6xCa13etSP97WZHbJ3Wa6_-ldo8ykAsarZS6XoezATvCQj1bEFAMv5gKHILmNgNI3ikBPig_73Sly1i588_3JwHGE9XwPycR-zj-tJTFul7UCsXy6nMn2XWGvupHmy-GDDkaUP8-1i0wjdIjRCB8A4HJn16Uay_VZgGYQYAc5WUYOiDUKKODFsYHO9cxAVLHZyUJ67Avu3uBLl')">
+<div class="absolute top-sm right-sm bg-surface/90 backdrop-blur px-sm py-xs rounded text-primary font-label-sm uppercase tracking-wider">Networking</div>
+</div>
+<div class="p-md flex flex-col flex-1 gap-sm">
+<div class="flex flex-col gap-xs">
+<h3 class="font-headline-md text-on-background line-clamp-2">Global Cohort Mixer</h3>
+<p class="font-body-md text-on-surface-variant line-clamp-2">Connect with fellow NGN members across different sectors and regions.</p>
+</div>
+<div class="mt-auto pt-md border-t border-outline-variant/30 flex flex-col gap-xs">
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="schedule">schedule</span>
+<span class="font-label-sm">Nov 05, 2023 • 6:00 PM UTC</span>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="location_on">location_on</span>
+<span class="font-label-sm">Virtual</span>
+</div>
+</div>
+<button class="mt-sm w-full py-sm rounded-lg border-2 border-primary text-primary font-emphasis hover:bg-primary hover:text-on-primary transition-colors">
+                        View Details
+                    </button>
+</div>
+</article>
+<!-- Event Card 4 (Mentorship) -->
+<article class="bg-surface rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] overflow-hidden flex flex-col border-t-4 border-outline hover:shadow-[0px_8px_30px_rgba(0,0,0,0.10)] transition-shadow">
+<div class="h-48 bg-cover bg-center relative" data-alt="A focused mentorship session in a bright, modern office space. A senior leader is explaining a concept to a younger professional, both looking at a document. The environment is clean, featuring crisp whites, warm grays, and natural light that underscores clarity and precision. The visual style is authoritative yet welcoming, embodying the nurturing spirit of the leadership network's brand." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAbnQjPG_OBx_xOxGANdliyEiLcTmKT-UwQnrIqL5KnTwuH-j_JzKMgNhRNGwZM4-xHaSMk9LrO6Cn1tY1VzkhMsl7tJGWOMgn2Xf3V8ILPgZVgDhmP2FoDJx-SVDoNWZwJx51jY590tkqrHZRSiFSAbn_6w6sHplz7FZtYLQ_5_RvEH5R0Mp8whDi4v8L7j1UCo7-Iyf_zSjTs1LgH5g3tzse7BPmSngJYyT7mqC0ODNSFDMybY012zoArC5iTJYX8DHtsoWVCnloH')">
+<div class="absolute top-sm right-sm bg-surface/90 backdrop-blur px-sm py-xs rounded text-on-surface-variant font-label-sm uppercase tracking-wider">Mentorship</div>
+</div>
+<div class="p-md flex flex-col flex-1 gap-sm">
+<div class="flex flex-col gap-xs">
+<h3 class="font-headline-md text-on-background line-clamp-2">Policy Development Masterclass</h3>
+<p class="font-body-md text-on-surface-variant line-clamp-2">Exclusive small-group session on drafting effective public policy.</p>
+</div>
+<div class="mt-auto pt-md border-t border-outline-variant/30 flex flex-col gap-xs">
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="schedule">schedule</span>
+<span class="font-label-sm">Nov 12, 2023 • 9:00 AM UTC</span>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="location_on">location_on</span>
+<span class="font-label-sm">Virtual</span>
+</div>
+</div>
+<button class="mt-sm w-full py-sm rounded-lg border-2 border-primary text-primary font-emphasis hover:bg-primary hover:text-on-primary transition-colors">
+                        View Details
+                    </button>
+</div>
+</article>
+</div>
+</main>
+</body></html>

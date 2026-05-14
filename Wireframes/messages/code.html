@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Message Inbox</title>
+<!-- Google Fonts: Hanken Grotesk & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#f0eded",
+              "surface": "#fcf9f9",
+              "surface-container-lowest": "#ffffff",
+              "outline-variant": "#c4c6d2",
+              "on-secondary-container": "#653900",
+              "secondary-container": "#fe9812",
+              "surface-dim": "#dcd9d9",
+              "on-tertiary-fixed-variant": "#4f4700",
+              "secondary-fixed": "#ffdcbe",
+              "inverse-on-surface": "#f3f0f0",
+              "on-tertiary": "#ffffff",
+              "on-surface": "#1b1b1c",
+              "surface-container-highest": "#e5e2e2",
+              "secondary-fixed-dim": "#ffb871",
+              "tertiary-fixed-dim": "#dbc826",
+              "outline": "#747782",
+              "surface-tint": "#385ca5",
+              "surface-container-high": "#eae7e7",
+              "primary-container": "#0e3b83",
+              "on-primary-fixed-variant": "#1b448c",
+              "tertiary-fixed": "#f9e544",
+              "on-secondary-fixed": "#2d1600",
+              "on-primary-fixed": "#001944",
+              "surface-bright": "#fcf9f9",
+              "on-surface-variant": "#434651",
+              "primary-fixed-dim": "#afc6ff",
+              "on-error": "#ffffff",
+              "inverse-surface": "#303031",
+              "on-secondary-fixed-variant": "#6a3c00",
+              "surface-variant": "#e5e2e2",
+              "tertiary": "#695f00",
+              "inverse-primary": "#afc6ff",
+              "on-error-container": "#93000a",
+              "on-background": "#1b1b1c",
+              "on-secondary": "#ffffff",
+              "surface-container-low": "#f6f3f3",
+              "primary-fixed": "#d9e2ff",
+              "tertiary-container": "#bead00",
+              "on-tertiary-fixed": "#201c00",
+              "error-container": "#ffdad6",
+              "primary": "#00265e",
+              "on-tertiary-container": "#474000",
+              "on-primary-container": "#86a8f7",
+              "secondary": "#8b5000",
+              "background": "#fcf9f9",
+              "error": "#ba1a1a",
+              "on-primary": "#ffffff"
+            },
+            borderRadius: {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "full": "9999px"
+            },
+            spacing: {
+              "xs": "4px",
+              "gutter": "24px",
+              "sm": "12px",
+              "md": "24px",
+              "margin-desktop": "64px",
+              "lg": "48px",
+              "base": "8px",
+              "xl": "80px",
+              "margin-mobile": "16px"
+            },
+            fontFamily: {
+              "headline-md": ["Hanken Grotesk"],
+              "emphasis": ["Hanken Grotesk"],
+              "label-sm": ["Hanken Grotesk"],
+              "body-md": ["Hanken Grotesk"],
+              "headline-lg-mobile": ["Hanken Grotesk"],
+              "display-lg": ["Hanken Grotesk"],
+              "body-lg": ["Hanken Grotesk"],
+              "headline-lg": ["Hanken Grotesk"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col relative pb-[72px]">
+<!-- Header Section -->
+<header class="bg-surface sticky top-0 z-10 px-margin-mobile py-md flex items-center justify-between shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+<h1 class="text-headline-lg-mobile font-bold text-primary">Inbox</h1>
+<div class="flex items-center gap-sm">
+<button aria-label="Search Messages" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-on-surface" style="font-variation-settings: 'FILL' 0;">search</span>
+</button>
+<button aria-label="New Message" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">edit_square</span>
+</button>
+</div>
+</header>
+<!-- Tabs -->
+<div class="bg-surface px-margin-mobile border-b border-surface-variant flex gap-gutter">
+<button class="py-sm border-b-[3px] border-primary text-primary font-emphasis text-[14px]">All Messages</button>
+<button class="py-sm border-b-[3px] border-transparent text-on-surface-variant font-emphasis text-[14px] hover:text-on-surface transition-colors">Unread</button>
+</div>
+<!-- Message List -->
+<main class="flex-1 overflow-y-auto bg-surface">
+<!-- Unread Message Item -->
+<article class="flex items-center gap-margin-mobile p-margin-mobile border-b border-surface-variant bg-surface hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="relative shrink-0">
+<img class="w-14 h-14 rounded-full object-cover shadow-sm" data-alt="A professional headshot of a young African female leader looking confident. She is wearing a modern corporate blazer in a subtle blue hue. The background is a clean, bright, out-of-focus modern office setting with warm light mode illumination, matching the corporate yet accessible brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfZ88zTR3od19PpkdFATkUBNR9yq0xP7H0qUmoGHtA05jwJRWo6q1fwoezJNTdzYfWj63nCcrNaMRFStTSW_vcs5nJ3M-YDDqyp6QlT0IvT4Isi0Ywnlc2vw9SEt4ZIaeUWqOxP-GeIwtER19HXV20_6grM_V6immCU9wt9ulDWw-prViIyt-X6xgEdIInjT7d78uUstLQ9rdnViswSylBlnP4S-F54k0-wbWf60_n-V9ipUWJ97Zk0_bzrOQHkETr_BbNlvo2dEV8"/>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-secondary-container rounded-full border-2 border-surface"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-xs">
+<h2 class="text-on-surface font-emphasis text-[16px] truncate">Sarah Jenkins</h2>
+<span class="text-primary font-emphasis text-[12px] shrink-0 ml-sm">10:42 AM</span>
+</div>
+<p class="text-on-surface font-emphasis text-[14px] truncate leading-tight">Are we still on for the leadership panel tomorrow?</p>
+</div>
+</article>
+<!-- Unread Message Item -->
+<article class="flex items-center gap-margin-mobile p-margin-mobile border-b border-surface-variant bg-surface hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="relative shrink-0">
+<img class="w-14 h-14 rounded-full object-cover shadow-sm" data-alt="A portrait of an energetic young male entrepreneur from Africa, smiling warmly. He is wearing a crisp white button-down shirt. The lighting is bright and even, casting soft ambient shadows consistent with a clean, high-end digital interface in light mode. The mood is collaborative and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWwcsx7g8t4en_g2qu95-ez4kH2qzOdLRBMe2aBemr2cjSwQmrxVtNswlDakBoxGAmpwABn1QKbPnadZFl9x-_2ddb7nKMwD7WfEq8uoGqXmBpTUYfqTH6l-mkBAiIkJHyWbB1G8rnJ7G8UUVo0fJ45aR-FMbwQuDF0LO9TvQTertd5Mhg5NfVaWQ-Y713L_kLWc4p1ELjkHemYaVobRY86HxUR503TvzjJ3dmiAONTVNZmVbqGKLiGKMf3ZLQ7rLW2XCpIakFcPUo"/>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-secondary-container rounded-full border-2 border-surface"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-xs">
+<h2 class="text-on-surface font-emphasis text-[16px] truncate">Kwame Mensah</h2>
+<span class="text-primary font-emphasis text-[12px] shrink-0 ml-sm">09:15 AM</span>
+</div>
+<p class="text-on-surface font-emphasis text-[14px] truncate leading-tight">I reviewed the grant proposal. Looks solid.</p>
+</div>
+</article>
+<!-- Read Message Item -->
+<article class="flex items-center gap-margin-mobile p-margin-mobile border-b border-surface-variant bg-surface hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="relative shrink-0">
+<img class="w-14 h-14 rounded-full object-cover shadow-sm" data-alt="A professional profile photo of an experienced African woman in business attire. She wears glasses and a navy blue top, conveying authority and approachability. The background is a soft, minimalist grey, aligning perfectly with the structured, corporate light-mode design system. The lighting is studio-quality and pristine." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7mt9d5aF-L96gkjDVw8lQbP3lV0dOoZm7WxjDZ3VLF33GrsOnt-cmhvoANNYsGVQxLpzBf7R4HN8EbDSBxmLyRlEzF0niLCT9bQRD7mkGeowddpwCg62LyuFW5zBfF_qE8hzk8XzCFHIBsDgQmv5NDgAkgn58R-nBItdChk3VPS9HCSH0Cq60dRW4YLhjlVE1K0iInNkYtK1fgRUNY8KpqWPZm_Haya803cMaXlqGwhCGR0iI-UH6rFhiI1XQFc1jqmAAJ5KUZAy8"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-xs">
+<h2 class="text-on-surface font-emphasis text-[16px] truncate">Ngozi Adichie</h2>
+<span class="text-on-surface-variant font-label-sm text-[12px] shrink-0 ml-sm">Yesterday</span>
+</div>
+<p class="text-on-surface-variant font-body-md text-[14px] truncate leading-tight">Thank you for sharing those insights during the forum.</p>
+</div>
+</article>
+<!-- Read Message Item -->
+<article class="flex items-center gap-margin-mobile p-margin-mobile border-b border-surface-variant bg-surface hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="relative shrink-0 flex items-center justify-center w-14 h-14 rounded-full bg-surface-variant text-primary font-bold text-lg shadow-sm">
+                MR
+            </div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-xs">
+<h2 class="text-on-surface font-emphasis text-[16px] truncate">Mike Ross</h2>
+<span class="text-on-surface-variant font-label-sm text-[12px] shrink-0 ml-sm">Mon</span>
+</div>
+<p class="text-on-surface-variant font-body-md text-[14px] truncate leading-tight">I sent the documents over to your team.</p>
+</div>
+</article>
+<!-- Read Message Item -->
+<article class="flex items-center gap-margin-mobile p-margin-mobile border-b border-surface-variant bg-surface hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="relative shrink-0">
+<img class="w-14 h-14 rounded-full object-cover shadow-sm" data-alt="A casual yet professional photo of a young man against an urban architectural background. He wears a smart-casual polo shirt. The scene is brightly lit with natural sunlight, capturing a forward-looking, vibrant aesthetic suitable for a next-generation leadership network platform in light mode." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpg5gedmwJTWzd7UWuMtqItFuvxffOjAssElh18cypQBLn1xRAsnbdSY5WiwUl7ZilW-1LXJp6g0KjVbyCijTNToPS11YLftLcPkd1o9C1d05fARqbuCpMx9M5M8XRb4vjnUwQQupswTv2qDTvjTPBOWvKrDH2np57WkGkkAmV4cdsBXM5uKKidncX3y70L0PsRcWBqtyLX_oE2y2aHiI6bk-_LbMwaLR_wvEJkM50ux_TYMesJUu6GVdQ207KLLrT9NhnaXqikAZK"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-xs">
+<h2 class="text-on-surface font-emphasis text-[16px] truncate">David Osei</h2>
+<span class="text-on-surface-variant font-label-sm text-[12px] shrink-0 ml-sm">Oct 12</span>
+</div>
+<p class="text-on-surface-variant font-body-md text-[14px] truncate leading-tight">Can we schedule a quick sync next week?</p>
+</div>
+</article>
+</main>
+<!-- Shared Component: Bottom NavBar -->
+<div class="fixed bottom-0 w-full flex gap-2 border-t border-surface-variant bg-surface px-4 pb-3 pt-2 z-20 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-on-surface-variant" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 0;">House</span>
+</div>
+<p class="text-[12px] font-medium leading-normal tracking-[0.015em]">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-on-surface-variant" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 0;">user_attributes</span>
+</div>
+<p class="text-[12px] font-medium leading-normal tracking-[0.015em]">Matches</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">chat</span>
+</div>
+<p class="text-[12px] font-medium leading-normal tracking-[0.015em]">Inbox</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-on-surface-variant" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 0;">verified_user</span>
+</div>
+<p class="text-[12px] font-medium leading-normal tracking-[0.015em]">Profile</p>
+</a>
+</div>
+</body></html>
