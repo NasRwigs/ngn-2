@@ -39,56 +39,12 @@ create type public.moderation_kind as enum ('post', 'comment');
 create or replace function public.set_updated_at()
 returns trigger
 language plpgsql
+set search_path = public
 as $$
 begin
   new.updated_at = now();
   return new;
 end;
-$$;
-
-create or replace function public.is_staff()
-returns boolean
-language sql
-stable
-security definer
-set search_path = public
-as $$
-  select exists (
-    select 1
-    from public.profiles p
-    where p.id = auth.uid()
-      and p.role in ('exco', 'programme_admin', 'foundation_staff')
-  );
-$$;
-
-create or replace function public.can_manage_spaces()
-returns boolean
-language sql
-stable
-security definer
-set search_path = public
-as $$
-  select exists (
-    select 1
-    from public.profiles p
-    where p.id = auth.uid()
-      and p.role in ('exco', 'programme_admin')
-  );
-$$;
-
-create or replace function public.can_create_events()
-returns boolean
-language sql
-stable
-security definer
-set search_path = public
-as $$
-  select exists (
-    select 1
-    from public.profiles p
-    where p.id = auth.uid()
-      and p.role in ('exco', 'programme_admin')
-  );
 $$;
 
 -- ---------------------------------------------------------------------------
@@ -195,6 +151,52 @@ on public.profiles for update
 to authenticated
 using (auth.uid() = id)
 with check (auth.uid() = id);
+
+-- RLS helpers (after profiles — bodies reference public.profiles)
+create or replace function public.is_staff()
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select exists (
+    select 1
+    from public.profiles p
+    where p.id = auth.uid()
+      and p.role in ('exco', 'programme_admin', 'foundation_staff')
+  );
+$$;
+
+create or replace function public.can_manage_spaces()
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select exists (
+    select 1
+    from public.profiles p
+    where p.id = auth.uid()
+      and p.role in ('exco', 'programme_admin')
+  );
+$$;
+
+create or replace function public.can_create_events()
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select exists (
+    select 1
+    from public.profiles p
+    where p.id = auth.uid()
+      and p.role in ('exco', 'programme_admin')
+  );
+$$;
 
 -- ---------------------------------------------------------------------------
 -- Mentorship
@@ -703,7 +705,18 @@ begin
 end;
 $$;
 
+revoke all on function public.create_dm_conversation(uuid) from public;
+revoke execute on function public.create_dm_conversation(uuid) from anon;
 grant execute on function public.create_dm_conversation(uuid) to authenticated;
+
+revoke all on function public.is_staff() from public;
+revoke all on function public.can_manage_spaces() from public;
+revoke all on function public.can_create_events() from public;
+revoke all on function public.handle_new_user() from public;
+revoke execute on function public.is_staff() from anon, authenticated;
+revoke execute on function public.can_manage_spaces() from anon, authenticated;
+revoke execute on function public.can_create_events() from anon, authenticated;
+revoke execute on function public.handle_new_user() from anon, authenticated;
 
 alter table public.conversations enable row level security;
 alter table public.conversation_participants enable row level security;
@@ -752,13 +765,22 @@ create policy "messages_update_read_own"
 on public.messages for update
 to authenticated
 using (
-  exists (
+  sender_id <> auth.uid()
+  and exists (
     select 1 from public.conversation_participants cp
     where cp.conversation_id = messages.conversation_id
       and cp.profile_id = auth.uid()
   )
 )
-with check (true);
+with check (
+  sender_id <> auth.uid()
+  and read_at is not null
+  and exists (
+    select 1 from public.conversation_participants cp
+    where cp.conversation_id = messages.conversation_id
+      and cp.profile_id = auth.uid()
+  )
+);
 
 create policy "conversation_participants_update_own"
 on public.conversation_participants for update
@@ -932,11 +954,6 @@ on conflict (id) do nothing;
 insert into storage.buckets (id, name, public)
 values ('attachments', 'attachments', false)
 on conflict (id) do nothing;
-
-create policy "avatars_public_read"
-on storage.objects for select
-to public
-using (bucket_id = 'avatars');
 
 create policy "avatars_owner_write"
 on storage.objects for insert
