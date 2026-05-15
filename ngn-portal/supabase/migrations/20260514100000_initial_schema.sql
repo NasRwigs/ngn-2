@@ -713,10 +713,14 @@ revoke all on function public.is_staff() from public;
 revoke all on function public.can_manage_spaces() from public;
 revoke all on function public.can_create_events() from public;
 revoke all on function public.handle_new_user() from public;
-revoke execute on function public.is_staff() from anon, authenticated;
-revoke execute on function public.can_manage_spaces() from anon, authenticated;
-revoke execute on function public.can_create_events() from anon, authenticated;
+revoke execute on function public.is_staff() from anon;
+revoke execute on function public.can_manage_spaces() from anon;
+revoke execute on function public.can_create_events() from anon;
 revoke execute on function public.handle_new_user() from anon, authenticated;
+
+grant execute on function public.is_staff() to authenticated;
+grant execute on function public.can_manage_spaces() to authenticated;
+grant execute on function public.can_create_events() to authenticated;
 
 alter table public.conversations enable row level security;
 alter table public.conversation_participants enable row level security;
