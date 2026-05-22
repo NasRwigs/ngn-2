@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { MIN_PASSWORD_LENGTH } from "@/lib/auth/password";
+
 import { ConfirmResetForm } from "./confirm-form";
 
 export const metadata = { title: "Choose a new password" };
@@ -22,8 +24,8 @@ export default function ConfirmResetPage() {
           Choose a new password
         </h1>
         <p className="mt-1 text-body-md text-on-surface-variant">
-          Pick a strong password — at least 12 characters with a mix of letters
-          and numbers.
+          Pick a strong password — at least {MIN_PASSWORD_LENGTH} characters with
+          a mix of letters and numbers.
         </p>
 
         <div className="mt-8">

@@ -6,6 +6,10 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { FormField } from "@/components/ui/form-field";
 import { Input } from "@/components/ui/input";
+import {
+  MIN_PASSWORD_LENGTH,
+  passwordMeetsMinLength,
+} from "@/lib/auth/password";
 import { isSupabaseEnabled } from "@/lib/supabase/config";
 
 import { updatePasswordAction } from "../actions";
@@ -24,6 +28,10 @@ export function ConfirmResetForm() {
     setError(null);
     if (password !== confirm) {
       setError("Passwords don't match.");
+      return;
+    }
+    if (!passwordMeetsMinLength(password)) {
+      setError(`Password must be at least ${MIN_PASSWORD_LENGTH} characters.`);
       return;
     }
     if (strength < 3) {
@@ -106,7 +114,7 @@ const STRENGTH_LABEL = ["very weak", "weak", "fair", "good", "strong"];
 
 function scorePassword(password: string): number {
   let score = 0;
-  if (password.length >= 12) score++;
+  if (password.length >= MIN_PASSWORD_LENGTH) score++;
   if (/[a-z]/.test(password) && /[A-Z]/.test(password)) score++;
   if (/\d/.test(password)) score++;
   if (/[^A-Za-z0-9]/.test(password)) score++;

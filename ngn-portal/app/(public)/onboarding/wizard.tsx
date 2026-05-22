@@ -20,6 +20,12 @@ import { SECTORS } from "@/lib/taxonomy/sectors";
 import { isSupabaseEnabled } from "@/lib/supabase/config";
 import { toast } from "@/components/ui/toaster";
 
+import {
+  MIN_PASSWORD_LENGTH,
+  MIN_PASSWORD_LENGTH_HINT,
+  passwordMeetsMinLength,
+} from "@/lib/auth/password";
+
 import { signUpFromOnboardingAction } from "./actions";
 
 const STEPS = [
@@ -277,7 +283,7 @@ function StepAccount({
         label="Password"
         htmlFor="password"
         required
-        helper="At least 12 characters."
+        helper={MIN_PASSWORD_LENGTH_HINT}
       >
         <Input
           id="password"
@@ -286,7 +292,7 @@ function StepAccount({
           value={state.password}
           onChange={(event) => update("password", event.target.value)}
           required
-          minLength={12}
+          minLength={MIN_PASSWORD_LENGTH}
         />
       </FormField>
     </section>
@@ -603,7 +609,7 @@ function StepBio({
 function isStepValid(step: number, state: State): boolean {
   switch (step) {
     case 0:
-      return state.email.includes("@") && state.password.length >= 12;
+      return state.email.includes("@") && passwordMeetsMinLength(state.password);
     case 1:
       return Boolean(
         state.name && state.country && state.nationality && state.title && state.organisation,
