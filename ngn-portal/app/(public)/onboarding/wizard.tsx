@@ -3,16 +3,16 @@
 import * as React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, Eye, EyeOff } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { cn } from "@/components/ui/cn";
 import { Checkbox } from "@/components/ui/checkbox";
 import { FormField } from "@/components/ui/form-field";
 import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Select } from "@/components/ui/select";
-import { Stepper } from "@/components/ui/stepper";
+import { OnboardingWizardStepper } from "@/components/ui/stepper";
 import { TagInput } from "@/components/ui/tag-input";
 import { Textarea } from "@/components/ui/textarea";
 import { COUNTRIES } from "@/lib/taxonomy/countries";
@@ -28,13 +28,40 @@ import {
 
 import { signUpFromOnboardingAction } from "./actions";
 
-const STEPS = [
-  "Account",
-  "About you",
-  "Expertise",
-  "Mentorship",
-  "Bio & links",
+const ONBOARDING_STEPS = [
+  {
+    stepperLabel: "Account",
+    title: "Set up your account",
+    description:
+      "Let's get started by creating your login credentials to join the next generation network.",
+  },
+  {
+    stepperLabel: "Identity",
+    title: "Basic identity",
+    description:
+      "Tell us the basics about you. You can edit any of this later in your profile.",
+  },
+  {
+    stepperLabel: "Professional",
+    title: "Professional context",
+    description:
+      "Pick your sectors and add the skills people should know you for.",
+  },
+  {
+    stepperLabel: "Mentorship",
+    title: "Mentorship preferences",
+    description:
+      "Set your default availability for the mentorship programme.",
+  },
+  {
+    stepperLabel: "Story",
+    title: "Your story",
+    description:
+      "Introduce yourself to the network with a short bio and optional links.",
+  },
 ] as const;
+
+const STEPPER_LABELS = ONBOARDING_STEPS.map((s) => s.stepperLabel);
 
 interface State {
   email: string;
@@ -116,7 +143,7 @@ export function OnboardingWizard() {
   }
 
   function next() {
-    if (step < STEPS.length - 1) setStep(step + 1);
+    if (step < ONBOARDING_STEPS.length - 1) setStep(step + 1);
   }
   function back() {
     if (step > 0) setStep(step - 1);
@@ -209,7 +236,7 @@ export function OnboardingWizard() {
       </header>
 
       <div className="container-content px-4 md:px-8 py-6">
-        <Stepper steps={[...STEPS]} current={step} />
+        <OnboardingWizardStepper steps={STEPPER_LABELS} current={step} />
       </div>
 
       <main className="flex-1 px-4 md:px-8 pb-8">
@@ -233,7 +260,7 @@ export function OnboardingWizard() {
               Back
             </Button>
 
-            {step < STEPS.length - 1 ? (
+            {step < ONBOARDING_STEPS.length - 1 ? (
               <Button onClick={next} disabled={!isStepValid(step, state)}>
                 Continue
                 <ArrowRight className="size-4" aria-hidden />
